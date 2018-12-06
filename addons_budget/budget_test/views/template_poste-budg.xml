@@ -1,0 +1,99 @@
+<openerp>
+<data>
+<!--Applicant form view -->
+	<record id="view_budget_post_form_inherited" model="ir.ui.view">
+	<field name="name">post.budget.form.inherited</field>
+	<field name="model">account.budget.post</field>
+	<field name="inherit_id" ref='account_budget.view_budget_post_form'/>
+	<field name="arch" type="xml">
+	
+	<!--type sélection-->
+	<!--<xpath expr="//group/field[@name='validating_user_id']" position="after"> -->
+		
+		<!--</xpath>-->
+		<!--<xpath expr="//page[@string='Budget Lines']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>-->
+
+		
+			<!--<xpath expr="//field[@name='crossovered_budget_line']" position="replace">
+		        	<field name="budget_line_ids"/>
+			</xpath>-->
+		      
+
+
+
+		<xpath expr="//field[@name='code']" position="attributes">
+			     	<attribute name="invisible">1</attribute>
+			 	</xpath>
+
+
+
+
+				<xpath expr="//field[@name='name']" position="replace">
+<sheet>
+					<group>
+<group >
+					
+					<field name="titre"/>
+					
+					<field name="section"/>
+</group>
+<group>
+					
+					
+					
+</group>
+<group>
+					<field name="chapitre"/>
+					<field name="article"/>
+					
+					<field name="paragraphe"/>
+</group>
+				
+
+					
+</group>
+</sheet>
+
+</xpath>
+
+
+
+
+
+
+
+
+
+
+
+	<!--<xpath expr="//field[@name='code']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+
+	<xpath expr="//field[@name='creating_user_id']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+
+	<xpath expr="//field[@name='validating_user_id']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>-->
+
+
+	<!--<xpath expr="//field[@name='name']" position="before">
+		        	<label for="budgetaire"/>
+				<field name="budgetaire"/>
+			</xpath>-->
+		      
+
+
+
+
+
+
+           </field>
+       </record>
+
+</data>
+</openerp>

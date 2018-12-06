@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+<!--id = nom du module.id-->
+
+
+*
+    <record model="courriel.mode" id="cci_bureau_ordre.email_mode">
+        <field name="name">Email</field>
+    </record>
+    <record model="courriel.mode" id="cci_bureau_ordre.courriel_mode">
+        <field name="name">Courriel</field>
+    </record>
+    <record model="courriel.mode" id="cci_bureau_ordre.fax_mode">
+        <field name="name">Fax</field>
+    </record>
+   <record model="courriel.mode" id="cci_bureau_ordre.depot_mode">
+        <field name="name">Dépôt directe </field>
+    </record>
+ <record model="courriel.mode" id="mode_other">
+        <field name="name">Autres</field>
+    </record>
+</data>
+</openerp>

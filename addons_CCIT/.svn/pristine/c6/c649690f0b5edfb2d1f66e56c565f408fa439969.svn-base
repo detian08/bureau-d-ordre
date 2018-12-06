@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+	<record id="wkf_courriel_sortant" model="workflow">
+	    <field name="name">courriel.sortant.wkf</field>
+	    <field name="osv">cci.courriel.sortant</field>
+	    <field name="on_create">True</field>
+	</record>
+
+	<!-- liste des activités-->
+        <record id="act_draft" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_sortant"/>
+            <field name="flow_start">True</field>
+            <field name="name">draft</field>
+        </record>   
+<!--soumis à la DG-->
+        <record id="act_to_soumdg" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_sortant"/>
+            <field name="name">soumdg</field>
+            <field name="kind">function</field>
+            <field name="action">to_soumdg()</field>
+        </record>
+<!--soumis à la DG-->
+
+<!--traiter-->
+        <record id="act_traite" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_sortant"/>
+            <field name="name">traite</field>
+            <field name="kind">function</field>
+            <field name="action">traite()</field>
+        </record>
+<!--traiter-->
+<!--DG soumettre au président-->
+        <record id="act_to_soumpre" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_sortant"/>
+            <field name="name">soumpre</field>
+            <field name="kind">function</field>
+            <field name="action">to_soumpre()</field>
+        </record>
+<!--DG soumettre au président-->
+<!--RETOUR_DG-->
+        <record id="act_to_soumpre_act_soumdg" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_sortant"/>
+            <field name="name">retoursoumpre</field>
+            <field name="kind">function</field>
+            <field name="action">to_soumdg()</field>
+        </record>
+<!--RETOUR_DG-->
+
+
+        <record id="act_soumdg_to_soumpre" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_sortant"/>
+            <field name="name">soumdg</field>
+            <field name="kind">function</field>
+            <field name="action">to_soumpre()</field>
+        </record>
+
+
+	<!-- liste des transitions-->
+        <record id="trans_draft_to_soumdg" model="workflow.transition">
+            <field name="act_from" ref="act_draft"/>
+            <field name="act_to" ref="act_to_soumdg"/>
+            <field name="condition">True</field>
+            <field name="signal">valider_bt</field>
+        </record>
+
+       <record id="trans_to_soumdg_to_soumpre_soum" model="workflow.transition">
+            <field name="act_from" ref="act_to_soumdg"/>
+            <field name="act_to" ref="act_to_soumpre"/>
+            <field name="condition">True</field>
+            <field name="signal">a_soumis_bt</field>
+        </record>
+
+
+
+	<record id="trans_to_soumdg_traite" model="workflow.transition">
+            <field name="act_from" ref="act_to_soumdg"/>
+            <field name="act_to" ref="act_traite"/>
+            <field name="condition">True</field>
+            <field name="signal">a_traite_bt</field>
+        </record>
+
+
+
+
+	<record id="trans_to_soumdg_to_soumpre" model="workflow.transition">
+            <field name="act_from" ref="act_to_soumdg"/>
+            <field name="act_to" ref="act_to_soumpre"/>
+            <field name="condition">True</field>
+            <field name="signal">a_soumpre_bt</field>
+        </record>
+<!--retour au DG-->
+
+	<record id="trans_to_soumdg_to_soumpre_retour_dg" model="workflow.transition">
+            <field name="act_from" ref="act_to_soumpre"/>
+            <field name="act_to" ref="act_to_soumdg"/>
+            <field name="condition">True</field>
+            <field name="signal">a_retour_dg_bt</field>
+        </record>
+</data>
+</openerp>

@@ -1,0 +1,45 @@
+<openerp>
+    <data>
+      <record id="entretien_evaluation_tree_view" model="ir.ui.view">
+        <field name="name">entretien_evaluation.tree.view </field>
+        <field name="model">entretien_evaluation.entretien_evaluation</field>
+        <field name="arch" type="xml">
+		<tree string="entretien_evaluation">
+			<field name="critere"/>
+			<field name="note"/>
+			<!--<field name="birth_date"/>
+                        <field name="email"/>
+                        <field name="phone"/>-->
+		</tree>
+	</field> 
+      </record>
+
+	<record id="entretien_evaluation_form_view" model="ir.ui.view">
+        <field name="name">Entretien_evaluation.Form.View </field>
+        <field name="model">entretien_evaluation.entretien_evaluation</field>
+        <field name="arch" type="xml">
+		<form string="entretien_evaluation">
+		  <sheet>
+	             <group>
+			<field name="critere"/>
+			<field name="note"/>
+			<!--<field name="birth_date"/>
+                         <field name="email"/>
+                         <field name="phone"/>-->
+		     </group>
+		  </sheet>
+		</form>
+	</field> 
+      </record>
+
+	<record model="ir.actions.act_window" id="action_list_ideas">
+    <field name="name">Evaluation</field>
+    <field name="res_model">entretien_evaluation.entretien_evaluation</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<!--menu parent
+<menuitem id="menu_ideas" name="Evaluation" sequence="10"
+          action="action_list_ideas"/>-->
+
+    </data>
+</openerp>

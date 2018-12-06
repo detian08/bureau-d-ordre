@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="type_template_form_view" model="ir.ui.view">
+            <field name="name">CCI Form type</field>
+            <field name="model">courriel.type</field>
+            <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                        <field name="name" />
+
+
+                      
+                        
+                      
+		</group>
+		
+		<!--<notebook><page string="Note">
+
+		</page></notebook>-->
+                
+            </sheet>
+        </form>
+	    </field>
+
+	</record>
+
+	<record id="type_template_tree_view" model="ir.ui.view">
+            <field name="name">type.template.type.tree</field>
+            <field name="model">courriel.type</field>
+            <field name="arch" type="xml">
+            <tree string="Type de courriel">
+
+                <field name="name" />
+
+         
+
+
+            </tree>
+            </field>
+        </record>
+
+        <record id="type_template_action" model="ir.actions.act_window">
+            <field name="name">Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">courriel.type</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="type_template_tree_view"/>
+
+        </record>
+        <menuitem action="type_template_action"  id="menu_type_template_action" parent="menu_courriel_configuration" sequence="2" />
+
+    </data>
+</openerp>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="oe_secteurs_activite" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="partner_name" class="java.lang.String"/>
+	<field name="sect_act_name" class="java.lang.String"/>
+	<field name="stat_path" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/stat_path]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="57"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OE/ Secteurs d'activité]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Le " + new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="19" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="39" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="58" width="555" height="1"/>
+			</line>
+			<image onErrorType="Blank">
+				<reportElement x="0" y="1" width="129" height="50"/>
+				<imageExpression><![CDATA[$F{stat_path}+"logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="173" height="45"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Secteur]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="0" width="383" height="45"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{sect_act_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="3" width="555" height="21"/>
+				<textElement>
+					<font size="14" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Liste des opérateurs économiques:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="-21" width="555" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{partner_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+        <template name="conditions" id="website.conditions" page="True">
+            <t t-call="website.layout">
+                <section class="blog-wrapper">
+                    <div class="container">
+                        <div>
+                            <h1>Conditions générales de vente</h1>
+                            <hr class="colorgraph"/>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Objet :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Les présentes conditions générales de vente détaillent
+                                    les
+                                    droits et obligations de la société HendayeMédical Services SAS ci-après dénommée
+                                    HMS et
+                                    de ses clients dans le cadre de la vente et de la location des marchandises
+                                    suivantes :
+                                    produits médicaux, matériels liés à cette activité et véhicules aménagés.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Produits :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Les produits proposés à la vente par la société HMS sont
+                                    ceux
+                                    figurant sur tous les supports édités par celle-ci. Toutefois, HMS se réserve le
+                                    droit
+                                    de modifier sa gamme de produits à tout moment. Il est également entendu que toutes
+                                    les
+                                    caractéristiques techniques, photographies ou représentations des produits proposés
+                                    à la
+                                    vente n’ont qu’une valeur indicative et ne peuvent en aucun cas être considérées
+                                    comme
+                                    contractuelles.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Prix :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Les prix des marchandises vendues sont ceux en vigueur au
+                                    jour de la prise de commande. Ils sont libellés en euros et calculés hors taxes. Par
+                                    conséquent, ils seront majorés du taux de TVA et des frais de livraison applicables
+                                    au
+                                    jour de la commande. La société HMS s’accorde le droit de modifier ses tarifs à tout
+                                    moment. Toutefois, elle s’engage à facturer les marchandises commandées aux prix
+                                    indiqués lors de l’enregistrement de la commande.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Commande :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Une commande n’est réputée acceptée que
+                                    lorsque la société HMS en a accusé réception. En cas d’erreur typographique sur tout
+                                    type de document commercial, d’erreur informatique sur son site Internet, la société
+                                    HMS
+                                    se réserve le droit de refuser la commande et en informera l’acheteur dans les plus
+                                    brefs délais.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Escompte :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Aucun escompte ne sera consenti en cas de paiement
+                                    anticipé.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Modalités de paiement :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Sauf conditions spécifiques accordées par la société HMS
+                                    (paiement à échéance), le paiement intégral est dû à la commande. Le règlement
+                                    pourra
+                                    être effectué par carte bancaire, chèque, virement ou espèces. Pour tout montant
+                                    supérieur à 1500 Euro HT, le chèque et le virement sont les seuls moyens de paiement
+                                    acceptés.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Retard de paiement :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>En cas de défaut de paiement total ou partiel des
+                                    marchandises livrées au jour de la réception et sauf accord préalable de la société
+                                    HMS,
+                                    l’acheteur doit verser à la société HMS une pénalité de retard égale à trois fois le
+                                    taux de l’intérêt légal. En outre, une indemnité forfaitaire pour frais de
+                                    recouvrement,
+                                    d’un montant de QUARANTE (40) Euro sera due, de plein droit et sans notification
+                                    préalable, en cas de retard de paiement. La société HMS se réserve le droit de
+                                    demander
+                                    à l’acheteur, une indemnisation complémentaire si les frais de recouvrement
+                                    effectivement engagés dépassaient ce montant, sur présentation des justificatifs.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Livraison :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Sauf conditions particulières expresses propres à la
+                                    vente,
+                                    la livraison s’effectuera au domicile de l’acheteur à l’adresse mentionnée sur le
+                                    bon de
+                                    commande. Il est entendu que les délais de livraison spécifiés dans le devis ou au
+                                    moment de la commande ne le sont qu’à titre indicatif et le non-respect de ceux-ci
+                                    n’engage en rien la responsabilité de la société HMS. En cas de livraisons multiples
+                                    pour une même commande, les frais de livraison ne seront facturés qu’une seule fois.
+                                    Pour la France Métropolitaine et la Corse, le barème des frais de livraison est
+                                    défini
+                                    de la manière suivante :
+                                </span>
+                            </p>
+                            <p>
+                                <span>• Commande supérieure à 200 Euro TTC: Franco de port
+                                </span>
+                            </p>
+                            <p>
+                                <span>• Commande inférieure au franco: 8,40 Euro TTC. Pour les
+                                    expéditions en contre-remboursement, il sera appliqué une majoration de 15 ,00 Euro
+                                    TTC.
+                                    Les frais de contre remboursement s’appliqueront même si le franco de port est
+                                    atteint.
+                                </span>
+                            </p>
+                            <p>
+                                <span>Pour une autre destination (DOM-TOM OU Export), les frais
+                                    de
+                                    transports seront fixés sur pro-forma après étude du volume, du poids et de
+                                    l’adresse de
+                                    destination du colis.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Garantie :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>La garantie légale sous la responsabilité du fournisseur
+                                    du
+                                    matériel défectueux s’applique à compter du jour ou les marchandises atteignent
+                                    l’adresse de destination. La société HMS ne pourra être tenue pour responsable des
+                                    dommages aux biens ou aux personnes ainsi qu’à un éventuel manque à gagner pouvant
+                                    résulter de l’utilisation et du fonctionnement des marchandises. Sauf accord de la
+                                    société HMS, les frais de retour des marchandises restent à la charge de l’acheteur.
+                                    Transfert des risques Dès l’enlèvement des marchandises par les transporteurs au
+                                    sein
+                                    des magasins de la société HMS, les risques et la responsabilité sont transférés à
+                                    l’acheteur pour toutes les ventes et ce même en cas de livraison franco.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Réclamations :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>En signant le bordereau de
+                                    livraison, le
+                                    client accepte les produits livrés. Il est de la responsabilité du client et/ou du
+                                    réceptionnaire d’effectuer toutes vérifications et de faire toutes réserves à
+                                    l’arrivée
+                                    du colis et d’exercer, le cas échéant, tous recours contre le transporteur. A la
+                                    réception des marchandises, le client doit immédiatement vérifier leur état et leur
+                                    conformité par rapport au contrat de vente. Toutes réclamations relatives à un
+                                    défaut
+                                    des marchandises livrées, à une inexactitude dans les quantités ou à une référence
+                                    erronée par rapport à la commande confirmée par la société HMS, doivent être
+                                    formulées
+                                    par écrit dans un délai de 4 jours à réception des marchandises à défaut de quoi le
+                                    droit de réclamation cessera d’être acquis. Tout retour de marchandises nécessite
+                                    l’accord préalable du vendeur.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <strong style = "font-size:20px;color:#e2392f;">
+                                        <span>Réserve de propriété :</span>
+                                    </strong>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Les marchandises restent la propriété de la société HMS
+                                    jusqu’au paiement intégral de leur prix en principal et en intérêts. L’acheteur en
+                                    deviendra responsable dès leur remise matérielle, le transfert en possession
+                                    entraînant
+                                    celui des risques. A défaut de paiement à l’échéance convenue, la société HMS pourra
+                                    reprendre les marchandises, la vente pourra être résolue de plein droit et les
+                                    acomptes
+                                    déjà versés lui seront acquis en contrepartie de la jouissance des marchandises dont
+                                    aura bénéficié l’acheteur.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Droit de Rétractation :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Conformément à l’article L121-20 du Code de la
+                                    Consommation,
+                                    l’Acheteur dispose d’un délai de sept jours francs à compter de la date de
+                                    réception,
+                                    pour retourner à ses frais, les produits commandés, pour remboursement (hors frais
+                                    d’acheminement). Les produits doivent impérativement être retournés à la société HMS
+                                    dans un parfait état de revente, dans leur état d’origine, dûment scellés, et
+                                    accompagnés de la facture correspondante à l’achat. Tout produit abîmé, endommagé ou
+                                    dont l’emballage d’origine aura été détérioré, ne sera ni remboursé ni échangé. Tout
+                                    remboursement à la charge de la société HMS sera effectué par chèque.
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Protection des données personnelles :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Les données nominatives fournies par le client ne sont
+                                    pas
+                                    diffusées à des tiers, à l’exception de la société HMS pour la sécurisation et
+                                    l’assurance des paiements. Conformément à la loi 78-17 du 6 janvier 1978 modifiée
+                                    par la
+                                    loi du 6 août 2004, le client dispose à tout moment d’un droit d’accès, de
+                                    rectification
+                                    et de suppression des informations le concernant. Pour exercer ce droit, il suffit
+                                    de
+                                    contacter le service client de la société HMS - ZI les Jon-Caux Rue de l’Industrie -
+                                    Lot
+                                    n°11 - 64700 HENDAYE
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <em>
+                                        <strong style = "font-size:20px;color:#e2392f;">
+                                            <span>Juridiction et litiges :</span>
+                                        </strong>
+                                    </em>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Les informations contractuelles sont présentées en langue
+                                    française et les produits proposés à la vente sont conformes à la réglementation
+                                    européenne. Le cas échéant, il appartient au client étranger de vérifier les
+                                    possibilités d’utilisation du produit dans le pays de destination. La société HMS ne
+                                    saurait être engagée en cas de non-respect de la réglementation d’un pays étranger.
+                                    Tous
+                                    les différents relatifs à la formation, l’exécution et la cessation des obligations
+                                    contractuelles entre les parties ne pouvant donner lieu à un règlement à l’amiable
+                                    seront soumis à la juridiction du Tribunal de Commerce de Bayonne (64) ce qui est
+                                    expressément accepté par l’acheteur.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </template>
+
+        <record id="conditions_page_link" model="website.menu">
+            <field name="name">Conditions générales de vente</field>
+            <field name="url">/page/conditions</field>
+        </record>
+
+
+    </data>
+</openerp>

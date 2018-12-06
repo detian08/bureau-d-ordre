@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_question" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.81818181818182"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1046"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;reponse&apos;]"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FAEBD7">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFE4BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#D5CBBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#FFF4E6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#FFFCF8"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<subDataset name="Table Dataset 2"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="title" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/title]]></fieldDescription>
+	</field>
+	<field name="title_page" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/title_page]]></fieldDescription>
+	</field>
+	<field name="product_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/product_id]]></fieldDescription>
+	</field>
+	<field name="question" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/question]]></fieldDescription>
+	</field>
+	<field name="reponse" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/reponse]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/type]]></fieldDescription>
+	</field>
+	<field name="stat_path" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/stat_path]]></fieldDescription>
+	</field>
+	<field name="dateAuj" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/dateAuj]]></fieldDescription>
+	</field>
+	<group name="Page">
+		<groupExpression><![CDATA[$F{title_page}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<textField>
+					<reportElement x="0" y="0" width="555" height="20" isRemoveLineWhenBlank="true" forecolor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{title_page}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Question">
+		<groupExpression><![CDATA[$F{question}]]></groupExpression>
+		<groupHeader>
+			<band height="15">
+				<textField>
+					<reportElement x="3" y="0" width="514" height="15" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{question}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="58" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="15" width="105" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="1" width="100" height="50"/>
+				<imageExpression><![CDATA[$F{stat_path} + "logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="450" y="29" width="105" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="1" width="105" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Le "+$F{dateAuj}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="1" width="555" height="20" isRemoveLineWhenBlank="true" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="654">
+			<staticText>
+				<reportElement x="4" y="120" width="551" height="20"/>
+				<textElement/>
+				<text><![CDATA[Questionnaire confidentiel destiné à usage statistique. La CPCCAF et la CCI du Togo vous garantissent l’anonymat des informations recueillies et d’un traitement dans le cadre du secret statistique.]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="17" y="141" width="482" height="21"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="141" width="551" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SECTION A : IDENTIFICATION DE L’ENTREPRISE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="168" width="31" height="23"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="168" width="107" height="23"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Libellé]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="168" width="309" height="23"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Code catégories/modalités]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="168" width="35" height="23"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="191" width="31" height="37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="191" width="107" height="37"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Fonction du répondant ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="191" width="154" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Directeur(1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="191" width="155" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Employé(3)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="191" width="35" height="37"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="228" width="31" height="82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="228" width="107" height="82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Contact du répondant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="229" width="309" height="81"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nom……………………………………………………………
+Tél……………………………………………………………………
+Adresse …………………………………………………………………
+Email :…………………………@…………………………………]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="310" width="31" height="37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="310" width="107" height="37"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Dénomination de l’entreprise]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="310" width="309" height="37"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[……………………………………………………………………………………………………………………]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="228" width="35" height="426"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="347" width="31" height="37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="347" width="107" height="37"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Secteur d’activité 
+(Cochez une seule case)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="383" width="107" height="25"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Êtes-vous artisan ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="384" width="31" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[4’]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="408" width="31" height="37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="408" width="108" height="38"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Activité principale de l’entreprise]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="409" width="309" height="36"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[…………………………………………………………………………………………………………………………………………………………………………………………………………………………………………]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="445" width="31" height="83"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="445" width="107" height="83"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Effectifs salariés permanents]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="528" width="31" height="37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="528" width="107" height="37"/>
+				<textElement/>
+				<text><![CDATA[Ancienneté de l’entreprise]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="565" width="31" height="89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="377" y="193" width="16" height="14"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="155" y="210" width="154" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Responsable(2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="210" width="155" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Autre (précisez(4)]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="406" y="212" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="222" y="193" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="246" y="212" width="16" height="14"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="309" y="347" width="155" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Services(3)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="347" width="154" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Commerce(1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="366" width="154" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Industrie, mines, BTP(2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="366" width="155" height="19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Agriculture(4)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="385" width="83" height="23"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Oui(1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="386" width="87" height="23"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Non(2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="385" width="137" height="23"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ne se prononce pas(3)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="445" width="154" height="25"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[0 salarié(1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="470" width="155" height="29"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[1 à 9 salariés(2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="499" width="155" height="29"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[10 à 49 salariés(3)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="445" width="156" height="39"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[50 à 250 salariés(4)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="484" width="154" height="44"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Plus de 250 salariés(5)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="0" width="552" height="120"/>
+				<textElement/>
+				<text><![CDATA[La CPCCAF (Conférence Permanente des Chambres Consulaires Africaines et Francophones) défend les intérêts du secteur privé africain. A travers ce questionnaire, elle mesure l’évolution des économies africaines à travers l’opinion des entreprises des pays d'Afrique Francophone. Ces études conjoncturelles sont lancées afin de relayer leurs résultats plus efficacement auprès des Etats et des principales organisations internationales partenaires.
+
+Nous vous remercions de bien vouloir prendre le temps de répondre à ce questionnaire : vos réponses construiront une vision proprement africaine des problèmes des PME, tout en restant anonymes. Les résultats de l’enquête feront l’objet de présentations et discussions lors des Ateliers de la Coopération Consulaire organisés par la CPCCAF en juin 2018, et seront relayées par la Chambre de Commerce et d’Industrie (CCI) du Togo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="528" width="102" height="37"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Moins de 1 an(1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="528" width="112" height="37"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Entre 1 et 5 ans(2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="528" width="97" height="37"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Plus de 5 ans(3)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="565" width="107" height="89"/>
+				<textElement/>
+				<text><![CDATA[Chiffre d'afaires hors taxes à l'année précédente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="565" width="154" height="25"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Pas de CA à l'année précédente (1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="590" width="154" height="29"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Moins de 5 millions FCFA(2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="619" width="154" height="35"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Entre 5 et 50 millions FCFA   (3)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="565" width="154" height="39"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Entre 50 et 200 millions FCFA(4)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="604" width="154" height="50"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Plus de 200 millions FCFA(5)]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="230" y="347" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="377" y="351" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="277" y="368" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="406" y="368" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="206" y="391" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="285" y="391" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="440" y="390" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="222" y="449" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="241" y="475" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="422" y="456" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="434" y="499" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="257" y="504" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="239" y="541" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="350" y="541" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="446" y="541" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="252" y="572" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="290" y="597" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="334" y="586" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="447" y="621" width="16" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="175" y="636" width="16" height="14"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="72" y="0" width="483" height="20">
+					<printWhenExpression><![CDATA[$F{type}.equals( "textbox" )||$F{type}.equals( "numerical_box" )||$F{type}.equals( "datetime" )]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="78" y="3" width="17" height="16">
+					<printWhenExpression><![CDATA[$F{type}.equals( "multiple_choice" )]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$F{stat_path} + "case-vide-carre.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="77" y="3" width="17" height="16">
+					<printWhenExpression><![CDATA[$F{type}.equals( "simple_choice" )]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$F{stat_path} + "radio-button.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="104" y="0" width="451" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{reponse}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

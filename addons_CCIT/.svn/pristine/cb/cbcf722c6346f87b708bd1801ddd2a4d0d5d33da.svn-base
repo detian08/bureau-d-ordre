@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="courriel_template_form_view" model="ir.ui.view">
+            <field name="name">CCI Form courriel</field>
+            <field name="model">cci.courriel</field>
+            <field name="arch" type="xml">
+		<form>
+		<header></header>
+            	<sheet>
+            <group colspan="2">
+		<group>
+                        <!--<field name="name" />-->
+                        <field name="ref" />
+		</group>
+		<group>
+                        <field name="date_courriel" />
+		</group>
+                      	
+	     </group>
+<group>
+<field name="objet" /></group>
+		<notebook>
+			
+		<page string="Information Générale">
+   				 <group col="4">
+                                    <separator colspan="2" string="Information Générale"/>
+                                    <newline/>
+                        <field name="mode_id" option="{'create_edit': false}"/>
+                        <field name="degre_id" option="{'create_edit': false}"/>
+ 
+
+                                </group>
+                                <group col="4">
+                                          <field name="importance_id"/>
+                       			 <field name="urgent_id"/>
+                       			 <field name="type_id"/>
+
+
+                                </group>
+
+		</page>
+						<page string="Expéditeur">
+                            <group>
+				<group>
+
+
+	 				<field name="name"/>		                        
+					    <label for="street" string="Addresse"/>
+						<div>
+		                            <field name="street" placeholder="Rue..."/>
+		                            <field name="street2"/>
+
+		                            <div class="address_format">
+		                                <field name="city" placeholder="Ville" style="width: 40%%"/>
+		                               
+		                                <field name="zip" placeholder="Code postale" style="width: 40%%"/>
+		                            </div>
+		                            <field name="country_id" placeholder="Pays" class="oe_no_button" options='{"no_open": True, "no_create": True}'/>
+		                        </div>
+		                        <field name="website" widget="url" placeholder="ex: www.odoo.com" string="Site Web"/>
+
+                            	</group>
+				<group>
+					   
+					<field name="function"/>
+					<field name="phone"/>
+					<field name="email" widget="email"/>
+					<!--<field name="email"/>-->
+					<!--<field name="state"/>-->
+					<field name="is_company" invisible='1' default="True"/>
+					<field name="title" options='{"no_open": True}' string="Civilité"/>
+				</group>
+
+
+			</group>
+
+	</page>
+<page string="Destinataire">
+				    <group>
+                                          <field name="dept_id"/>
+</group>
+    					<!--<label for="liste_dest_ids" string="Liste de département"/>
+                                          <field name="liste_dest_ids"/>-->
+
+		</page>
+				<page string="Notes">
+
+<field name="note_ids"/>
+
+		</page>
+				<page string="Piéces Jointes">
+
+		</page></notebook>
+                
+            </sheet>
+        </form>
+	    </field>
+
+	</record>
+
+	<record id="courriel_template_tree_view" model="ir.ui.view">
+            <field name="name">courriel.template.courriel.tree</field>
+            <field name="model">cci.courriel</field>
+            <field name="arch" type="xml">
+            <tree string="Courriel">
+                <!--<field name="name" />-->
+                <field name="ref" />
+                <field name="note_id" />
+                <field name="type_id" />
+                <field name="mode_id" />
+                <field name="degre_id" />
+                <field name="importance_id" />
+                <field name="urgent_id" />
+                <field name="date_courriel" />
+                  
+            </tree>
+            </field>
+        </record>
+
+        <record id="courriel_template_action" model="ir.actions.act_window">
+            <field name="name">Bureau d'ordre</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="courriel_template_tree_view"/>
+        </record>
+
+
+
+       <!-- <record id="courriel_sortant_template_action" model="ir.actions.act_window">
+            <field name="name">Courriels sortants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="courriel_template_tree_view"/>
+        </record>-->
+<!--Menu parent-->
+       <menuitem id="menu_courriel" name="Bureau d'ordre" sequence="1"/>
+	<menuitem name ='Configuration' id="menu_courriel_configuration" parent="menu_courriel" sequence="2"/>
+       <menuitem id="menu_courriel_parent" name="Courriels" sequence="1" parent='menu_courriel'/>
+
+
+       <!--<menuitem id="menu_courriel_sortant" name='Courriels sortants' sequence="2" parent='menu_courriel_parent' action="courriel_sortant_template_action"/>-->
+
+      
+
+    </data>
+</openerp>

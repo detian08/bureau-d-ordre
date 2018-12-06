@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+        <template name="eps page" id="website.eps" page="True">
+            <t t-call="website.layout">
+            	<div class="oe_structure oe_empty" id="wrap" data-oe-id="318" data-oe-source-id="288"
+                         data-oe-xpath="/data/xpath/div[2]" data-oe-model="ir.ui.view" data-oe-field="arch">
+                        <div class="container">
+                            <section>
+                                <div class="container">
+                                        <h1>
+                                            <strong><span> Qui sommes <span class="highlight"> E.P.S</span> ?</span> </strong>
+                                        </h1>
+
+                                        <!--<hr class="no-padding"/>-->
+                                        <div>
+                                            <p> <strong style="color:#e2392f;">E.P.S : </strong> <strong style="color:#e2392f;">E</strong>quipements de <strong style="color:#e2392f;">P</strong>remiers <strong style="color:#e2392f;">S</strong>ecours 
+                                            
+                                                est une Société Tunisienne spécialisée dans la distribution de
+                                                matériel de formation
+                                                et de Premiers secours.
+
+                                                <strong>E.P.S </strong> met à la disposition de ses clients des produits conformes aux normes
+                                                et aux dernières
+                                                recommandations de l'American Heart Association et de l'European
+                                                Ressuscitation Council.
+
+                                                <strong>E.P.S </strong> compte dans son actif un portefeuille de marques de notoriété
+                                                internationale, toutes
+                                                leaders dans le domaine de l'urgence et des premiers secours, et synonymes
+                                                d'excellence
+                                                (LAERDAL, VIDACARE, SPENCER, FERNO, DUMONT …).
+                                            </p>
+                                        </div>
+                                        <div class="container">
+                                        	<div class="row appear stats">
+												<div class="col-xs-6 col-sm-2 col-md-2">
+													<div class="align-center color-white txt-shadow">
+														<div class="images">
+															<a href= "http://www.laerdal.com/fr/" target="_blank" title="LAERDAL">
+																<img src="/office_website/static/src/img/marques/logo-2.jpg"/></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6 col-sm-2 col-md-2">
+													<div class="align-center color-white txt-shadow">
+														<div class="images">
+															<a href= "http://www.vidacare.com/" target="_blank" title="VIDACARE">
+																<img src="/office_website/static/src/img/marques/logo-6.jpg"/></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6 col-sm-2 col-md-2">
+													<div class="align-center color-white txt-shadow">
+														<div class="images">
+															<a href= "https://www.spencer.it/fr/home" target="_blank" title="SPENCER">
+																<img src="/office_website/static/src/img/marques/logo-5.jpg"/></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6 col-sm-2 col-md-2">
+													<div class="align-center color-white txt-shadow">
+														<div class="images">
+															<a href= "http://www.ferno.com/index.htm" target="_blank" title="FERNO">
+																<img src="/office_website/static/src/img/marques/logo-4.jpg"/></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6 col-sm-2 col-md-2">
+													<div class="align-center color-white txt-shadow">
+														<div class="images">
+															<a href= "https://www.dumont-securite.fr/" target="_blank" title="DUMONT-SECURITE">
+																<img src="/office_website/static/src/img/marques/logo-3.jpg"/></a>
+														</div>
+													</div>
+												</div>
+											</div>
+                                        </div>
+                                	</div>
+                            	</section>
+
+	                            <section>
+	                                <div class="container">
+	                                    <h1 id="title-middle" class="general-title padding-top">
+	                                        <strong style="color:#e2392f;">E.P.S.</strong>
+	                                        c'est<hr class="no-padding"/>
+	                                        <br/>
+	                                        <i></i>
+	                                    </h1>
+	                                </div>
+	                            </section>
+
+	                            <section id="fa-icons">
+	                          	<div class="container">
+									<div class="row appear stats">
+										<div class="col-xs-6 col-sm-4 col-md-4">
+											<div class="align-center color-white txt-shadow">
+												<div class="icon">
+													<center><i class="fa fa-thumbs-up fa-5x"></i></center>
+												</div>
+												<br/>
+												<center><span class="text">Une enseigne de confiance</span></center>
+											</div>
+										</div>
+										<div class="col-xs-6 col-sm-4 col-md-4">
+											<div class="align-center color-white txt-shadow">
+												<div class="icon">
+													<center><i class="fa fa-check-square-o fa-5x"></i></center>
+												</div>
+												<br/>
+												<center><span class="text">Des produits adaptés</span></center>
+											</div>
+										</div>
+										<div class="col-xs-6 col-sm-4 col-md-4">
+											<div class="align-center color-white txt-shadow">
+												<div class="icon">
+													<center><i class="fa fa-star fa-5x"></i></center>
+												</div>
+												<br/>
+												<center><span class="text">Une grande expérience</span></center>
+											</div>
+										</div>
+										<div class="col-xs-6 col-sm-4 col-md-4">
+											<div class="align-center color-white txt-shadow">
+												<div class="icon">
+													<center><i class="fa fa-user fa-5x"></i></center>
+												</div>
+												<br/>
+												<center><span class="text">Vente aux particuliers</span></center>
+											</div>
+										</div>
+
+										<div class="col-xs-6 col-sm-4 col-md-4">
+											<div class="align-center color-white txt-shadow">
+												<div class="icon">
+													<center><i class="fa fa-user-md fa-5x"></i></center>
+												</div>
+												<br/>
+												<center><span class="text">Vente aux professionnels</span></center>
+											</div>
+										</div>
+										<div class="col-xs-6 col-sm-4 col-md-4">
+											<div class="align-center color-white txt-shadow">
+												<div class="icon">
+													<center><i class="fa fa-trophy fa-5x"></i></center>
+												</div>
+												<br/>
+												<center><span class="text">Des marques leaders</span></center>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+                        </div>
+                    </div>
+                </t>
+            </template>
+        <record id="eps_page_link" model="website.menu">
+            <field name="name">Qui sommes nous?</field>
+            <field name="url">/page/eps</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+        </record>
+        </data>
+    </openerp>

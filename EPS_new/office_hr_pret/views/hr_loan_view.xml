@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<!--Loan Tree-->
+		<record id="tree_hr_loan_view" model="ir.ui.view">
+			<field name="name">hr.loan.tree</field>
+			<field name="model">hr.loan</field>
+			<field name="arch" type="xml">
+				<tree string="Loan Requests">
+					<field name="name"/>
+					<field name="employee_id"/>
+					<field name="date"/>
+					<field name="state"/>
+
+					<!--<field name="loan_amount"/>
+					<field name="state"/>-->
+				</tree>
+			</field>
+		</record>
+
+
+
+		<!--Loan Form-->
+		<record id="view_hr_loan_form" model="ir.ui.view">
+			<field name="name">hr.loan.form</field>
+			<field name="model">hr.loan</field>
+			<field name="arch" type="xml">
+				<form string="Loan Request">
+					<header>
+					
+						<button name="action_approve" type="object" string="Approuver" states="draft"/>
+						<button name="action_set_to_draft" type="object" string="Retour au Brouillon" states="approve"/>
+						<button name="action_refuse" type="object" string="Refuser" states="draft"/>
+						<button name="action_cloture" type="object" string="Cloturer" states="approve"/>
+						<field name="state" widget="statusbar" statusbar_visible="draft,approve,cloture,refuse" statusbar_colors='{"draft":"blue","refuse":"red"}'/>
+					</header>
+					<sheet>
+							<group>
+								<group>
+									<field name="name"/>
+								</group>
+								<group>
+									<field name="employee_id"/>
+									<field name="emp_salary"/>
+									<field name="taux_plafond"/>
+									<field name="plafond_payement"/>
+								</group>
+								<separator string="Détails du Pret"  colspan="4"/>
+								<group >
+									<field name="loan_amount"/>
+									<!--<field name="taux"/>
+									<field name="total_loan_amount"/>-->
+									<field name="no_month"/>
+									<field name="mnt_paye"/>
+								</group>
+								<group>
+									<field name="date"/>
+									<field name="payment_start_date"/>
+									<field name="reste"/>
+									<!--<field name="type_pret"/>
+									<field name="motif_pret"/>-->
+								</group>
+							</group>							
+						<separator string="Paiement du Pret" colspan="4"/>
+						<button type="object" name="compute_loan_line" string="Calculer Tranches" icon="terp-stock_format-scientific" colspan="2" />
+						<button type="object" name="reglement_total" string="Règlement totale" icon="terp-stock_format-scientific" colspan="2" />
+						<!-- attrs="{'invisible':[('state','=','approve')]}" -->
+						<field name="loan_line_ids">
+							<tree string="Ligne des prets" >
+								<field name="paid_date"/>
+								<field name="paid_amount"/>
+								<field name="state"/>
+							</tree>
+						</field>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+
+		<!--loan menu-->
+		<menuitem name="Prets"
+			parent="hr.menu_hr_root"
+			id="menu_hr_loans"
+			sequence="20"/>
+		
+		<record id="action_hr_loan_request" model="ir.actions.act_window">
+			<field name="name">Demandes des prets</field>
+			<field name="res_model">hr.loan</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem name="Demande des Prets"
+			parent="menu_hr_loans"
+			id="menu_hr_loan_request"
+			action="action_hr_loan_request"/>
+
+
+
+
+
+		<!--Loan Motif Tree
+		<record id="tree_hr_loan_motif_view" model="ir.ui.view">
+			<field name="name">hr.loan.motif.tree</field>
+			<field name="model">hr.loan.motif</field>
+			<field name="arch" type="xml">
+				<tree string="Motif des Prets">
+					<field name="name"/>
+					
+				</tree>
+			</field>
+		</record>-->
+
+		<!--Loan Motif Tree
+		<record id="form_hr_loan_motif_view" model="ir.ui.view">
+			<field name="name">hr.loan.motif.form</field>
+			<field name="model">hr.loan.motif</field>
+			<field name="arch" type="xml">
+				<form string="Motif des Prets">
+					<sheet>
+						<group>
+							<field name="name"/>
+						</group>
+					</sheet>
+					
+				</form>
+			</field>
+		</record>
+		<record id="action_hr_loan_motif" model="ir.actions.act_window">
+			<field name="name">Motif des prets</field>
+			<field name="res_model">hr.loan.motif</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="hr_loan_configure" parent="hr.menu_hr_configuration" name="Motif des Prets" action="action_hr_loan_motif"/>
+
+-->
+
+
+	</data>
+</openerp>

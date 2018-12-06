@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+                <record id="courriel_template_form_view" model="ir.ui.view">
+            <field name="name">CCI Form courriel</field>
+            <field name="model">cci.courriel</field>
+            <field name="arch" type="xml">
+		<form>
+		<header></header>
+            	<sheet>
+            <group colspan="2" id='entete'>
+
+			<!--<field name="type_id" attrs="{'readonly': [ ('state', 'in', ['to_validate','validate','reject'])]}" />-->
+                               <field name="type_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}"/>
+
+
+
+
+
+
+
+
+                        <field name="date_courriel" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+	     </group>
+		<group>
+		<field name="objet" attrs="{'readonly': [ ('state', '!=', 'draft')]}" /></group>
+			<notebook>
+			
+				<page string="Information Générale">
+		   				 <group col="4">
+				                   <!-- <separator colspan="2" string="Information Générale"/>
+				                    <newline/>-->
+				        <field name="mode_id" option="{'create_edit': false}" attrs="{'readonly': [ ('state', '!=', 'draft')]}"/>
+				        <field name="degre_id" option="{'create_edit': false}" attrs="{'readonly': [ ('state', '!=', 'draft')]}"/>
+				                </group>
+				                <group col="4">
+				                          <field name="importance_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}"/>
+				       			  <field name="urgent_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}"/>
+				                </group>
+				</page>
+				<page string="Expéditeur">
+                            		<group>
+						<group>
+
+
+			 <field name="name" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>		                        
+							   
+			<label for="street" string="Addresse" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+					<div>
+			<field name="street" placeholder="Rue..." attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+
+
+
+			            <field name="street2" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+						            <div class="address_format">
+						                <field name="city" placeholder="Ville" style="width: 40%%" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+						                <field name="zip" placeholder="Code postale" style="width: 40%%" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+						            </div>
+						            <field name="country_id" placeholder="Pays" class="oe_no_button" options='{"no_open": True, "no_create": True}' attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+						        </div>
+						        <field name="website" widget="url" placeholder="ex: www.odoo.com" string="Site Web" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+
+				            	</group>
+						<group>
+							<field name="function" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+							<field name="phone" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+							<field name="email" widget="email" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+
+							<!--<field name="state"/>-->
+							<field name="is_company" invisible='1' default="True" attrs="{'readonly': [ ('state', '!=', 'draft')]}"/>
+							<field name="title" options='{"no_open": True}' string="Civilité" attrs="{'readonly': [ ('state', '!=', 'draft')],'invisible': [('op_eco_exist', '=', True)]}"/>
+							<field name="op_eco_exist" />
+						</group>
+		<group>
+                        <field name="op_eco_id" attrs="{'invisible': [('op_eco_exist', '=', False)]}" />
+                        <field name="op_eco_new" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+		</group>
+					</group>
+
+				</page>
+
+
+			<!--<page string="Destinataire">-->
+
+				<page string="Destinataire" attrs="{'required': [('state','in',['to_soumdg','to_soumpre'])]}">
+
+
+
+
+
+
+
+				    <group>
+                                          <field name="dept_id"/>
+				    </group>
+    					<!--<label for="liste_dest_ids" string="Liste de département"/>
+                                          <field name="liste_dest_ids"/>-->
+
+				</page>
+			<!--<page string="Destinataire">-->
+				<page string="Notes" attrs="{'readonly': [ ('state', '!=', 'draft')]}">
+					<field name="note_ids" attrs="{'readonly': [ ('state', '!=', 'draft')]}"/>
+				</page>
+				<page string="Instruction" attrs="{'readonly': [ ('state', '!=', 'draft')]}">
+					<field name="instruction_ids" attrs="{'readonly': [ ('state', '!=', 'draft')]}"/>
+				</page>
+				<page string="Piéces Jointes" attrs="{'readonly': [ ('state', '!=', 'draft')]}">
+
+				</page>
+			    </notebook>
+                
+            </sheet>
+        </form>
+	    </field>
+
+	</record>
+	<record id="courriel_template_tree_view" model="ir.ui.view">
+            <field name="name">courriel.template.courriel.tree</field>
+            <field name="model">cci.courriel</field>
+            <field name="arch" type="xml">
+            <tree string="Courriel">
+                <field name="name" />
+                <field name="note_id" />
+                <field name="type_id" />
+                <field name="mode_id" />
+                <field name="degre_id" />
+                <field name="importance_id" />
+                <field name="urgent_id" />
+                <field name="date_courriel" />
+                <!--<field name="state"/>-->
+            </tree>
+            </field>
+        </record>
+
+        <record id="courriel_template_action" model="ir.actions.act_window">
+            <field name="name">Bureau d'ordre</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="courriel_template_tree_view"/>
+        </record>
+
+        <record id="courriel_entrant_template_action" model="ir.actions.act_window">
+            <field name="name">Courriels entrants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="courriel_template_tree_view"/>
+        </record>
+
+        <record id="courriel_sortant_template_action" model="ir.actions.act_window">
+            <field name="name">Courriels sortants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="courriel_template_tree_view"/>
+        </record>
+
+<!--Menu parent-->
+
+	<menuitem id="menu_courriel" name="Bureau d'ordre" sequence="1"/>
+	<menuitem name ='Configuration' id="menu_courriel_configuration" parent="menu_courriel"/>
+	<menuitem id="menu_courriel_parent" name="Courriels" sequence="2" parent='menu_courriel'/>
+	<menuitem id="menu_courriel_faire" name="A faire" parent="menu_courriel" sequence="1"/>
+
+
+
+      
+
+    </data>
+</openerp>

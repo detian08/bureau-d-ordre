@@ -1,0 +1,16 @@
+[0329/120926.575:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\temp: Accès refusé. (0x5)
+[0329/120926.670:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
+[0329/120926.670:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled
+[0329/120950.464:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\temp: Accès refusé. (0x5)
+[0329/120950.582:ERROR:registration_protocol_win.cc(60)] WaitNamedPipe: Le fichier spécifié est introuvable. (0x2)
+[0329/120950.582:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled
+[0329/120956.150:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\temp: Accès refusé. (0x5)
+[0329/120956.281:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
+[0329/120956.294:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled
+[0329/121023.013:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\temp: Accès refusé. (0x5)
+[0329/121023.104:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
+[0329/121023.121:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled
+[0329/121554.722:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\temp: Accès refusé. (0x5)
+[0329/121556.770:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\temp: Accès refusé. (0x5)
+[0329/121556.770:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
+[0329/121556.785:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled

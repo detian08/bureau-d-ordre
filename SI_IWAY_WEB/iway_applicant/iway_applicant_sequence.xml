@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<openerp>
+   <data>
+
+       <record id="ir_sequence_expense" model="ir.sequence.type">
+           <field name="name">applicant</field>
+           <field name="code">condidature</field>
+       </record>
+
+       <record id="seq_cheque" model="ir.sequence">
+           <field name="name">applicant</field>
+           <field name="code">condidature</field>
+           <field name="prefix">2018/Iway/ENT</field>
+           <field name="padding">4</field>
+       </record>
+   </data>
+</openerp>

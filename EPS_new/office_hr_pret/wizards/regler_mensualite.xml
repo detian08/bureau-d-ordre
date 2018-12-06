@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+	<!--==================== wizard View ==================-->
+	<record model="ir.ui.view" id="wizard_form">
+		<field name="name">wizard.form</field>
+		<field name="model">wizard.regler.mensualite</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+	    	<form string="Reglement total du pret" >
+                	<group col="2" fill="0" colspan="4">
+				<field name='pret' String="Reference du pret"/>
+				<field name='montant' String="Montant à payer"/>
+				<button string="Regler totalité" name="reglement_total" type="object"/>
+			</group>
+		</form>
+	    	</field>
+	</record>
+
+        <record model="ir.actions.act_window" id="action_wizard_regle">
+        	<field name="name">Regle totalité pret</field>
+        	<field name="res_model">wizard.regler.mensualite</field>
+        	<field name="type">ir.actions.act_window</field>
+        	<field name="view_type">form</field>
+        	<field name="view_mode">form</field>
+        	<field name="target">new</field>		
+        	<field name="domain">[]</field>
+        </record>
+
+	<menuitem name="Regler mensualité" parent="menu_hr_loans" id="menu_hr_loan_regle" action="action_wizard_regle"/>
+
+    </data>
+</openerp>

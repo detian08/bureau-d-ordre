@@ -1,0 +1,23 @@
+<openerp>
+    <data>
+
+<record model="ir.ui.view" id="office_document_alfresco_product_wizard_view_form">
+    <field name="name">wizard.form</field>
+    <field name="model">office.document.alfresco.product.wizard</field>
+    <field name="arch" type="xml">
+        <form string="Add Attendees">
+            <group col="3">
+                <field name="chemin" width="634" filename="nom_fichier" string=" "> </field>
+            </group>
+            <group>
+                <field name="nom_fichier"></field>
+            </group>
+            <footer>
+                <button name="upload_document" type="object"
+                        string="Upload" class="oe_highlight"/>
+            </footer>
+        </form>
+    </field>
+</record>
+    </data>
+</openerp>

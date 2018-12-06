@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+<!--id = nom du module.id-->
+
+
+*
+    <record model="hr.recruitment.degree" id="hr_recruitment.degree_graduate">
+        <field name="name">Bac plus un</field>
+    </record>
+    <record model="hr.recruitment.degree" id="hr_recruitment.degree_bachelor">
+        <field name="name">Bac plus deux</field>
+    </record>
+    <record model="hr.recruitment.degree" id="hr_recruitment.degree_licenced">
+        <field name="name">Bac plus trois</field>
+    </record>
+    <record model="hr.recruitment.degree" id="hr_recruitment.degree_bac5">
+        <field name="name">Bac plus quatre</field>
+    </record>
+ <record model="hr.recruitment.degree" id="degree_bac_plus">
+        <field name="name">Bac plus cinq</field>
+    </record>
+ <record model="hr.recruitment.degree" id="degree_other">
+        <field name="name">Autre</field>
+    </record>
+</data>
+</openerp>

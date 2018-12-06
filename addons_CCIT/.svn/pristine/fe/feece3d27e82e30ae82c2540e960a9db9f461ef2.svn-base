@@ -1,0 +1,53 @@
+<openerp>
+    <data>
+
+       <record model="workflow" id="wkf_courrier">
+        <field name="name">document courrier workflow</field>
+        <field name="osv">document.courrier</field>
+        <field name="on_create">True</field>
+    </record>
+
+    <record model="workflow.activity" id="draft">
+        <field name="name">Draft</field>
+        <field name="wkf_id" ref="wkf_courrier"/>
+        <field name="flow_start" eval="True"/>
+        <field name="kind">function</field>
+        <field name="action">action_draft()</field>
+    </record>
+
+    <record model="workflow.activity" id="processed">
+        <field name="name">processed</field>
+        <field name="wkf_id" ref="wkf_courrier"/>
+        <field name="kind">function</field>
+        <field name="action">action_send()</field>
+    </record>
+
+    <record model="workflow.activity" id="done">
+        <field name="name">Done</field>
+        <field name="wkf_id" ref="wkf_courrier"/>
+        <field name="kind">function</field>
+        <field name="action">action_done()</field>
+    </record>
+
+
+
+
+    <record model="workflow.transition" id="mail_draft_to_processed">
+        <field name="act_from" ref="draft"/>
+        <field name="act_to" ref="processed"/>
+        <field name="signal">process</field>
+    </record>
+
+    <record model="workflow.transition" id="mail_processed_to_confirmed">
+        <field name="act_from" ref="processed"/>
+        <field name="act_to" ref="done"/>
+        <field name="signal">close</field>
+    </record>
+    <record model="workflow.transition" id="mail_done_to_processed">
+        <field name="act_from" ref="done"/>
+        <field name="act_to" ref="processed"/>
+        <field name="signal">process</field>
+    </record>
+
+</data>
+</openerp>

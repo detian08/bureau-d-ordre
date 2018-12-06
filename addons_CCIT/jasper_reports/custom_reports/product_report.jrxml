@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="product_report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="393"/>
+	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;product_sector_ids&apos;]"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/mbenmessaoud/Odoo_ERP_Project/addons_CCI_Demo/jasper_reports/custom_reports/"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Reference_interne-default_code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Reference_interne-default_code]]></fieldDescription>
+	</field>
+	<field name="Nom-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Nom-name]]></fieldDescription>
+	</field>
+	<field name="Nom-name2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Categorie_interne-categ_id/Nom-name]]></fieldDescription>
+	</field>
+	<field name="Nom_complet-complete_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Secteurs_d_activite-product_sector_ids/Nom_complet-complete_name]]></fieldDescription>
+	</field>
+	<group name="product_group">
+		<groupExpression><![CDATA[$F{Nom-name}]]></groupExpression>
+		<groupHeader>
+			<band height="75">
+				<staticText>
+					<reportElement x="62" y="33" width="135" height="20" forecolor="#000000" backcolor="#B6D6F7"/>
+					<box>
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Désignation             :]]></text>
+				</staticText>
+				<rectangle radius="10">
+					<reportElement mode="Transparent" x="43" y="6" width="147" height="22" forecolor="#000000" backcolor="#B6D6F7"/>
+				</rectangle>
+				<textField>
+					<reportElement x="197" y="53" width="202" height="20" backcolor="#B6D6F7"/>
+					<box>
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{Nom-name2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="118" y="8" width="72" height="20" backcolor="#B6D6F7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{Reference_interne-default_code}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="197" y="33" width="202" height="20" backcolor="#B6D6F7"/>
+					<box>
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{Nom-name}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="44" y="8" width="74" height="20" forecolor="#000000" backcolor="#B6D6F7"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Référence ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="62" y="53" width="135" height="20" forecolor="#000000" backcolor="#B6D6F7"/>
+					<box>
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Catégorie                 :]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="0" width="554" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="sector_group">
+		<groupExpression><![CDATA[$F{Reference_interne-default_code}]]></groupExpression>
+		<groupHeader>
+			<band height="22">
+				<staticText>
+					<reportElement x="62" y="2" width="120" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Secteurs d'activité :]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="58" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Liste Des Produits]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="449" y="15" width="105" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="449" y="30" width="105" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="0" width="26" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Le]]></text>
+			</staticText>
+			<textField pattern="dd-MMM-yyyy">
+				<reportElement x="449" y="0" width="105" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="0" width="368" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Nom_complet-complete_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="1" width="555" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

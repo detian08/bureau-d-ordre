@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_empplyee_form_inherited">
+            <field name="name">hr.employee.form.inherited</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='active']" position="after">
+
+                    <field name="present" />
+                </xpath>
+                <!--<xpath expr="//field[@name='company_ids']" position="after">
+                    <field name="share"/>
+                </xpath>-->
+            </field>
+        </record>
+  
+    </data>
+</openerp>

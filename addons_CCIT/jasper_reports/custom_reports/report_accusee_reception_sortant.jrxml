@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_accusee_reception_sortant" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Objet-objet" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Objet-objet]]></fieldDescription>
+	</field>
+	<field name="Reference-reference" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Reference-reference]]></fieldDescription>
+	</field>
+	<field name="Type_de_courriel-type_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Type_de_courriel-type_id]]></fieldDescription>
+	</field>
+	<field name="Operateur_Economique_Existant-op_eco_exist" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Operateur_Economique_Existant-op_eco_exist]]></fieldDescription>
+	</field>
+	<field name="Date_de_reception-date_courriel" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Date_de_reception-date_courriel]]></fieldDescription>
+	</field>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="449" y="24" width="105" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="449" y="38" width="105" height="15"/>
+				<textElement/>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="449" y="10" width="105" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Le " + new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="0" width="555" height="79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accusé de réception ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Référence:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="20" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Expéditeur:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="40" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Date de réception:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Objet:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="1" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Type:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="20" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Destinataire:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="60" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Objet-objet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="1" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Reference-reference}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="40" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Date_de_reception-date_courriel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Type_de_courriel-type_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="266" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Le courrier a été reçu et enregistré par l'employé :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="454" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

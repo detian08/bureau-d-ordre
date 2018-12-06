@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="document_courrier_view_tree">
+            <field name="name">courrier.tree</field>
+            <field name="model">document.courrier</field>
+            <field name="arch" type="xml">
+                <tree string="Courrier Tree">
+                    <field name="subject"/>
+                    <field name="expediteur"/>
+                    <field name="mode_envoi"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="document_courrier_admin_group_view_form">
+            <field name="name">courrier.form</field>
+            <field name="model">document.courrier</field>
+            <field name="type">form</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager') ])]"/>
+            <field name="arch" type="xml">
+                <form string="Document Courrier">
+                    <header>
+                        <button name="action_send" type="object"
+                                string="Transférer" states="draft,processed" context="{'courrier_id':active_id}"
+                                groups="base.group_erp_manager"/>
+
+                        <button name="action_send" type="object"
+                                string="Transférer" states="draft" context="{'courrier_id':active_id}"
+                                groups="bureau_ordre.courrier_group_agent_bureau_ordre"/>
+
+                        <button name="action_send" type="object"
+                                string="Transférer" states="processed,draft" context="{'courrier_id':active_id}"
+                                groups="bureau_ordre.courrier_group_employe"/>
+
+                        <button name="action_done" type="object"
+                                string="Clôturer" states="processed"
+                                groups="bureau_ordre.courrier_group_employe" context="{'courrier_id':active_id}"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+
+                    <sheet>
+                        <group col="4">
+                            <field name="name" string="Référence" colspan="4"/>
+                            <field name="subject" string="Objet"/>
+                            <field name="categorie" string="Catégorie"/>
+                            <field name="date_sauv_courrier" string="Date de sauvegarde"/>
+                            <field name="date_limite" string="Dernier délai"/>
+                            <field name="priorite" string="Priorité"/>
+                            <field name="date_reception" string="Date de reception"/>
+                        </group>
+                        <notebook>
+                            <page string="Source">
+                                <group col="4">
+                                    <separator colspan="2" string="Expéditeur"/>
+                                    <newline/>
+                                    <field name="nom_expediteur" string="Nom" colspan="2"/>
+                                    <field name="prenom_expediteur" string="Prénom" colspan="2"/>
+                                    <field name="cin_expediteur" string="Cin" colspan="2"/>
+
+                                    <field name="adresse" string="Adresse" colspan="2"/>
+
+                                </group>
+                                <group col="4">
+                                    <field name="date_envoi" string="Date d'envoi" colspan="2"/>
+                                    <field name="mode_envoi" string="Mode d'envoi" colspan="2"/>
+                                </group>
+                            </page>
+                            <page string="Pièces jointes">
+                                <tree create="false" edit="false">
+                                    <field name="attachments_ids">
+                                        <tree string="documents" create="false">
+                                            <field name="nom_fichier"/>
+                                            <field name="description"/>
+                                        </tree>
+                                    </field>
+                                    <button name="add_attachment" type="object"
+                                            string="Ajouter pièce jointe"
+                                            context="{'active_id':active_id}"
+                                            class="oe_edit_only"/>
+                                </tree>
+                            </page>
+
+                            <page string="Suivi	et réponse">
+                                <field colspan="4" name="courrier_actions" nolabel="1" widget="one2many_list">
+                                    <tree string="Suivi" create="false">
+                                        <field name="type_action" string="Type d'action"/>
+                                        <field name="from" string="De"/>
+                                        <field name="to" string="à"/>
+                                        <field name="message" string="Message"/>
+                                        <field name="reponse_type" string="Type de réponse"/>
+                                        <field name="date_action" string="Date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Remarques">
+                                <field name="details" nolabel="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="document_courrier_agent_group_view_form">
+            <field name="name">courrier.form</field>
+            <field name="model">document.courrier</field>
+            <field name="inherit_id" ref="bureau_ordre.document_courrier_admin_group_view_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('bureau_ordre.courrier_group_agent_bureau_ordre') ])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='subject']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='categorie']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_sauv_courrier']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_limite']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='priorite']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='nom_expediteur']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_sauv_courrier']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='prenom_expediteur']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='cin_expediteur']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='adresse']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='mode_envoi']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_reception']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='add_attachment']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='details']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_envoi']" position="attributes">
+                    <attribute name="attrs">{'readonly' : ['|',('state', '=', 'processed'),('state','=','done')]}
+                    </attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_bo_courrier_form_employe">
+            <field name="name">Courriers.inherit</field>
+            <field name="model">document.courrier</field>
+            <field name="inherit_id" ref="bureau_ordre.document_courrier_agent_group_view_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('bureau_ordre.courrier_group_employe') ])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                </xpath>
+                <xpath expr="//field[@name='subject']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='categorie']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_sauv_courrier']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_limite']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='priorite']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='nom_expediteur']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_sauv_courrier']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='prenom_expediteur']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='cin_expediteur']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='adresse']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='mode_envoi']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_reception']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='add_attachment']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='details']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="document_action_transfert_view_form">
+            <field name="name">document.action.transfert.form</field>
+            <field name="model">document.action</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="2">
+                        <field name="date_action" string="Date" invisible="1"/>
+                        <field name="from" invisible="1"/>
+                        <field name="to" string="à" domain="[('id','!=',uid),('groups_id.name', '=', 'Employés')]"/>
+                        <field name="message" string="Message"/>
+                        <!--<field name="state" string="Etat" invisible="1"/>-->
+                        <!--<button name="action_send" string="Valider"-->
+                        <!--type="object"/>-->
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="document_action_cloturer_view_form">
+            <field name="name">document.action.cloturer.form</field>
+            <field name="model">document.action</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="2">
+                        <field name="date_action" string="Date" invisible="1"/>
+                        <field name="from" invisible="1"/>
+                        <field name="reponse_type" string="Type de réponse"/>
+                        <field name="message" string="Message"/>
+                        <!--<field name="state" string="Etat" invisible="1"/>-->
+                        <!--<button name="action_done" string="Valider" type="object"/>-->
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="document_action_transfert_wizard_view_form">
+            <field name="name">document.action.transfert.wizard.form</field>
+            <field name="model">document.action</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="2">
+                        <field name="date_action" string="Date" invisible="1"/>
+                        <field name="from" invisible="1"/>
+                        <field name="to" string="à" domain="[('id','!=',uid),('groups_id.name', '=', 'Employés')]"/>
+                        <field name="message" string="Message"/>
+                        <!--<field name="state" string="Etat" invisible="1"/>-->
+                        <button name="action_send" string="Valider"
+                                type="object"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="document_action_cloturer_wizard_view_form">
+            <field name="name">document.action.cloturer.wizard.form</field>
+            <field name="model">document.action</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="2">
+                        <field name="date_action" string="Date" invisible="1"/>
+                        <field name="from" invisible="1"/>
+                        <field name="reponse_type" string="Type de réponse"/>
+                        <field name="message" string="Message"/>
+                        <!--<field name="state" string="Etat" invisible="1"/>-->
+                        <button name="action_done" string="Valider" type="object"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="bureau_ordre_action">
+            <field name="name">Courrier</field>
+            <field name="res_model">document.courrier</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="alfresco_config_view_form">
+            <field name="name">alfresco.configuration.form</field>
+            <field name="model">alfresco.configuration</field>
+            <field name="arch" type="xml">
+                <form string="Configuration Alfresco Form">
+                    <group>
+                        <field name="url"/>
+                        <field name="port"/>
+                        <field name="user"/>
+                        <field name="mp" password="True"/>
+                        <field name="is_default" context="{'is_default': is_default}"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="alfresco_config_view_tree">
+            <field name="name">alfresco.configuration.tree</field>
+            <field name="model">alfresco.configuration</field>
+            <field name="arch" type="xml">
+                <tree string="Configuration tree">
+                    <field name="url"/>
+                    <field name="port"/>
+                    <field name="user"/>
+                    <field name="mp" password="True"/>
+                    <field name="is_default"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="alfresco_configuration_action">
+            <field name="name">Configuration du Alfresco</field>
+            <field name="res_model">alfresco.configuration</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="transmission_categ_action">
+            <field name="name">Modes d'envoi</field>
+            <field name="res_model">document.transmission.categ</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="document_category_action">
+            <field name="name">Catégories de courriers</field>
+            <field name="res_model">document.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="configuration_alfresco__menu" name="Configuration Alfresco" parent="base.menu_config"
+                  action="alfresco_configuration_action" sequence="1"/>
+
+
+        <menuitem id="base.bureau_ordre_menu_admin" name="Bureau d'ordre" groups="base.group_erp_manager"/>
+
+        <menuitem id="base.bureau_ordre_menu_agent" name="Bureau d'ordre"
+                  groups="bureau_ordre.courrier_group_agent_bureau_ordre"/>
+
+        <menuitem id="base.bureau_ordre_menu_employe" name="Bureau d'ordre"
+                  groups="bureau_ordre.courrier_group_employe"/>
+
+
+        <menuitem id="base.courrier_menu_admin" name="Courriers"
+                  parent="base.bureau_ordre_menu_admin" groups="base.group_erp_manager"/>
+
+        <menuitem id="base.parametres_menu_admin" name="Paramètres"
+                  parent="base.bureau_ordre_menu_admin" groups="base.group_erp_manager"/>
+
+        <menuitem id="base.courrier_menu_agent" name="Courriers"
+                  parent="base.bureau_ordre_menu_agent" groups="bureau_ordre.courrier_group_agent_bureau_ordre"/>
+
+        <menuitem id="base.courrier_menu_employe" name="Courriers"
+                  parent="base.bureau_ordre_menu_employe" groups="bureau_ordre.courrier_group_employe"/>
+
+
+        <menuitem id="base.courriel_sub_menu_admin" name="Courriers"
+                  action="bureau_ordre_action" parent="base.courrier_menu_admin"
+                  groups="base.group_erp_manager"/>
+
+        <menuitem id="base.categories_sub_menu_admin" name="Catégories de courriers"
+                  action="document_category_action" parent="base.parametres_menu_admin"
+                  groups="base.group_erp_manager"/>
+
+        <menuitem id="base.modes_envoi_sub_menu_admin" name="Modes d'envoi"
+                  action="transmission_categ_action" parent="base.parametres_menu_admin"
+                  groups="base.group_erp_manager"/>
+
+        <menuitem id="base.courriel_sub_menu_agent" name="Courriers"
+                  action="bureau_ordre_action" parent="base.courrier_menu_agent"
+                  groups="bureau_ordre.courrier_group_agent_bureau_ordre"/>
+
+        <menuitem id="base.courriel_sub_menu_employe" name="Courriers"
+                  action="bureau_ordre_action" parent="base.courrier_menu_employe"
+                  groups="bureau_ordre.courrier_group_employe"/>
+
+    </data>
+</openerp>

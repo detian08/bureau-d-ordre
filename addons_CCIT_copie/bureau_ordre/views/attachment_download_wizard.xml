@@ -1,0 +1,32 @@
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="document_attachment_view_form">
+            <field name="name">document.attachment.form</field>
+            <field name="model">document.attachment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="node" invisible="True"/>
+                        <field name="nom_fichier" string="Nom de fichier"/>
+                        <field name="description" string="Description"/>
+                        <button name="download_document" type="object"
+                                string="Télécharger Document" class="oe_highlight"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="document_attachment_download_view_form">
+            <field name="name">document.attachment.download.wizard.form</field>
+            <field name="model">document.attachment.download.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="download_link" string=" " filename="nom_fichier"/>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

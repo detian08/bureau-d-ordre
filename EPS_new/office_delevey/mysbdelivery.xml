@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="action_sale_devis" model="ir.actions.act_window">
+            <field name="name">Devis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.devis</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="office_sale_devis.view_sale_devis_tree"/>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('partner_id','=',active_id)]</field>
+            <field name="context">{
+                'search_default_section_id': [active_id],
+                'default_section_id': active_id,
+                }
+            </field>
+        </record>
+
+
+        <record id="mysbdelivery_view_buttons" model="ir.ui.view">
+            <field name="name">mysbdelivery.view.buttons</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+
+                    <button class="oe_inline oe_stat_button" type="action" name="%(action_sale_devis)d"
+                            attrs="{'invisible': [('customer', '=', False)]}"
+                            context="{'default_partner_id': 1}"
+                            icon="fa-quote-left ">
+                        <field string="Devis" name="voucher_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

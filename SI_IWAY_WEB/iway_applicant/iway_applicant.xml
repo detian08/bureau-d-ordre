@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+     <!--Applicant form view -->
+        <record id="crm_case_form_view_job_inherited" model="ir.ui.view">
+            <field name="name">hr.applicant.form.inherited</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref='hr_recruitment.crm_case_form_view_job'/>
+            <field name="arch" type="xml">
+		<!--Bouton send_notification  confirm="Are you sure you want to do this?"/
+		<xpath expr="//header" position="inside">
+
+		</xpath>-->
+
+		<!--type sélection-->
+		<xpath expr="//div[@class='oe_title']" position="after">
+                	<group>
+	        		<field name="type"/>
+				<!--<field name="ref"/>-->
+				<field name="sequence_id"/>
+				<field name="profil"/>
+                                <field name="stagiaire"/>
+  				<field name="cin"/>
+			</group>
+		</xpath>
+
+   		<xpath expr="//label[@for='title_action']" position="attributes">
+
+             		<attribute name="invisible">1</attribute>
+             		
+         	</xpath>
+
+		<xpath expr="//field[@name='title_action']" class="oe_inline" position="attributes">
+             		<attribute name="invisible">1</attribute>
+         	</xpath>
+
+
+		<xpath expr="//field[@name='date_action']" position="attributes">
+<attribute name="invisible">1</attribute>
+		</xpath>
+              
+            <!--replace, attributes, after, before, inside
+voir kanban 
+-->
+
+                <!--<xpath expr="//header/field[@name='stage_id']" position="replace">-->
+                        <!--<button name="action_soumise" type="workflow"
+                                string="Reset to soumise"
+                                states="entretien,contrat propose"/>-->
+
+                        <!--<button name="action_entretienn" type="workflow"
+                                string="Passer un entretien" states="soumise"
+                                class="oe_highlight"/>-->
+<!--states="confirmed"-->
+                     <!--   <button name="action_contratpropose" type="workflow"
+                                string="Contrat proposé" 
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visibility='soumise,contrat propose'/>
+
+		</xpath>-->
+
+
+
+
+ 
+
+		<!--<xpath expr="//group[@string='Contract']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 'f')]} </attribute>
+		</xpath>-->
+		<xpath expr="//group[@string='Job']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 'f')]} </attribute>
+		</xpath>
+
+		<xpath expr="//field[@name='categ_ids']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 'f')]} </attribute>
+		</xpath>
+ 		<xpath expr="//field[@name='source_id']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '!=', 's')]} </attribute>
+		</xpath>
+		<xpath expr="//field[@name='stagiaire']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '!=', 'f')]} </attribute>
+		</xpath>
+		<!--<xpath expr="//group[@string='Contract']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 'f')]} </attribute>
+		</xpath>-->
+<!--boutton creer emplyee
+		<xpath expr="//button[@string='Create Employee']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('state', '=', 'contratpropose')]} </attribute>
+		</xpath>-->
+<!--responsable/action suivante invisible-->
+               
+
+		<xpath expr="//field[@name='priority']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='reference']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//separator[@string='Application Summary']" position="attributes">
+    			<attribute name="invisible">1</attribute>
+		</xpath>
+		<xpath expr="//sheet/field[@name='description']" position="attributes">
+    			<attribute name="invisible">1</attribute>
+		</xpath>
+
+<!--visibilité de contrat si state:contract proposé-->
+		<xpath expr="//group[@string='Contract']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('stage_id', 'not in', [4,5])]} </attribute>
+		</xpath>
+                <xpath expr="//button[@string='Create Employee']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('stage_id', '!=', 5)]} </attribute>
+			<!--<attribute name="attrs">{'invisible': [('emp_id', '=', 5)]} </attribute>-->
+		</xpath>
+<!--visibilité de bouton planifier entretien-->
+<!--<xpath expr="//button[@string='PLanifier entretien']" position="attributes">
+    			<attribute name="attrs">{'invisible': [(''stage_id', '!=', 2)]} </attribute>
+		</xpath>-->
+
+
+
+
+
+<!--invisibilité de contract si workflow= contract proposed-->
+		<!--<xpath expr="//div[@class='oe_title']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('state', '!=', 'Contract Proposed')]} </attribute>
+		</xpath>-->
+
+
+		<!--<xpath expr="//field[@name='stage_id']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('stage_id', '!=', 'false')]} </attribute>
+		</xpath>--><!--tout le workflow est invisible-->
+		<!--<xpath expr="//group[@string='Contract']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('survey', '=', 'false')]} </attribute>
+		</xpath>-->
+<!--invisibilité de bouton créer employee-->
+		<!--<xpath expr="//button[@string='Create Employee']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('emp_id', '=', 'false')]} </attribute>
+		</xpath>-->
+<!--créer page dans application summary-->
+
+		<!--<xpath expr="//separator[@string='Application Summary']" position="after">
+    			<page string="My_New_Tab">
+                        </page>
+		</xpath>-->
+
+
+
+		<xpath expr="//sheet/field[@name='description']" position="after">  
+    			<notebook>
+    			<page string="Entretiens" attrs="{'invisible': [('stage_id', '!=', 2)]}">
+				<field name="entretien_ids" >
+					<tree string="iway_entretien"> 
+               	  
+						<field name="sujet"/>
+						<field name="responsable"/>
+						<field name="mode"/>
+						<field name="scorefinal"/>
+						<field name="decision"/>
+						<field name="localite"/>
+						<field name="date_entretien"/>
+						<field name="observation" style=' max-width: 1150px;  width: 500px'/>
+						<field name="state"/>
+		<button name="send_notification"
+    			string="PLanifier entretien"
+    			type="object" icon="STOCK_APPLY"
+    			/>
+
+		</tree>
+</field>
+                              
+                        </page>
+			</notebook>
+		</xpath>
+<!--information personnel group-->
+
+		<!--<xpath expr="//field[@name='partner_id']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='email_from']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='partner_phone']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='partner_mobile']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='type_id']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>-->
+		
+
+
+		<!--<xpath expr="//group[@string='Job']" position="before">
+    			<group string="Information_Personnelle">
+                        <field name="partner_id"
+                                on_change="onchange_partner_id(partner_id)"/>
+                        <field name="email_from" widget="email"/>
+                        <field name="partner_phone"/>
+                        <field name="partner_mobile"/>
+                        <field name="type_id" placeholder="Degree"/>
+                    	</group>
+		 </xpath>-->
+
+		<!--<xpath expr="//label[@for='availability']" position="attributes">
+
+             		<attribute name="invisible">1</attribute>
+             		
+         	</xpath>-->
+
+<!--page-->
+
+
+		<xpath expr="//field[@name='partner_id']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='email_from']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='partner_phone']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='partner_mobile']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+		<xpath expr="//field[@name='type_id']" position="attributes">
+             	<attribute name="invisible">1</attribute>
+         	</xpath>
+
+
+
+
+		<notebook>
+                    <page string="Candidat" editable="bottom">
+                               <group string="Information Personnelle">
+			<group>
+		<group>
+                        <field name="partner_id"
+                                on_change="onchange_partner_id(partner_id)"/>
+                        <field name="email_from" widget="email"/>
+                        <field name="partner_phone"/>
+                        <field name="partner_mobile"/>
+                        <field name="type_id" placeholder="Degree"/>
+			</group>
+		<group>
+			<field name="diplome"/>
+			<field name="specialite"/>
+			<field name="employeuractuel"/>
+			<field name="annee"/>
+			<field name="university"/>
+			<field name="establishment"/> <!--domain="[('establish_id','=',university)]"/>-->
+<!--domain-->
+<!--<group col="4">
+   <field name="ref" readonly="True"/>
+   <field name="id_unique"/>
+   <field name="employee_ids"/>
+   <field name="malade" domain="[('hr_emp_id','=',employee_ids)]"/>
+</group>-->
+<!--domain-->
+                    	</group>
+</group>
+</group>
+                     </page>
+                           <!--<page string="Pièce(s) jointe(s)" >
+                           </page>-->
+                       </notebook>
+		
+
+
+
+
+
+
+
+
+
+<!--attrs="{'invisible': [('special_deduction_type', '!=', 'bank')]}"-->
+
+
+ 		<!--<field name='bank_id'
+		attrs="{'invisible': [('special_deduction_type', '=', 'bank')]}" />-->
+
+
+
+
+
+<!--<xpath expr="//button[@string='Create Employee']">-->
+
+<!--<field name='union_id'
+attrs="{'invisible': [('salary_expected', '=', 'f')]}" /-->
+
+
+
+
+
+            </field>
+	</record>
+		  <!-- <xpath expr="//page[@string='HR Settings']" position="after">
+			    <page name="Sample" string="Custom page">
+			    <group string="Exemple ..">
+			      <field name="division"/>
+			    </group>
+			    </page>
+		    </xpath>-->
+
+
+<!--menu parent
+<record model="ir.actions.act_window" id="action_applicant">
+    <field name="name">applicant</field>
+    <field name="res_model">hr.applicant</field>
+    <field name="view_mode">tree,form</field>
+	</record>
+
+<menuitem id="menu_ideas" name="applicant" sequence="10"
+          action="action_applicant" parent="hr_recruitment.menu_crm_case_categ0_act_job"/>-->
+
+
+<!--pour supprimer un enregistrement -->
+	<delete id="hr_recruitment.stage_job3" model="hr.recruitment.stage"/>
+
+
+  
+    </data>
+</openerp>

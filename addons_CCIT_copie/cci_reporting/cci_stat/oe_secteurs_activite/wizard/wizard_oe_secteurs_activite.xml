@@ -1,0 +1,48 @@
+<openerp>
+    <data>
+        <record id='cci_wizard_fiche_oe_sect_act_view_form' model="ir.ui.view">
+            <field name="name">OE Secteurs activité</field>
+            <field name="model">cci.wizard.fiche.oe.sect.act</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="2" fill="0" colspan="2">
+                        <field name="sect_act_ids" string="Secteurs d'activité" ></field>
+
+                    </group>
+
+                    <group colspan="2">
+                        <div class="oe_button_box oe_right">
+                            <button special="cancel" icon="gtk-cancel" string="Cancel"/>
+                            <button type="object" name="create_report" icon="gtk-go-forward" string="Creer Rapport"/>
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_wizard_oe_sect_act">
+            <field name="name">OE Secteurs activité</field>
+            <field name="res_model">cci.wizard.fiche.oe.sect.act</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cci_wizard_fiche_oe_sect_act_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="submenu_wizard_oe_sect_act_report" name="OE Secteurs activité" action="action_wizard_oe_sect_act"  parent="menu_wizard_claim_list_report"/>
+
+
+        <report string="Rapport fiche oe secteurs activité"
+          model="res.partner"
+          auto="True"
+          name="jasper_oe_secteurs_activite_print"
+          rml="cci_reporting/cci_stat/oe_secteurs_activite/report/oe_secteurs_activite.jrxml"
+          id="fiche_oe_secteurs_activite"
+          menu="False"/>
+
+        </data>
+    </openerp>
+
+
+

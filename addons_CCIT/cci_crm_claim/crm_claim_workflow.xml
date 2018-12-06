@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+	<record id="wkf_claim" model="workflow">
+	    <field name="name">claim.wkf</field>
+	    <field name="osv">crm.claim</field>
+	    <field name="on_create">True</field>
+	</record>
+
+	<!-- liste des activités-->
+        <record id="act_draft" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="flow_start">True</field>
+            <field name="name">draft</field>
+        </record>   
+
+        <record id="act_soumise" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="name">soumise</field>
+            <field name="kind">function</field>
+            <field name="action">draft_to_soumise()</field>
+        </record>
+
+        <!--<record id="act_to_validate" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="name">validate</field>
+            <field name="kind">function</field>
+            <field name="action">to_validate()</field>
+        </record>-->
+
+        <record id="act_validate" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="name">validate</field>
+            <field name="kind">function</field>
+            <field name="action">validate()</field>
+        </record>
+
+        <record id="act_close" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="name">close</field>
+            <field name="kind">function</field>
+            <field name="action">close()</field>
+        </record>
+
+        <record id="act_reject" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="name">reject</field>
+            <field name="kind">function</field>
+            <field name="action">reject()</field>
+        </record>
+
+        <record id="act_soumise" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="name">soumise</field>
+            <field name="kind">function</field>
+            <field name="action">soumise()</field>
+        </record>
+
+    <!--    <record id="act_reject_close" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="name">close</field>
+            <field name="kind">function</field>
+            <field name="action">reject_to_close()</field>
+        </record>
+        <record id="act_close_reject" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_claim"/>
+            <field name="name">soumise</field>
+            <field name="kind">function</field>
+            <field name="action">close_to_soumise()</field>
+        </record>-->
+
+
+	<!-- liste des transitions-->
+        <record id="trans_draft_soumise" model="workflow.transition">
+            <field name="act_from" ref="act_draft"/>
+            <field name="act_to" ref="act_soumise"/>
+            <field name="condition">True</field>
+            <field name="signal">soumise_bt</field>
+        </record>
+
+       <!-- <record id="trans_soumise_to_validate" model="workflow.transition">
+            <field name="act_from" ref="act_soumise"/>
+            <field name="act_to" ref="act_to_validate"/>
+            <field name="condition">True</field>
+            <field name="signal">to_valid_bt</field>
+        </record>-->
+
+        <!--<record id="trans_soumise_reject" model="workflow.transition">
+            <field name="act_from" ref="act_soumise"/>
+            <field name="act_to" ref="act_reject"/>
+            <field name="condition">True</field>
+            <field name="signal">reject_bt</field>
+        </record>-->
+
+        <record id="trans_soumise_validate" model="workflow.transition">
+            <field name="act_from" ref="act_soumise"/>
+            <field name="act_to" ref="act_validate"/>
+            <field name="condition">True</field>
+            <field name="signal">valid_bt</field>
+        </record>
+
+        <record id="trans_validate_close" model="workflow.transition">
+            <field name="act_from" ref="act_validate"/>
+            <field name="act_to" ref="act_close"/>
+            <field name="condition">True</field>
+            <field name="signal">close_bt</field>
+        </record>
+
+        <record id="trans_reject_close" model="workflow.transition">
+            <field name="act_from" ref="act_reject"/>
+            <field name="act_to" ref="act_close"/>
+            <field name="condition">True</field>
+            <field name="signal">reject_close_bt</field>
+        </record>
+
+        <record id="trans_soumise_reject" model="workflow.transition">
+            <field name="act_from" ref="act_soumise"/>
+            <field name="act_to" ref="act_reject"/>
+            <field name="condition">True</field>
+            <field name="signal">reject_bt</field>
+        </record>
+
+        <record id="trans_close_soumise" model="workflow.transition">
+            <field name="act_from" ref="act_close"/>
+            <field name="act_to" ref="act_soumise"/>
+            <field name="condition">True</field>
+            <field name="signal">resoumise_bt</field>
+        </record>
+
+        <record id="trans_soumise_soumise" model="workflow.transition">
+            <field name="act_from" ref="act_soumise"/>
+            <field name="act_to" ref="act_soumise"/>
+            <field name="condition">True</field>
+            <field name="signal">soumise_soumise_bt</field>
+        </record>
+</data>
+</openerp>

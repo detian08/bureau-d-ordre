@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+        <template name="references page" id="website.references" page="True">
+            <t t-call="website.layout">
+                <div class="oe_structure oe_empty" id="wrap" data-oe-id="318" data-oe-source-id="288"
+                data-oe-xpath="/data/xpath/div[2]" data-oe-model="ir.ui.view" data-oe-field="arch">
+                    <div class="container">
+                        <div class = "col-sm-7 col-lg-7" >
+                            <h1> <span> <span class="highlight">Nos clients</span> sont nos meilleures références. </span></h1>
+                            <p>
+                                Voici quelques exemples d'enseignes ayant témoignés leur confiance en faisant appel à notre expertise, à nos produits, ou à nos services.
+                            </p>
+                        </div>
+                        <div class = "col-sm-5 col-lg-5" >
+                            <img src="/office_website/static/src/img/eps.jpeg" style="width: 100%; max-width:328px"/>
+                        </div>
+                    </div>
+                    <section>
+                        <div class="container">
+                                    <h1 id="title-middle" class="general-title padding-top">
+                                        <strong style="color:#e2392f;">Nos clients</strong>
+                                        <hr class="no-padding"/>
+                                        <br/>
+                                        <i></i>
+                                    </h1>
+                        </div>
+                    </section>
+                    <section class="mb16">
+                        <div class="container">
+                            <div class="row mt16 mb16">
+
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/1.gif"/>
+                                </div>
+
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/2.gif"/>
+                                </div>
+
+                                <div class = "col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/3.gif"/>
+                                </div>
+
+                                <div class = "col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/4.gif"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="mb16">
+                        <div class="container">
+                            <div class="row mt16 mb16">
+
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/5.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/12.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/13.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/14.gif"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb16">
+                        <div class="container">
+                            <div class="row mt16 mb16">
+
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/15.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/16.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/18.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/24.gif"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb16">
+                        <div class="container">
+                            <div class="row mt16 mb16">
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/25.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/26.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/28.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/29.gif"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="mb16">
+                        <div class="container">
+                            <div class="row mt16 mb16">
+
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/30.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/32.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/33.gif"/>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <img src="/office_website/static/src/img/clients/34.gif"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+
+        <record id="references_page_link" model="website.menu">
+            <field name="name">Nos Références</field>
+            <field name="url">/page/references</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">25</field>
+        </record>
+
+    </data>
+</openerp>

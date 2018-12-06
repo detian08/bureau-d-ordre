@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="important_template_form_view" model="ir.ui.view">
+            <field name="name">CCI Form important</field>
+            <field name="model">courriel.important</field>
+            <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                        <field name="name" />
+
+
+                      
+                        
+                      
+		</group>
+		
+		<!--<notebook><page string="Note">
+
+		</page></notebook>-->
+                
+            </sheet>
+        </form>
+	    </field>
+
+	</record>
+
+	<record id="important_template_tree_view" model="ir.ui.view">
+            <field name="name">important.template.important.tree</field>
+            <field name="model">courriel.important</field>
+            <field name="arch" type="xml">
+            <tree string="Importance">
+
+                <field name="name" />
+
+         
+
+
+            </tree>
+            </field>
+        </record>
+
+        <record id="important_template_action" model="ir.actions.act_window">
+            <field name="name">importance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">courriel.important</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="important_template_tree_view"/>
+
+        </record>
+        <menuitem action="important_template_action"  id="menu_important_template_action" parent="menu_courriel_configuration" sequence="2" />
+
+    </data>
+</openerp>

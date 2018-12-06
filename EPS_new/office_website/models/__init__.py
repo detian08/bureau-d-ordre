@@ -1,0 +1,5 @@
+import slides_images
+import res_config
+import product_promo
+import newsletter
+import product_template

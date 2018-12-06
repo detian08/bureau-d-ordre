@@ -1,0 +1,51 @@
+<openerp>
+    <data>
+        <record model="workflow" id="wkf_iway_pfe_workflow">
+            <field name="name">iway_pfe.iway_pfe_workflow.workflow</field>
+            <field name="osv">iway_pfe.iway_pfe</field><!--nom du modèle-->
+            <field name="on_create">True</field>
+        </record>
+
+        <record model="workflow.activity" id="propose">
+            <field name="name">Propose</field>
+            <field name="wkf_id" ref="wkf_iway_pfe_workflow"/>
+            <field name="flow_start" eval="True"/>
+            <field name="kind">function</field>
+            <field name="action">action_propose()</field>
+        </record>
+        <record model="workflow.activity" id="affecter">
+            <field name="name">affecter</field>
+            <field name="wkf_id" ref="wkf_iway_pfe_workflow"/>
+            <field name="kind">function</field>
+            <field name="action">action_affecte()</field>
+        </record>
+        <record model="workflow.activity" id="cloture">
+            <field name="name">Cloture</field>
+            <field name="wkf_id" ref="wkf_iway_pfe_workflow"/>
+            <field name="kind">function</field>
+            <field name="action">action_cloture()</field>
+        </record>
+
+        <record model="workflow.transition" id="iway_pfe_workflow_draft_to_affecter">
+            <field name="act_from" ref="propose"/>
+            <field name="act_to" ref="affecter"/>
+            <field name="signal">action_affecte</field>
+        </record>
+        <record model="workflow.transition" id="iway_pfe_workflow_affecter_to_propose">
+            <field name="act_from" ref="affecter"/>
+            <field name="act_to" ref="propose"/>
+            <field name="signal">action_propose</field>
+        </record>
+        <record model="workflow.transition" id="iway_pfe_workflow_done_to_propose">
+            <field name="act_from" ref="cloture"/>
+            <field name="act_to" ref="propose"/>
+            <field name="signal">action_propose</field>
+        </record>
+        <record model="workflow.transition" id="iway_pfe_workflow_affecter_to_cloture">
+            <field name="act_from" ref="affecter"/>
+            <field name="act_to" ref="cloture"/>
+            <field name="signal">action_cloture</field>
+        </record>
+    </data>
+</openerp>
+

@@ -1,0 +1,1640 @@
+1    [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : Name-name
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : Name-name
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : Name-name
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : Name-name
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+341583 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : Name-name
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : Name-name
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : Name-name
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : Name-name
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+408408 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : Name-name
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : Name-name
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : Name-name
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : Name-name
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+5213266 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582653453_50279: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582653453_50279: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582653453_50279: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582653453_50279: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 18 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582653453_50279: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582653453_50279: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 18 more
+5305252 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582745536_528264: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582745536_528264: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582745536_528264: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582745536_528264: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 18 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582745536_528264: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582745536_528264: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 18 more
+5321667 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582762038_303065: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582762038_303065: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582762038_303065: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582762038_303065: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 18 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582762038_303065: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582762038_303065: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 18 more
+5394944 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582835286_528609: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582835286_528609: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582835286_528609: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582835286_528609: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 18 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582835286_528609: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541582835286_528609: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 18 more
+6911616 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584351990_690375: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584351990_690375: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584351990_690375: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584351990_690375: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584351990_690375: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584351990_690375: 709: unexpected token: ) @ line 709, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+7212018 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584652404_979084: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584652404_979084: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584652404_979084: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584652404_979084: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584652404_979084: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584652404_979084: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+7229717 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584670096_19270: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584670096_19270: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584670096_19270: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584670096_19270: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584670096_19270: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584670096_19270: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+7326740 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584767122_821740: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584767122_821740: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584767122_821740: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584767122_821740: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584767122_821740: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584767122_821740: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+7419190 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584859549_939461: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584859549_939461: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584859549_939461: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584859549_939461: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584859549_939461: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541584859549_939461: 703: unexpected token: ) @ line 703, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+7591071 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585031458_495647: 699: unexpected token: ) @ line 699, column 45.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585031458_495647: 699: unexpected token: ) @ line 699, column 45.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585031458_495647: 699: unexpected token: ) @ line 699, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585031458_495647: 699: unexpected token: ) @ line 699, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585031458_495647: 699: unexpected token: ) @ line 699, column 45.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585031458_495647: 699: unexpected token: ) @ line 699, column 45.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+7672392 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585112761_10459: 687: unexpected token: courrier @ line 687, column 43.
+1 error
+
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585112761_10459: 687: unexpected token: courrier @ line 687, column 43.
+1 error
+
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585112761_10459: 687: unexpected token: courrier @ line 687, column 43.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585112761_10459: 687: unexpected token: courrier @ line 687, column 43.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585112761_10459: 687: unexpected token: courrier @ line 687, column 43.
+1 error
+
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:101)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:188)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+calculator_report2_courriel32_sortant_1541585112761_10459: 687: unexpected token: courrier @ line 687, column 43.
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:337)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:104)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:71)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:236)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:158)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:814)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:511)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:487)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:464)
+	at net.sf.jasperreports.compilers.JRGroovyCompiler.compileUnits(JRGroovyCompiler.java:97)
+	... 17 more
+7735133 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Misplaced quote found at position 1 in row: ""
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Misplaced quote found at position 1 in row: ""
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Misplaced quote found at position 1 in row: ""
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.parseRow(JRCsvDataSource.java:361)
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.next(JRCsvDataSource.java:200)
+	at com.nantic.jasperreports.CsvMultiLanguageDataSource.next(CsvMultiLanguageDataSource.java:107)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.advanceDataSource(JRFillDataset.java:864)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.next(JRFillDataset.java:782)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1482)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Misplaced quote found at position 1 in row: ""
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.parseRow(JRCsvDataSource.java:361)
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.next(JRCsvDataSource.java:200)
+	at com.nantic.jasperreports.CsvMultiLanguageDataSource.next(CsvMultiLanguageDataSource.java:107)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.advanceDataSource(JRFillDataset.java:864)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.next(JRFillDataset.java:782)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1482)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+7918098 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Misplaced quote found at position 1 in row: ""
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Misplaced quote found at position 1 in row: ""
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Misplaced quote found at position 1 in row: ""
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.parseRow(JRCsvDataSource.java:361)
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.next(JRCsvDataSource.java:200)
+	at com.nantic.jasperreports.CsvMultiLanguageDataSource.next(CsvMultiLanguageDataSource.java:107)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.advanceDataSource(JRFillDataset.java:864)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.next(JRFillDataset.java:782)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1482)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Misplaced quote found at position 1 in row: ""
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.parseRow(JRCsvDataSource.java:361)
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.next(JRCsvDataSource.java:200)
+	at com.nantic.jasperreports.CsvMultiLanguageDataSource.next(CsvMultiLanguageDataSource.java:107)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.advanceDataSource(JRFillDataset.java:864)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.next(JRFillDataset.java:782)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1482)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+7995959 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Misplaced quote found at position 1 in row: ""
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Misplaced quote found at position 1 in row: ""
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Misplaced quote found at position 1 in row: ""
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.parseRow(JRCsvDataSource.java:361)
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.next(JRCsvDataSource.java:200)
+	at com.nantic.jasperreports.CsvMultiLanguageDataSource.next(CsvMultiLanguageDataSource.java:107)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.advanceDataSource(JRFillDataset.java:864)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.next(JRFillDataset.java:782)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1482)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Misplaced quote found at position 1 in row: ""
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.parseRow(JRCsvDataSource.java:361)
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.next(JRCsvDataSource.java:200)
+	at com.nantic.jasperreports.CsvMultiLanguageDataSource.next(CsvMultiLanguageDataSource.java:107)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.advanceDataSource(JRFillDataset.java:864)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.next(JRFillDataset.java:782)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1482)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+8007468 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Misplaced quote found at position 1 in row: ""
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Misplaced quote found at position 1 in row: ""
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Misplaced quote found at position 1 in row: ""
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.parseRow(JRCsvDataSource.java:361)
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.next(JRCsvDataSource.java:200)
+	at com.nantic.jasperreports.CsvMultiLanguageDataSource.next(CsvMultiLanguageDataSource.java:107)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.advanceDataSource(JRFillDataset.java:864)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.next(JRFillDataset.java:782)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1482)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Misplaced quote found at position 1 in row: ""
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.parseRow(JRCsvDataSource.java:361)
+	at net.sf.jasperreports.engine.data.JRCsvDataSource.next(JRCsvDataSource.java:200)
+	at com.nantic.jasperreports.CsvMultiLanguageDataSource.next(CsvMultiLanguageDataSource.java:107)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.advanceDataSource(JRFillDataset.java:864)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.next(JRFillDataset.java:782)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1482)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+1    [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : dateAuj
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : dateAuj
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : dateAuj
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : dateAuj
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+1    [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : dateAuj
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : dateAuj
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : dateAuj
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : dateAuj
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+2280856 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : dateAuj
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Report design not valid : 
+	 1. Field not found : dateAuj
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : dateAuj
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.design.JRValidationException: Report design not valid : 
+	 1. Field not found : dateAuj
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.verifyDesign(JRAbstractCompiler.java:258)
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:140)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:215)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:131)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReportToFile(JasperCompileManager.java:113)
+	at com.nantic.jasperreports.JasperServer.compile(JasperServer.java:98)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:137)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+6963413 [XML-RPC-0] ERROR org.apache.xmlrpc.server.XmlRpcErrorLogger - Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Byte data not found at location : logo.png
+org.apache.xmlrpc.common.XmlRpcInvocationException: Failed to invoke method execute in class com.nantic.jasperreports.JasperServer: Byte data not found at location : logo.png
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:129)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)
+Caused by: net.sf.jasperreports.engine.JRException: Byte data not found at location : logo.png
+	at net.sf.jasperreports.engine.util.JRLoader.loadBytesFromLocation(JRLoader.java:563)
+	at net.sf.jasperreports.engine.JRImageRenderer.getInstance(JRImageRenderer.java:217)
+	at net.sf.jasperreports.engine.fill.JRFillImage.evaluateImage(JRFillImage.java:1057)
+	at net.sf.jasperreports.engine.fill.JRFillImage.evaluate(JRFillImage.java:1004)
+	at net.sf.jasperreports.engine.fill.JRFillElementContainer.evaluate(JRFillElementContainer.java:258)
+	at net.sf.jasperreports.engine.fill.JRFillBand.evaluate(JRFillBand.java:499)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillTitle(JRVerticalFiller.java:326)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReportStart(JRVerticalFiller.java:262)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:128)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	... 6 more
+Caused by:
+net.sf.jasperreports.engine.JRException: Byte data not found at location : logo.png
+	at net.sf.jasperreports.engine.util.JRLoader.loadBytesFromLocation(JRLoader.java:563)
+	at net.sf.jasperreports.engine.JRImageRenderer.getInstance(JRImageRenderer.java:217)
+	at net.sf.jasperreports.engine.fill.JRFillImage.evaluateImage(JRFillImage.java:1057)
+	at net.sf.jasperreports.engine.fill.JRFillImage.evaluate(JRFillImage.java:1004)
+	at net.sf.jasperreports.engine.fill.JRFillElementContainer.evaluate(JRFillElementContainer.java:258)
+	at net.sf.jasperreports.engine.fill.JRFillBand.evaluate(JRFillBand.java:499)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillTitle(JRVerticalFiller.java:326)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReportStart(JRVerticalFiller.java:262)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:128)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:946)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:864)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:84)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:624)
+	at com.nantic.jasperreports.JasperServer.privateExecute(JasperServer.java:212)
+	at com.nantic.jasperreports.JasperServer.execute(JasperServer.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.invoke(ReflectiveXmlRpcHandler.java:115)
+	at org.apache.xmlrpc.server.ReflectiveXmlRpcHandler.execute(ReflectiveXmlRpcHandler.java:106)
+	at org.apache.xmlrpc.server.XmlRpcServerWorker.execute(XmlRpcServerWorker.java:46)
+	at org.apache.xmlrpc.server.XmlRpcServer.execute(XmlRpcServer.java:86)
+	at org.apache.xmlrpc.server.XmlRpcStreamServer.execute(XmlRpcStreamServer.java:200)
+	at org.apache.xmlrpc.webserver.Connection.run(Connection.java:208)
+	at org.apache.xmlrpc.util.ThreadPool$Poolable$1.run(ThreadPool.java:68)

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="consultation_template_form_view" model="ir.ui.view">
+            <field name="name">CCI Form Consultation</field>
+            <field name="model">cci.consultation</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                            <field name="name" />
+                            <field name="date_cons" />
+                            <field name="type_id" option="{'create_edit': false}"/>
+                            <field name="consult_tag" string="Tags Consultation" widget="many2many_tags" />
+
+                            <field name="responsable" />
+                            <field name="op_eco_exist" />
+                    </group>
+                    <group>
+                            <field name="op_eco_id" attrs="{'invisible': [('op_eco_exist', '=', False)]}" />
+                            <field name="op_eco_new" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+                    </group>
+                    <group>
+                        <group>
+                            <label for="street" string="Addresse" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+
+                            <div>
+                                <field name="street" placeholder="Rue ..." attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+
+                                <field name="street2" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+                                  <div class="address_format" attrs="{'invisible': [('op_eco_exist', '=', True)]}">
+                                        <field name="city" placeholder="Ville" style="width: 60%%" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+                                        <field name="zip" placeholder="Code postale" style="width: 40%%" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+                                  </div>
+
+                                 <field name="country_id" placeholder="Pays" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+        		 
+                            </div>
+
+                        </group>
+
+                        <group>
+                                <field name="phone" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+                                <field name="mobile" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+                                <field name="fax" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+                                <field name="mail" widget="email" attrs="{'invisible': [('op_eco_exist', '=', True)]}"/>
+                        </group>
+		            </group>
+<group>
+
+                          <field name="degre"/>
+               		 <field name="user_ids" string="USERES"/>
+
+
+</group>
+		            <notebook>
+                        <page string="Note">
+                            <field name="note" />
+		                </page>
+                   
+
+
+
+                    <!--<label for="prive" string="privé"/>
+                            <field name="prive" />-->
+
+
+                    </notebook>
+                </sheet>
+            </form>
+	    </field>
+
+	</record>
+
+	<record id="consultation_template_tree_view" model="ir.ui.view">
+            <field name="name">consultation.template.consultation.tree</field>
+            <field name="model">cci.consultation</field>
+            <field name="arch" type="xml">
+            <tree string="Consultation">
+                <field name="name" />
+                <field name="type_id" />
+                <field name="consult_tag" string="Tags Consultation"/>
+                <field name="user_ids" string="USERES"/>
+               <!-- <field name="groups_id" string="GROUPS"/>-->
+                <field name="responsable" />
+                <field name="date_cons" />
+            </tree>
+            </field>
+        </record>
+
+        <record id="consultation_template_action" model="ir.actions.act_window">
+            <field name="name">Consultations</field>
+            <field name="res_model">cci.consultation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+
+
+        </record>
+
+        <menuitem action="consultation_template_action"  id="menu_consultation_template_action" parent="cci_crm.test_menu_crm_config_activity" sequence="2" />
+
+    </data>
+</openerp>

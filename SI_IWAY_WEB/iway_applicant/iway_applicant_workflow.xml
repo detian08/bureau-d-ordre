@@ -1,0 +1,51 @@
+<openerp>
+    <data>
+        <record model="workflow" id="wkf_iway_applicant_workflow">
+            <field name="name">iway_applicant.iway_applicant_workflow.workflow</field>
+            <field name="osv">hr.applicant</field><!--nom du modèle-->
+            <field name="on_create">True</field>
+        </record>
+
+        <record model="workflow.activity" id="soumise">
+            <field name="name">Soumise</field>
+            <field name="wkf_id" ref="wkf_iway_applicant_workflow"/>
+            <field name="flow_start" eval="True"/>
+            <field name="kind">function</field>
+            <field name="action">action_soumise()</field>
+        </record>
+        <record model="workflow.activity" id="entretien">
+            <field name="name">entretien</field>
+            <field name="wkf_id" ref="wkf_iway_applicant_workflow"/>
+            <field name="kind">function</field>
+            <field name="action">action_entretienn()</field>
+        </record>
+        <record model="workflow.activity" id="contratpropose">
+            <field name="name">Contratpropose</field>
+            <field name="wkf_id" ref="wkf_iway_applicant_workflow"/>
+            <field name="kind">function</field>
+            <field name="action">action_contratpropose()</field>
+        </record>
+
+        <record model="workflow.transition" id="iway_applicant_workflow_draft_to_entretien">
+            <field name="act_from" ref="soumise"/>
+            <field name="act_to" ref="entretien"/>
+            <field name="signal">action_entretienn</field>
+        </record>
+        <record model="workflow.transition" id="iway_applicant_workflow_entretien_to_soumise">
+            <field name="act_from" ref="entretien"/>
+            <field name="act_to" ref="soumise"/>
+            <field name="signal">action_soumise</field>
+        </record>
+        <record model="workflow.transition" id="iway_applicant_workflow_done_to_soumise">
+            <field name="act_from" ref="contratpropose"/>
+            <field name="act_to" ref="soumise"/>
+            <field name="signal">action_soumise</field>
+        </record>
+        <record model="workflow.transition" id="iway_applicant_workflow_entretien_to_contratpropose">
+            <field name="act_from" ref="entretien"/>
+            <field name="act_to" ref="contratpropose"/>
+            <field name="signal">action_contratpropose</field>
+        </record>
+    </data>
+</openerp>
+

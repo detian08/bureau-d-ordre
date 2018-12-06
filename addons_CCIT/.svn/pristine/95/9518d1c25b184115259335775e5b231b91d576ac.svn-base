@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="courriel_entrant_template_form_view_inherited" model="ir.ui.view">
+            <field name="name">CCI.Form.courriel.inherited</field>
+            <field name="model">cci.courriel.entrant</field>
+		<field name="type">form</field>
+		<field name="inherit_id" ref='cci_bureau_ordre.courriel_template_form_view'/>
+            	<field name="arch" type="xml">
+        	
+       			<!--<xpath expr="header" position="before">-->
+ 
+		<header position='inside'>
+			
+				<button string="Soumettre au Président" name="a_valider_bt" states="draft" type="workflow" class="oe_highlight"/>
+
+				<button string="Soumettre à a DG" name="valider_bt" states="to_soumpre" type="workflow" class="oe_highlight"/>
+				<button string="Traiter" name="a_traite_bt" states="to_soumdg" type="workflow" class="oe_highlight"/>
+    <button string="Retour au Président" name="a_retour_bt" states="to_soumdg" type="workflow" class="oe_highlight"/>
+				<field name="state" widget="statusbar" statusbar_visible="draft,to_soumpre,to_soumdg"/>
+			
+
+                </header>
+ 
+               </field>        
+</record>
+
+
+
+
+
+	<record id="courriel_entrant_template_tree_view_inherited" model="ir.ui.view">
+	<field name="name">CCI.tre.courriel.inherited</field>
+	<field name="model">cci.courriel.entrant</field>
+	<field name="type">tree</field>
+ 	<field name="arch" type="xml">
+            <tree>
+                <field name="state"/>      
+            </tree>
+        </field>
+	</record>
+
+
+	<record id="action_courriel_entrant_form" model="ir.actions.act_window">
+            <field name="name">Courriels entrants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel.entrant</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_courriel_entrant_form_view1" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="courriel_entrant_template_form_view_inherited"/>
+            <field name="act_window_id" ref="action_courriel_entrant_form"/>
+        </record>
+        <record id="action_partner_tree_view1" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="courriel_entrant_template_tree_view_inherited"/>
+            <field name="act_window_id" ref="action_courriel_entrant_form"/>
+        </record>
+
+
+
+
+
+       <menuitem action="action_courriel_entrant_form" id="menu_courriel_entrant" name='Courriels entrants' sequence="1" parent='menu_courriel_parent'/>
+
+</data>
+</openerp>

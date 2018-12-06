@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_emp_user,res.users,base.model_res_users,base.group_user,1,1,1,1
+access_hr_grp_user,res.groups,base.model_res_groups,base.group_user,1,1,1,1
+
+access_gerant_user,res.users,base.model_res_users,office_groups.office_group_gerant_eps,1,1,1,1
+access_gerant_grp_user,res.groups,base.model_res_groups,office_groups.office_group_gerant_eps,1,1,1,1
+

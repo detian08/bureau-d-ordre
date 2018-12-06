@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+coach_access_distance_oe,op.eco.distance,model_op_eco_distance,cci_config_groups.group_coach_cci,1,1,0,1
+user_access_distance_oe,op.eco.distance,model_op_eco_distance,cci_config_groups.group_user_cci,1,1,1,1

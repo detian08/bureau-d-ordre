@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cheques_depense" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="objet" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/objet]]></fieldDescription>
+	</field>
+	<field name="product_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/product_id]]></fieldDescription>
+	</field>
+	<field name="responsable" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/responsable]]></fieldDescription>
+	</field>
+	<field name="date_reclamation" class="java.util.Date">
+		<fieldDescription><![CDATA[/data/record/date_reclamation]]></fieldDescription>
+	</field>
+	<field name="partner" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/partner]]></fieldDescription>
+	</field>
+	<field name="echeance" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/echeance]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/state]]></fieldDescription>
+	</field>
+	<field name="dateAuj" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/dateAuj]]></fieldDescription>
+	</field>
+	<field name="stat_path" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/stat_path]]></fieldDescription>
+	</field>
+	<group name="groupe line">
+		<groupHeader>
+			<band height="43">
+				<staticText>
+					<reportElement x="1" y="11" width="146" height="32" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Objet]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="392" y="11" width="95" height="32" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Responsable]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="147" y="11" width="95" height="32" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Partenaire]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="329" y="11" width="63" height="32" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Échéance]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="487" y="11" width="68" height="32" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[État]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="242" y="11" width="87" height="32" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="37"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="-2" y="0" width="555" height="45" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTE DES RÉCLAMATIONS]]></text>
+			</staticText>
+			<textField pattern="dd-MMM-yyyy" isBlankWhenNull="true">
+				<reportElement x="431" y="0" width="124" height="12"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Le " + new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="46" width="555" height="36" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="12" width="124" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="45" width="551" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="431" y="25" width="124" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="-6" width="100" height="50"/>
+				<imageExpression><![CDATA[$F{stat_path} + "logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="392" y="0" width="95" height="36"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{responsable}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="0" width="146" height="36"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{objet}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yyyy" isBlankWhenNull="true">
+				<reportElement x="242" y="0" width="87" height="36"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($F{date_reclamation})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="0" width="95" height="36"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{partner}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yyyy" isBlankWhenNull="true">
+				<reportElement x="329" y="0" width="63" height="36"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{echeance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="487" y="0" width="68" height="36"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="553" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="7" splitType="Stretch"/>
+	</summary>
+</jasperReport>

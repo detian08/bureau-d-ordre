@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+    <record model="cci.type.consultation" id="type_consultation_1">
+        <field name="name">Appel Téléphonique</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record model="cci.type.consultation" id="type_consultation_2">
+        <field name="name">Rencontre sur site</field>
+        <field name="sequence">2</field>
+    </record>
+
+    <record model="cci.type.consultation" id="type_consultation_3">
+        <field name="name">Email</field>
+        <field name="sequence">3</field>
+    </record>
+
+
+    
+</data>
+</openerp>

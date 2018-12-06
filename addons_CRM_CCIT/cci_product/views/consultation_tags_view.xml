@@ -1,0 +1,47 @@
+<openerp>
+    <data>
+
+       <record id="consultation_tags_form" model="ir.ui.view">
+           <field name="name">Consultation tags Form</field>
+           <field name="model">cci.consultation.tags</field>
+           <field name="arch" type="xml">
+               <form string="Consultation Tags">
+                   <sheet>
+			<group>
+                       		<field name="name"/>
+			</group>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+       <record id="consultation_tags_tree" model="ir.ui.view">
+           <field name="name">Consultation tags Tree</field>
+           <field name="model">cci.consultation.tags</field>
+           <field name="arch" type="xml">
+               <tree string="Consultation Tags">
+                   <field name="name"/>
+               </tree>
+           </field>
+       </record>
+
+       <record id="consultation_tags_action" model="ir.actions.act_window">
+           <field name="name">Consultation Tags</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">cci.consultation.tags</field>
+           <field name="view_mode">tree,form</field>
+           <field name="help" type="html">
+             <p class="oe_view_nocontent_create">
+               Click Here to create Tag
+             </p><p>
+               <!-- More details about what a user can do with this object will be OK -->
+             </p>
+           </field>
+       </record>
+
+
+       <menuitem action="consultation_tags_action" id="menu_consultation_tags_action" parent="menu_consultation_parent" sequence="3" name="Consultation Tags"/>
+	<!-- hide for user_cci et coach_cci-->
+	
+    </data>
+</openerp>

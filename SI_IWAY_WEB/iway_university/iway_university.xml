@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!--<menuitem name="Inscription Management" id="inscription_parent_menu"/>-->
+
+        <!-- Institute Management -->
+       <!-- <menuitem name="Institute Management" parent="inscription_parent_menu" id="inscription_management_side_menu"/>-->
+
+        <!-- Establishment -->
+        <record model="ir.ui.view" id="category_establishment_form_view">
+            <field name="name">category.establishment.form.view</field>
+            <field name="model">category.establishment</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Establishment Form" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="logo" widget='image' class="oe_avatar oe_left"/>
+                            <field name="name"/>
+			    <field name="abbreviation"/>
+                            <field name="description"/>
+			     <field name="website"/>
+                            <field name="address"/>
+			    <field name="establish_id"/>
+                        </group>
+                        <!--<notebook>
+                            <page string="Universitys">
+                                <field name="establishement_ids" widget="one2many_list"/>
+                            </page>
+                        </notebook>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="category_establishment_tree_view">
+            <field name="name">category.establishment.tree.view</field>
+            <field name="model">category.establishment</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Establishment List">
+                    <field name="name"/>
+                   <!-- <field name="establishement_ids" widget="one2many"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_category_establishment">
+            <field name="name">Establishment Management</field>
+            <field name="res_model">category.establishment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record id="action_category_establishment_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="category_establishment_form_view"/>
+            <field name="act_window_id" ref="action_category_establishment"/>
+        </record>
+        
+        <record id="action_category_establishment_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="category_establishment_tree_view"/>
+            <field name="act_window_id" ref="action_category_establishment"/>
+        </record>
+        
+        <!--<menuitem name="Establishment" parent="inscription_management_side_menu" id="inscription_establishment_menu"
+                  action="action_inscription_establishment"/>-->
+
+        <!-- University -->
+        <record model="ir.ui.view" id="category_university_form_view">
+            <field name="name">category.university.form.view</field>
+            <field name="model">category.university</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="University Form" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="logo" widget='image' class="oe_avatar oe_left"/>
+                            <field name="name"/>
+                            <field name="abbreviation"/>
+                            <field name="description"/>
+                            <field name="website"/>
+                            <field name="address"/>
+                            
+                        </group>
+                        <notebook>
+                            <page string="Etablissement ">
+                              
+				<!--<field name="university_ids" widget="one2many_list"/>-->
+				<field name="univer_id" widget="one2many_list"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="category_university_tree_view">
+            <field name="name">category.university.tree.view</field>
+            <field name="model">category.university</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="University List">
+                    <field name="abbreviation"/>
+                    <field name="name"/>
+                    
+                    <field name="website"/>
+		    <!--<field name="establishement_ids" widget="one2many"/>-->
+		<!--<field name="university_ids" widget="one2many"/>-->
+                    
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_category_university">
+            <field name="name">University Management</field>
+            <field name="res_model">category.university</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record id="action_category_university_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="category_university_form_view"/>
+            <field name="act_window_id" ref="action_category_university"/>
+        </record>
+        
+        <record id="action_category_university_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="category_university_tree_view"/>
+            <field name="act_window_id" ref="action_category_university"/>
+        </record>
+
+
+
+<record model="ir.actions.act_window" id="action_university">
+    <field name="name">University</field>
+    <field name="res_model">category.university</field>
+    <field name="view_mode">tree,form</field>
+	</record>
+
+<record model="ir.actions.act_window" id="action_establishement">
+    <field name="name">Establishement</field>
+    <field name="res_model">category.establishment</field>
+    <field name="view_mode">tree,form</field>
+	</record>
+<menuitem id="category_university_menu" name="Universités" sequence="10"
+          action="action_university" parent="hr_recruitment.menu_hr_recruitment_recruitment"/>
+
+<menuitem id="category_establishment_menu" name="Établissement" sequence="11"
+          action="action_establishement" parent="hr_recruitment.menu_hr_recruitment_recruitment"/>
+        <!--<menuitem name="University" parent="category_management_side_menu" id="category_university_menu"
+                  action="action_category_university"/>-->
+
+      
+
+    </data>
+</openerp>

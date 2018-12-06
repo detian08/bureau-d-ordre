@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="activity" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="1725"/>
+	<property name="ireport.y" value="96"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="date_debut" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/date_debut]]></fieldDescription>
+	</field>
+	<field name="date_fin" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/date_fin]]></fieldDescription>
+	</field>
+	<field name="create_date" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/create_date]]></fieldDescription>
+	</field>
+	<field name="nom_op" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/nom_op]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/type]]></fieldDescription>
+	</field>
+	<field name="stat_path" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/stat_path]]></fieldDescription>
+	</field>
+	<field name="responsable_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/responsible_id]]></fieldDescription>
+	</field>
+	<field name="responsable_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/responsable_name]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FICHE ACTIVITE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="449" y="10" width="105" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Le " + new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="449" y="24" width="105" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement x="0" y="1" width="100" height="50"/>
+				<imageExpression><![CDATA[$F{stat_path} + "logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="21" width="554" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date_debut} + " jusqu'à  " +  $F{date_fin}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="554" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{responsable_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="17" width="189" height="20"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Date de l'activité]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="17" width="199" height="20"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nom de l'opération]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="17" width="167" height="20"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Type d'activité]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="1" width="189" height="32"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{create_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="356" y="1" width="199" height="32"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nom_op}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="189" y="1" width="167" height="32"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="189" y="0" width="167" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="37" splitType="Stretch"/>
+	</summary>
+</jasperReport>

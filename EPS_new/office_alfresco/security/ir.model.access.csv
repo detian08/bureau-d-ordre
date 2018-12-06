@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_document_alfresco_configuration_manager,office.alfresco.configuration,model_office_alfresco_configuration,group_manager,1,1,1,1
+document_alfresco_produit_manager,office.document.alfresco.produit,model_office_document_alfresco_produit,group_manager,1,1,1,1
+document_alfresco_vente_manager,document vente manager,model_office_document_alfresco_vente,group_manager,1,1,1,1
+document_alfresco_fournisseur_manager,office.document.alfresco.fournisseur,model_office_document_alfresco_fournisseur,group_manager,1,1,1,1

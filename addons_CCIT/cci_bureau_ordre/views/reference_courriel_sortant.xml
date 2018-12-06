@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+    <!--Sequence Type-->
+
+        <record id="ir_seq_type_ref_courriel_sortant" model="ir.sequence.type">
+            <field name="name">Reference Courriel sortant</field>
+            <field name="code">RefCourrielSortant</field>
+        </record>
+        <!--Sequence-->
+        <record id="ir_seq_ref_courriel_sortant" model="ir.sequence">
+            <field name="name">Reference Courriel sortant</field>
+            <field name="code">RefCourrielSortant</field>
+            <field name="prefix">Courriel sortant N° </field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+        </record>
+    </data>
+</openerp>

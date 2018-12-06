@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <delete model="ir.ui.menu" id="sale.menu_sale_order"/>
+        <delete model="ir.ui.menu" id="sale.menu_sale_quotations"/>
+        <!--
+            sale.order
+        -->
+        <record id="view_sale_order_form_inherited" model="ir.ui.view">
+            <field name="name">sale.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <button name="action_quotation_send" position="replace"/>
+                <button name="action_quotation_send" position="replace"/>
+                <button name="print_quotation" position="replace"/>
+                <button name="print_quotation" position="replace"/>
+
+                <field name="state" position="attributes">
+                    <attribute name="statusbar_visible">"draft,manual,done"</attribute>
+                </field>
+                <!--
+                <button name="action_button_confirm" position="after" >
+	<button name="returntodraft" states="manual" string="Retour etat Brouillon" type="object"/>
+</button>
+
+<button name="action_button_confirm" position="after" >
+	<button name="returntodone" states="draft" string="Retour etat Confirmer" type="object"/>
+</button>-->
+                <!--<xpath expr="//group/group/field[@name='product_id']" position="attributes">-->
+                    <!--<attribute name="on_change">product_id_change(parent.pricelist_id,product_id,discount,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, False, False, parent.date_order, False, parent.fiscal_position, True, context)</attribute>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//group/group/div/field[@name='product_uom_qty']" position="attributes">-->
+                    <!--<attribute name="on_change">product_id_change(parent.pricelist_id,product_id,discount,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, False, False, parent.date_order, False, parent.fiscal_position, True, context)</attribute>-->
+                <!--</xpath>-->
+                <!--<xpath expr="//group/group/div/field[@name='discount']" position="attributes">-->
+                    <!--<attribute name="on_change">product_id_change(parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, False, False, parent.date_order, False, parent.fiscal_position, True, context)</attribute>-->
+                <!--</xpath>-->
+
+                <xpath expr="//group/group/field[@name='currency_id']" position="attributes">
+                	<attribute name="invisible">0</attribute>
+                	<attribute name="readonly">0</attribute>
+                    
+                    </xpath>
+                
+<xpath
+                    expr="//field[@name='client_order_ref']"
+                    position="after">
+                       
+                    <field name="devis_id" domain="[('partner_id','=', partner_id) ,('state','=', 'confirmed')]" />
+		    <button colspan="2" name="button_add_devis" string="Ajouter lignes devis" type="object" />
+                 </xpath>
+		
+			<!--<tree string="Sales Order Lines" editable="bottom" position="inside" >
+		
+					
+                                     <field name="discount" />
+				            
+
+                   </tree>
+
+               <xpath expr="//field[@name='order_line']/form/group/group/field[@name='tax_id']"
+                    position="after">
+                    <field name="discount"/>
+                </xpath>-->
+ 			<xpath
+                    expr="//field[@name='order_line']/tree/field[@name='discount']"
+                    position="replace"/>
+
+			<xpath
+                    expr="//field[@name='order_line']/tree/field[@name='price_unit']"
+                    position="after">
+                       
+                    <field name="discount"/>
+
+
+                 </xpath>
+		<xpath
+                    expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']"
+                    position="before">
+                       
+                    <field name="default_code"/> 
+
+                 </xpath>
+
+
+            <field name="amount_untaxed" position="before">
+  <field name="undiscount_total" widget="monetary" options="{'currency_field': 'currency_id'}" />
+  <field name="discount_total" widget="monetary" options="{'currency_field': 'currency_id'}" />
+</field>
+                <button string="Create Invoice"
+                           position="replace"/>
+                <page string="Other Information"  position="attributes">
+                    <attribute name="invisible">True</attribute> 
+                </page>
+			 
+            </field>
+            
+        </record>
+
+        <record id="view_order_tree_inherited" model="ir.ui.view">
+            <field name="name">sale.order.tree.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml"> 
+                <field name="state" position="after">
+                   <field name="create_uid" string="crée par"/>                
+                   <!-- <field name="shipped_rate" widget="progressbar" string="Livraison (%)"/>  --> 
+                </field>
+		
+                    
+                
+            </field>
+        </record>
+
+
+        <record id="action_orders_all" model="ir.actions.act_window">
+            <field name="name">Sales Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="context">{
+                    'search_default_my_sale_orders_filter': 1,
+                'menuitem':True,
+                }
+            </field>
+            <!--field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field-->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a quotation that can be converted into a sales
+                    order.
+                </p><p>
+                    Odoo will help you efficiently handle the complete sales flow:
+                    quotation, sales order, delivery, invoicing and payment.
+                </p>
+            </field>
+        </record>
+
+
+
+        <menuitem action="action_orders_all" name="Bons de commande Vente" id="menu_sale_order" parent="base.menu_sales" sequence="6" groups="base.group_sale_salesman,base.group_sale_manager"/>
+        
+        
+    </data>
+</openerp>
+

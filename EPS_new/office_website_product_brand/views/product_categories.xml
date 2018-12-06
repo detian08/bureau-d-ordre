@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <template id="product_category" name="Brands">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Catégories des produits</t>
+            <div id="wrap" t-attf-class="wrapper"> 
+                <div class="container">
+
+                    <div class="container">
+                        <div class="row">
+                        <h1> <strong> <span> <span class="highlight" stype="marging-left:10px;">Nos Produits</span> par catégories</span> </strong> </h1>
+
+                        <form action="/shop/category" class="form-horizontal mt32 col-md-12" method="post"> 
+                            <div class="col-md-6" style="margin-left:20%">
+                                <input type="text" name="search" class="form-control" placeholder="Insérer votre critère de recherche..."/>
+                                </div>
+                            
+
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary">Recherche</button>
+                                </div>
+                            
+                        </form>
+                    </div>
+                        
+                    </div>
+                    <br/>
+                    <section>
+
+                    <t t-if='category_rec'>
+                        <t t-foreach="category_rec" t-as="c">
+                            <div class="col-md-3" style="display: inline-block;">
+                                <a t-att-href="keep('/shop/category',category = c.id)">
+                                    <div class='row' style='margin-left:15%;'>
+                                        <img itemprop="image" class="img" t-att-src="'data:image/png;base64,%s' % c.image" style="animation-play-state: paused; transition: none 0s ease 0s"/>
+                                    </div>
+                                    <div class='row' style='text-align:center;'>
+                                        <t t-esc='c.name' />
+                                    </div>
+                                </a>
+                            </div>
+                        </t>
+                    </t>   
+                    <t t-if='not category_rec'>
+                        <div class="text-center text-muted">
+                            <h3 class="css_editable_display">Aucune catégorie disponible.</h3>
+                        </div>
+                        </t>          
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+
+
+    <!-- Menu in website for Brand -->
+    <record id="menu_website_sale_category" model="website.menu">
+        <field name="name">Par catégorie</field>
+        <field name="url">/page/product_category</field>
+        <field name="parent_id" ref="website_sale.menu_shop" />
+    </record>
+
+
+
+
+
+    </data>
+</openerp>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="courriel_sortant_template_form_view_inherited" model="ir.ui.view">
+            <field name="name">CCI.Form.courriel.inherited</field>
+            <field name="model">cci.courriel.sortant</field>
+		<field name="type">form</field>
+		<field name="inherit_id" ref='cci_bureau_ordre.courriel_template_form_view'/>
+            	<field name="arch" type="xml">
+        	
+       			<!--<xpath expr="header" position="before">-->
+ 
+		<header position='inside'>
+
+				<button string="Soumettre à a DG" name="valider_bt" states="draft" type="workflow" class="oe_highlight"/>
+			
+				<button string="Soumettre au Président" name="a_soumis_bt" states="to_soumdg" type="workflow" class="oe_highlight"/>
+
+				<button string="Traiter" name="a_traite_bt" states="to_soumdg" type="workflow" class="oe_highlight"/>
+    <button string="Retour au DG" name="a_retour_dg_bt" states="to_soumpre" type="workflow" class="oe_highlight"/>
+				<field name="state" widget="statusbar" statusbar_visible="draft,to_soumpre,to_soumdg"/>
+			
+
+                </header>
+ 
+               </field>        
+</record>
+
+
+
+        <record id="courriel_sortant_template_action" model="ir.actions.act_window">
+            <field name="name">Courriels sortants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel.sortant</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="courriel_sortant_template_form_view_inherited"/>
+        </record>
+
+       <menuitem id="menu_courriel_sortant" name='Courriels sortants' sequence="2" parent='menu_courriel_parent' action="courriel_sortant_template_action"/>
+
+</data>
+</openerp>

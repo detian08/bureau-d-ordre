@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+
+        <template id="website.homepage" name="homepage">
+            <t t-call="website.layout">
+
+            <xpath expr="//div[@id='wrap']" position="inside">
+                <section class="blog-wrapper">
+                    <div class="carousel slide mb8" id="myCarousel_1461667333867">
+                        <ol class="carousel-indicators">
+                            <li class="active" data-slide-to="0" data-target="#myCarousel_1461667333867"/>
+                            <li data-slide-to="1" data-target="#myCarousel_1461667333867"/>
+                            <li data-slide-to="2" data-target="#myCarousel_1461667333867"/>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="item oe_img_bg active" style="background-image: url(&quot;/office_website/static/src/img/carroussel_affichage2.png&quot;);">
+                                <div class="container">
+                                    <div class="row content">
+                                        <div class="flex-caption">
+                                            <t t-if='product_promo'>
+                                        	 <t t-foreach="product_promo" t-as="p">
+                                                <h2> 
+                                                    <strong style="color:#d9232d;"> NOUVEAU PRODUIT</strong> 
+                                                    <br/>
+                                                   
+                                                    <strong style="color:white;font-size: 25px;"> 
+                                                        <span t-field="p.product_id"/>
+                                                    </strong>
+                                                </h2>
+                                                <p> <h2 style="color:white;"> Seulement à <span t-field="p.price_promo"/> DT</h2></p>
+                                                <!--redirect to a specific record-->
+                                                <!--<a class="btn btn-success " t-att-href="keep('/shop/product/',product = p.product_id)">Savoir plus ...</a>-->
+                                            </t>
+                                        </t>
+
+                                            </div>
+                                        <div class="carousel-img col-md-6 hidden-sm hidden-xs"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                           <t t-foreach="slides" t-as="s">
+                                <div class="item oe_img_bg" style="background-image">
+                                    <img t-att-src="'data:image/png;base64,%s' % s.image" >
+                                        <div class="container">
+
+                                            <div class="row content">
+                                                <div class="flex-caption">
+                                            <t t-if='product_promo'>
+                                             <t t-foreach="product_promo" t-as="p">
+                                                <h2> 
+                                                    <strong style="color:#d9232d;"> NOUVEAU PRODUIT</strong> 
+                                                    <br/>
+                                                   
+                                                    <strong style="color:white;font-size: 25px;"> 
+                                                        <span t-field="p.product_id"/>
+                                                    </strong>
+                                                </h2>
+                                                <p> <h2 style="color:white;"> Seulement à <span t-field="p.price_promo"/> DT</h2></p>
+                                                <!--redirect to a specific record-->
+                                                <!--<a class="btn btn-success " t-att-href="keep('/shop/product/',product = p.product_id)">Savoir plus ...</a>-->
+                                            </t>
+                                        </t>
+
+                                            </div>
+                                                <div class="carousel-img col-md-6 hidden-sm hidden-xs"/>
+                                            </div>
+                                        </div>
+                                     </img>
+
+                                </div>
+                            </t>
+                            
+
+                        </div>
+                        <div class="carousel-control left" data-slide="prev" data-target="#myCarousel_1461667333867"
+                             href="#myCarousel_1461667333867" style="width: 10%">
+                            <i class="fa fa-chevron-left"/>
+                        </div>
+                        <div class="carousel-control right" data-slide="next" data-target="#myCarousel_1461667333867"
+                             href="#myCarousel_1461667333867" style="width: 10%">
+                            <i class="fa fa-chevron-right"/>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="tp-caption Header12 scrollDown">
+                            <a id="scrollDown" href="#bottom">
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                    </div>-->
+
+                    <div class="oe_structure oe_empty" id="wrap" data-oe-id="318" data-oe-source-id="288"
+                         data-oe-xpath="/data/xpath/div[2]" data-oe-model="ir.ui.view" data-oe-field="arch">
+
+                        <div class="container">
+                            <div class="container">
+                                <h1 id="title-middle" class="general-title padding-top">
+                                        <strong style="color:#e2392f;">Nos catégories de produits</strong>
+                                        <hr class="no-padding"/>
+                                        <br/>
+                                        <i></i>
+                                </h1>
+                            </div>
+
+                            <!--////////////////////////////////////////////////////////////-->
+                          <!--<li t-att-class="'active' if c.id == int(category or 0) else ''">
+                              <a t-att-href="keep('/shop/category/' + (c), category=0)" t-field="c.name"></a>
+                              <ul t-if="c.child_id" class="nav nav-pills nav-stacked nav-hierarchy">
+                                  <t t-foreach="c.child_id" t-as="c">
+                                      <t t-call="website_sale.categories_recursive"/>
+                                  </t>
+                              </ul>
+                          </li>-->
+                          <!--////////////////////////////////////////////////////////////-->
+     
+
+                            <div class="shop_wrapper padding-top">
+                                <t t-foreach="categories" t-as="c">
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="shop_item">
+                                        <div class="entry">
+                                            <img class="img-responsive" t-att-src="'data:image/png;base64,%s' % c.image" style="animation-play-state: paused; transition: none 0s ease 0s"/>
+                                            <div class="magnifier">
+                                                <div class="buttons">
+                                                    <a class="st btn btn-default" href="/shop" rel="bookmark">En savoir plus
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shop_desc">
+                                            <div class="shop_title pull-left">
+                                                <a t-att-href="keep('/shop/category',category = c.id)">
+                                                    <span style="text-align: center" t-field="c.name"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </xpath>
+        </t>
+        </template>
+
+    </data>
+</openerp>

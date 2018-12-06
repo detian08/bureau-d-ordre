@@ -1,0 +1,86 @@
+<openerp>
+    <data>
+     <!--Applicant form view -->
+        <record id="form_view_job_inherited" model="ir.ui.view">
+            <field name="name">hr.job.form.inherited</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref='hr.view_hr_job_form'/>
+            <field name="arch" type="xml">
+<!--ref='hr.view_hr_job_form'-->
+		
+		<!--type sélection-->
+		<!--<xpath expr="//div[@class='oe_title']" position="before">
+                	<group>
+	        		<field name="type"/>
+			</group>
+		</xpath>-->
+		<xpath expr="//div[@class='oe_title']" position="before">
+                	<group>
+	        		<field name="type"/>
+			</group>
+		</xpath>
+<!--invisibilité des champs de postes-->
+		<xpath expr="//field[@name='department_id']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+		</xpath>
+
+		<xpath expr="//field[@name='user_id']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+		</xpath>
+<xpath expr="//group[@name='employee_data']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+		</xpath>
+
+		<!--<xpath expr="//field[@name='survey_id']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+		</xpath>
+		<xpath expr="//field[@name='address_id']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+		</xpath>
+		<xpath expr="//label[@for='survey_id']" position="attributes">
+
+             		<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+             		
+         	</xpath>-->
+
+		<!--<xpath expr="//div[@class='oe_inline']" position="attributes">
+			<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+             		
+         	</xpath>-->
+		<!--<xpath expr="//field[@name='user_id']" position="attributes">
+    			<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+		</xpath>
+		<xpath expr="//label[@for='address_id']" position="attributes">
+
+             		<attribute name="attrs">{'invisible': [('type', '=', 't')]} </attribute>
+             		
+         	</xpath>-->
+		<!--<xpath expr="//label[@for='address_id']" position="after">
+
+             		<group>
+	        		<field name="site"/>
+			</group>
+            	</xpath>-->
+		<!--<xpath expr="//field[@name='name']" position="before">
+    			<group>
+	        		<field name="site"/>
+			</group>
+		</xpath>-->
+<xpath expr="//group[@name='employee_data']" position="after">
+    		<group>
+	        		<field name="site"/>
+			</group>
+		</xpath>
+
+
+
+
+		
+
+
+
+</field>
+</record>
+
+    </data>
+</openerp>

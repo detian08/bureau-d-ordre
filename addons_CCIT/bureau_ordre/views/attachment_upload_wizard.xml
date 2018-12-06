@@ -1,0 +1,26 @@
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="upload_wizard_view_form">
+			<field name="name">upload.wizard.view.form</field>
+			<field name="model">document.attachment.upload.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Ajouter une pièce jointe">
+					<group col="3">
+						<field name="chemin" width="634" filename="nom_fichier" string= " "/>
+					</group>
+					<group>
+						<field name="nom_fichier"/>
+						<field name="description"/>
+					</group>
+
+					<footer>
+						<button name="upload_document" type="object"
+							string="Ajouter" class="oe_highlight"/>
+						</footer>
+					</form>
+				</field>
+			</record>
+
+		</data>
+	</openerp>

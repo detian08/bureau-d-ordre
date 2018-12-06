@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_partner,res.partner,model_res_partner,office_groups.office_group_manager_sale,1,0,0,0
+access_res_users,res.users,base.model_res_users,office_groups.office_group_manager_sale,1,0,0,0
+access_res_partner_category,res.partner.category,base.model_res_partner_category,office_groups.office_group_manager_sale,1,0,0,0

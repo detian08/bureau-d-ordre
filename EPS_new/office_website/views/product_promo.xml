@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    	<record id="view_product_promo_form" model="ir.ui.view">
+            <field name="name">product.promo.form</field>
+            <field name="model">product.promo</field>
+            <field name="arch" type="xml">
+                <form string="Promotion">
+                    <sheet>
+     					<group>
+    						<field name="product_id"/>
+    					</group>
+    					<group>
+	    					<group>
+	    						<field name="price_revient"/>
+	    						<field name="price_promo"/>
+	                        </group>
+	                        <group>
+	                        	<field name="actif"/>
+	                        </group>
+	                    </group>
+                    </sheet> 
+                </form>
+            </field>
+        </record>
+
+        <record id="view_product_promo_tree" model="ir.ui.view">
+            <field name="name">product.promo.tree</field>
+            <field name="model">product.promo</field>
+            <field name="arch" type="xml">
+                <tree string="Promotion">
+    				<field name="product_id"/>
+    				<field name="price_revient"/>
+    				<field name="price_promo"/>
+    				<field name="actif"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_product_promo" model="ir.actions.act_window">
+            <field name="name">Articles en promo</field>
+            <field name="res_model">product.promo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+        </record>
+
+    	<menuitem 
+            name="Article en promo"
+            id="menu_website_product_promo_root"
+            parent="base.menu_product"
+            groups="marketing.group_marketing_user" action="action_product_promo"/>
+    </data>
+</openerp>

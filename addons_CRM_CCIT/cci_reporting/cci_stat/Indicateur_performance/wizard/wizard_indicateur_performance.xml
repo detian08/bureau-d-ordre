@@ -1,0 +1,49 @@
+<openerp>
+	<data>
+		<record id='cci_wizard_performdep_view_form' model="ir.ui.view">
+			<field name="name">Indicateur de performance</field>
+			<field name="model">cci.wizard.performdep</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="2" fill="0" colspan="2">
+						<field name="departement_id" string="Département" options="{'no_create': True}"/>
+						<field name="date1" string="De"/>
+						<field name="date2" string="Jusqu'à"/>
+					</group>
+
+					<footer>
+						<div class="oe_button_box oe_right">
+							<button type="object" name="create_report" icon="gtk-go-forward" string="Créer Rapport"/>
+							<button special="cancel" icon="gtk-cancel" string="Annuler"/>
+						</div>
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_wizard_perform_dep">
+			<field name="name">Indicateur de performance</field>
+			<field name="res_model">cci.wizard.performdep</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="cci_wizard_performdep_view_form"/>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem id="submenu_wizard_perform_dep_report" name="Indicateurs de performance" action="action_wizard_perform_dep" parent="menu_wizard_claim_list_report" groups="cci_config_groups.group_coach_cci,cci_config_groups.group_pr_ccit,cci_config_groups.group_dg_ccit"/>
+		<menuitem id="menu_performance_admin" name="Indicateurs de performance" action="action_wizard_perform_dep" parent="menu_wizard_claim_list_report" groups="base.group_no_one"/>
+
+		<report string="Performance département"
+		  model="crm.case.section"
+		  auto="True"
+		  name="jasper_perform_dep_print"
+		  rml="cci_reporting/cci_stat/Indicateur_performance/report/cci_departement_report.jrxml"
+		  id="perform_dep"
+		  menu="False"/>
+
+		</data>
+	</openerp>
+
+
+

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ir_mail_server_coach,ir.mail.server,model_ir_mail_server,cci_config_groups.group_coach_cci,1,1,1,1
+access_ir_mail_server_user,ir.mail.server,model_ir_mail_server,cci_config_groups.group_user_cci,1,1,1,1
+access_mail_message_coach,mail.message,mail.model_mail_message,cci_config_groups.group_coach_cci,1,1,1,1
+user_access_mail_message,mail.message,mail.model_mail_message,cci_config_groups.group_user_cci,1,1,1,1
+access_mail_message_dg,mail.message,mail.model_mail_message,cci_config_groups.group_dg_ccit,1,1,1,1

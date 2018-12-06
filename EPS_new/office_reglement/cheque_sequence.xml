@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="ir_sequence_cheque_depense" model="ir.sequence.type">
+            <field name="name">Reglement cheque depense</field>
+            <field name="code">cheque.depense</field>
+        </record>
+
+        <record id="seq_cheque" model="ir.sequence">
+            <field name="name">Reglement cheque depense</field>
+            <field name="code">cheque.depense</field>
+            <field name="prefix">CHEQUE%(year)s/</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+</openerp>

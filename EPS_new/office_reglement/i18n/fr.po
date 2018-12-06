@@ -1,0 +1,1366 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* office_reglement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-15 08:06+0000\n"
+"PO-Revision-Date: 2017-03-15 08:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: office_reglement
+#: field:office.cheque,num_compte:0
+#: field:reglement.piece,num_compte:0
+msgid "Account Number"
+msgstr "Numéro de Compte"
+
+#. module: office_reglement
+#: field:office.cheque,montant_piece:0
+#: view:reglement.detail:office_reglement.view_reglement_detail_form
+#: view:reglement.detail:office_reglement.view_reglement_detail_tree
+#: field:reglement.detail,montant:0
+#: view:reglement.detail.avance:office_reglement.view_detail_avance_tree
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_form
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_tree
+#: view:reglement.detail.impaye:office_reglement.view_reglement_detail_impaye_form
+#: view:reglement.detail.impaye:office_reglement.view_reglement_detail_impaye_tree
+#: field:reglement.detail.impaye,montant_piece:0
+#: field:reglement.detail.piece,montant_piece:0
+#: field:reglement.piece,montant_piece:0
+msgid "Amount"
+msgstr "Montant"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:737
+#: code:addons/office_reglement/reglement1.py:640
+#, python-format
+msgid "Attention !"
+msgstr "Attention !"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.menu_avances
+#: view:reglement.avance:office_reglement.view_avance_tree
+msgid "Avance"
+msgstr "Avance"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_avance_client_form
+#: model:ir.ui.menu,name:office_reglement.menu_avance_form
+msgid "Avance Client"
+msgstr "Avance Client"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_avance_supplier_form
+#: model:ir.ui.menu,name:office_reglement.menu_avance_supplier_form
+msgid "Avance Fournisseur"
+msgstr "Avance Fournisseur"
+
+#. module: office_reglement
+#: view:reglement.avance:office_reglement.view_avance_form
+msgid "Avances"
+msgstr "Avances"
+
+#. module: office_reglement
+#: field:office.cheque,banque_id:0
+#: field:reglement.piece,banque_id:0
+msgid "Bank"
+msgstr "Banque"
+
+#. module: office_reglement
+#: field:office.cheque,agence:0
+#: field:reglement.piece,agence:0
+msgid "Bank Agency"
+msgstr "Agence Bancaire"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_banque_form
+#: model:ir.ui.menu,name:office_reglement.menu_banque_form
+#: view:reglement.banque:office_reglement.view_banque_reglement_form
+#: view:reglement.banque:office_reglement.view_reglement_banque_tree
+msgid "Banque"
+msgstr "Banque"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+#: view:reglement.paiement:office_reglement.view_reglement_tree_customer
+#: view:reglement.paiement:office_reglement.view_reglement_tree_supplier
+#: field:reglement.paiement,caisse_id:0
+msgid "Caisse"
+msgstr "Caisse"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "Calculer"
+msgstr "Calculer"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: office_reglement
+#: field:reglement.paiement,montant_espece:0
+msgid "Cash Amount"
+msgstr "Montant en espèces"
+
+#. module: office_reglement
+#: view:reglement.piece:office_reglement.view_account_reglement_piece_serch
+#: selection:reglement.piece,state:0
+msgid "Cashed"
+msgstr "Encaissé"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.cheque_menu_action
+#: field:reglement.avance,piece_id:0
+msgid "Cheque"
+msgstr "Chèque"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.depense_cheque_menu
+msgid "Cheque Depense EPS"
+msgstr "Cheque Depense EPS"
+
+#. module: office_reglement
+#: view:office.cheque:office_reglement.cheque_form_view
+msgid "Cheque Form"
+msgstr "Cheque Form"
+
+#. module: office_reglement
+#: view:office.cheque:office_reglement.cheque_tree_view
+msgid "Cheque Tree"
+msgstr "Cheque Tree"
+
+#. module: office_reglement
+#: field:reglement.avance,partner_id:0
+#: selection:reglement.avance,type:0
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_tree
+msgid "Client"
+msgstr "Client"
+
+#. module: office_reglement
+#: view:reglement.avance:office_reglement.view_avance_form
+#: view:reglement.paiement:office_reglement.view_account_paiement_serch
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+#: selection:reglement.retenu.source,state:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: office_reglement
+#: selection:reglement.avance,state:0
+#: selection:reglement.paiement,state:0
+msgid "Closed"
+msgstr "Fermé"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "Compute"
+msgstr "Calculer"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.menu_configuration_reglement
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: office_reglement
+#: view:office.cheque:office_reglement.cheque_form_view
+msgid "Confirm"
+msgstr "Confirm"
+
+#. module: office_reglement
+#: field:office.cheque,create_uid:0
+#: field:reglement.avance,create_uid:0
+#: field:reglement.banque,create_uid:0
+#: field:reglement.detail,create_uid:0
+#: field:reglement.detail.avance,create_uid:0
+#: field:reglement.detail.avoir,create_uid:0
+#: field:reglement.detail.impaye,create_uid:0
+#: field:reglement.detail.piece,create_uid:0
+#: field:reglement.mode,create_uid:0
+#: field:reglement.paiement,create_uid:0
+#: field:reglement.piece,create_uid:0
+#: field:reglement.retenu,create_uid:0
+#: field:reglement.retenu.source,create_uid:0
+#: field:retenue.src.line,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: office_reglement
+#: field:office.cheque,create_date:0
+#: field:reglement.avance,create_date:0
+#: field:reglement.banque,create_date:0
+#: field:reglement.detail,create_date:0
+#: field:reglement.detail.avance,create_date:0
+#: field:reglement.detail.avoir,create_date:0
+#: field:reglement.detail.impaye,create_date:0
+#: field:reglement.detail.piece,create_date:0
+#: field:reglement.mode,create_date:0
+#: field:reglement.paiement,create_date:0
+#: field:reglement.piece,create_date:0
+#: field:reglement.retenu,create_date:0
+#: field:reglement.retenu.source,create_date:0
+#: field:retenue.src.line,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_tree_customer
+#: field:reglement.paiement,partner_id:0
+#: field:reglement.retenu.source,partner_id:0
+#: selection:reglement.retenu.source,type_in_out:0
+msgid "Customer"
+msgstr "Client"
+
+#. module: office_reglement
+#: selection:reglement.paiement,type:0
+msgid "Customer Payment"
+msgstr "Paiement Client"
+
+#. module: office_reglement
+#: selection:reglement.paiement,type_invoice:0
+msgid "Customer invoices"
+msgstr "Customer invoices"
+
+#. module: office_reglement
+#: field:reglement.avance,date_avance:0
+#: field:reglement.detail,date_invoice:0
+#: field:reglement.detail.avance,date_avance:0
+#: field:reglement.detail.avoir,date_invoice:0
+#: field:reglement.retenu.source,date_retenu:0
+msgid "Date"
+msgstr "Date"
+
+#. module: office_reglement
+#: view:office.cheque:office_reglement.cheque_form_view
+#: field:office.cheque,date_encaissement:0
+#: view:reglement.piece:office_reglement.view_piece_client_form
+#: view:reglement.piece:office_reglement.view_piece_fournisseur_form
+#: view:reglement.piece:office_reglement.view_piece_fournisseur_tree
+#: field:reglement.piece,date_encaissement:0
+msgid "Date Encaissement"
+msgstr "Date Encaissement"
+
+#. module: office_reglement
+#: field:retenue.src.line,date_invoice:0
+msgid "Date Facture"
+msgstr "Date Facture"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement_ref.py:143
+#, python-format
+msgid "Date encaissement ne peut pas etre nul !"
+msgstr "Date encaissement ne peut pas etre nul !"
+
+#. module: office_reglement
+#: field:reglement.banque,designation:0
+#: field:reglement.mode,designation:0
+#: field:reglement.retenu,code:0
+msgid "Designation"
+msgstr "Désignation"
+
+#. module: office_reglement
+#: view:reglement.detail.avance:office_reglement.view_detail_avance_form
+msgid "Detail"
+msgstr "Détails"
+
+#. module: office_reglement
+#: field:office.cheque,currency_id:0
+#: field:reglement.avance,currency_id:0
+#: field:reglement.paiement,currency_id:0
+#: field:reglement.piece,currency_id:0
+msgid "Devise"
+msgstr "Devise"
+
+#. module: office_reglement
+#: selection:office.cheque,state:0
+#: selection:reglement.avance,state:0
+#: view:reglement.paiement:office_reglement.view_account_paiement_serch
+#: selection:reglement.paiement,state:0
+#: selection:reglement.piece,state:0
+#: selection:reglement.retenu.source,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: office_reglement
+#: selection:office.cheque,state:0
+msgid "Emis"
+msgstr "Emis"
+
+#. module: office_reglement
+#: selection:office.cheque,state:0
+msgid "Encaissed"
+msgstr "Encaissé"
+
+#. module: office_reglement
+#: view:reglement.piece:office_reglement.view_piece_client_form
+#: view:reglement.piece:office_reglement.view_piece_fournisseur_form
+msgid "Encaisser"
+msgstr "Encaisser"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:122
+#: code:addons/office_reglement/reglement.py:130
+#: code:addons/office_reglement/reglement.py:136
+#: code:addons/office_reglement/reglement.py:142
+#: code:addons/office_reglement/reglement.py:148
+#: code:addons/office_reglement/reglement1.py:110
+#: code:addons/office_reglement/reglement1.py:118
+#: code:addons/office_reglement/reglement1.py:124
+#: code:addons/office_reglement/reglement1.py:130
+#: code:addons/office_reglement/reglement1.py:136
+#, python-format
+msgid "Error !"
+msgstr "Error !"
+
+#. module: office_reglement
+#: field:account.invoice,statu_retenu:0
+msgid "Etat retenu"
+msgstr "État Retenue"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+msgid "Facture"
+msgstr "Facture"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "Factures"
+msgstr "Factures"
+
+#. module: office_reglement
+#: selection:reglement.avance,type:0
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_tree
+msgid "Fournisseur"
+msgstr "Fournisseur"
+
+#. module: office_reglement
+#: view:reglement.piece:office_reglement.view_account_reglement_piece_serch
+#: selection:reglement.piece,state:0
+msgid "Free"
+msgstr "Libre"
+
+#. module: office_reglement
+#: field:office.cheque,titulaire:0
+#: field:reglement.detail.impaye,titulaire:0
+#: field:reglement.detail.piece,titulaire:0
+#: field:reglement.piece,titulaire:0
+msgid "Holder"
+msgstr "Titulaire"
+
+#. module: office_reglement
+#: field:office.cheque,id:0
+#: field:reglement.avance,id:0
+#: field:reglement.banque,id:0
+#: field:reglement.detail,id:0
+#: field:reglement.detail.avance,id:0
+#: field:reglement.detail.avoir,id:0
+#: field:reglement.detail.impaye,id:0
+#: field:reglement.detail.piece,id:0
+#: field:reglement.mode,id:0
+#: field:reglement.paiement,id:0
+#: field:reglement.piece,id:0
+#: field:reglement.retenu,id:0
+#: field:reglement.retenu.source,id:0
+#: field:retenue.src.line,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: office_reglement
+#: view:reglement.piece:office_reglement.view_account_reglement_piece_serch
+#: selection:reglement.piece,state:0
+msgid "Impaid"
+msgstr "Impayé"
+
+#. module: office_reglement
+#: view:reglement.piece:office_reglement.view_piece_client_form
+#: view:reglement.piece:office_reglement.view_piece_fournisseur_form
+msgid "Impayer"
+msgstr "Impayer"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:754
+#: code:addons/office_reglement/reglement.py:760
+#: code:addons/office_reglement/reglement1.py:657
+#: code:addons/office_reglement/reglement1.py:663
+#, python-format
+msgid "Impossible de faire une retenue a la source !"
+msgstr "Impossible de faire une retenue a la source !"
+
+#. module: office_reglement
+#: selection:reglement.piece,state:0
+msgid "Integrated"
+msgstr "Intégré"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_account_invoice
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: office_reglement
+#: view:reglement.detail:office_reglement.view_reglement_detail_tree
+msgid "Invoice Details"
+msgstr "Détails Facture"
+
+#. module: office_reglement
+#: field:reglement.detail,invoice_id:0
+#: field:reglement.retenu.source,retenue_src_lines:0
+msgid "Invoice Ref"
+msgstr "Ref. Facture"
+
+#. module: office_reglement
+#: field:office.cheque,write_uid:0
+#: field:reglement.avance,write_uid:0
+#: field:reglement.banque,write_uid:0
+#: field:reglement.detail,write_uid:0
+#: field:reglement.detail.avance,write_uid:0
+#: field:reglement.detail.avoir,write_uid:0
+#: field:reglement.detail.impaye,write_uid:0
+#: field:reglement.detail.piece,write_uid:0
+#: field:reglement.mode,write_uid:0
+#: field:reglement.paiement,write_uid:0
+#: field:reglement.piece,write_uid:0
+#: field:reglement.retenu,write_uid:0
+#: field:reglement.retenu.source,write_uid:0
+#: field:retenue.src.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: office_reglement
+#: field:office.cheque,write_date:0
+#: field:reglement.avance,write_date:0
+#: field:reglement.banque,write_date:0
+#: field:reglement.detail,write_date:0
+#: field:reglement.detail.avance,write_date:0
+#: field:reglement.detail.avoir,write_date:0
+#: field:reglement.detail.impaye,write_date:0
+#: field:reglement.detail.piece,write_date:0
+#: field:reglement.mode,write_date:0
+#: field:reglement.paiement,write_date:0
+#: field:reglement.piece,write_date:0
+#: field:reglement.retenu,write_date:0
+#: field:reglement.retenu.source,write_date:0
+#: field:retenue.src.line,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:493
+#: code:addons/office_reglement/reglement.py:548
+#: code:addons/office_reglement/reglement.py:600
+#: code:addons/office_reglement/reglement.py:646
+#: code:addons/office_reglement/reglement1.py:415
+#: code:addons/office_reglement/reglement1.py:469
+#: code:addons/office_reglement/reglement1.py:521
+#: code:addons/office_reglement/reglement1.py:567
+#, python-format
+msgid "Le Montant que vous allez payer est superieur au montant restant !"
+msgstr "Le Montant que vous allez payer est superieur au montant restant !"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:330
+#: code:addons/office_reglement/reglement1.py:305
+#, python-format
+msgid "Le cheque a ete utilise dans une autre facture !"
+msgstr "Le cheque a ete utilise dans une autre facture !"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement_avance.py:53
+#, python-format
+msgid "Le montant de l avance est null !"
+msgstr "Le montant de l avance est null !"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:349
+#: code:addons/office_reglement/reglement1.py:324
+#, python-format
+msgid "Les montants de debit et de credit sont differents !"
+msgstr "Les montants de debit et de credit sont differents !"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:201
+#: code:addons/office_reglement/reglement.py:231
+#: code:addons/office_reglement/reglement.py:263
+#: code:addons/office_reglement/reglement.py:298
+#: code:addons/office_reglement/reglement1.py:176
+#: code:addons/office_reglement/reglement1.py:206
+#: code:addons/office_reglement/reglement1.py:238
+#: code:addons/office_reglement/reglement1.py:273
+#, python-format
+msgid "Les montants ont ete modifies !"
+msgstr "Les montants ont ete modifies !"
+
+#. module: office_reglement
+#: view:office.cheque:office_reglement.cheque_form_view
+msgid "Mark as encaissed"
+msgstr "Marquer comme encaissé"
+
+#. module: office_reglement
+#: field:office.cheque,date_echance:0
+#: field:reglement.detail.impaye,date_echance:0
+#: field:reglement.detail.piece,date_echance:0
+#: field:reglement.piece,date_echance:0
+msgid "Maturity Date"
+msgstr "Date d'échéance"
+
+#. module: office_reglement
+#: view:reglement.mode:office_reglement.view_mode_reglement_form
+msgid "Mode"
+msgstr "Mode"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_mode_reg_form
+#: model:ir.ui.menu,name:office_reglement.menu_mode_reg_form
+#: field:reglement.avance,mode_reglement:0
+#: view:reglement.mode:office_reglement.view_reglement_mode_tree
+msgid "Mode Reglement"
+msgstr "Mode Règlement"
+
+#. module: office_reglement
+#: field:reglement.detail.avance,montant:0
+#: field:reglement.detail.avoir,montant:0
+#: field:reglement.detail.impaye,montant:0
+msgid "Montant"
+msgstr "Montant"
+
+#. module: office_reglement
+#: field:reglement.avance,montant_avance:0
+#: field:reglement.detail.avance,montant_avance:0
+msgid "Montant Avance"
+msgstr "Montant Avance"
+
+#. module: office_reglement
+#: field:office.cheque,montant_monnaie_local:0
+#: field:reglement.piece,montant_monnaie_local:0
+msgid "Montant Monnaie Locale"
+msgstr "Montant Monnaie Locale"
+
+#. module: office_reglement
+#: field:reglement.avance,montant_paye:0
+msgid "Montant Paye"
+msgstr "Montant Payé"
+
+#. module: office_reglement
+#: view:reglement.detail.impaye:office_reglement.view_reglement_detail_impaye_form
+#: view:reglement.detail.impaye:office_reglement.view_reglement_detail_impaye_tree
+msgid "Montant Pièce"
+msgstr "Montant Pièce"
+
+#. module: office_reglement
+#: field:reglement.detail.avoir,montant_reglement:0
+msgid "Montant Reglement"
+msgstr "Montant Règlement"
+
+#. module: office_reglement
+#: field:office.cheque,montant_paye:0
+#: field:reglement.detail.avance,montant_rest:0
+#: field:reglement.detail.avoir,montant_rest:0
+#: field:reglement.detail.impaye,montant_rest:0
+#: field:reglement.piece,montant_paye:0
+msgid "Montant Restant"
+msgstr "Montant Restant"
+
+#. module: office_reglement
+#: field:retenue.src.line,montant_retenu:0
+msgid "Montant Retenu"
+msgstr "Montant Retenu"
+
+#. module: office_reglement
+#: field:retenue.src.line,ttc:0
+msgid "Montant Total TTC"
+msgstr "Montant Total TTC"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement1.py:647
+#, python-format
+msgid "Montant Total des factures est inferieur a 1000 DT"
+msgstr "Montant Total des factures est inferieur a 1000 DT"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:744
+#, python-format
+msgid "Montant Total des factures est inferieur à '%s' DT"
+msgstr "Montant Total des factures est inferieur à '%s' DT"
+
+#. module: office_reglement
+#: field:reglement.detail.avoir,num_facture:0
+msgid "N Avoir"
+msgstr "Num. Avoir"
+
+#. module: office_reglement
+#: field:office.cheque,num_cheque_traite:0
+#: field:reglement.piece,num_cheque_traite:0
+msgid "N Cheque/Traite"
+msgstr "Num. Chèque/Traité"
+
+#. module: office_reglement
+#: field:office.cheque,nature_piece:0
+#: field:reglement.piece,nature_piece:0
+msgid "Nature Piece"
+msgstr "Nature Pièce"
+
+#. module: office_reglement
+#: selection:office.cheque,nature_piece:0
+#: selection:reglement.piece,nature_piece:0
+msgid "Notre Propre Piece"
+msgstr "Notre Propre Pièce"
+
+#. module: office_reglement
+#: field:reglement.detail.piece,num_cheque_traite:0
+msgid "Number"
+msgstr "Numéro"
+
+#. module: office_reglement
+#: field:reglement.detail.piece,reglement_id:0
+msgid "Numero Payment"
+msgstr "Numéro Paiement"
+
+#. module: office_reglement
+#: field:reglement.detail.piece,piece_id:0
+msgid "Numero Piece"
+msgstr "Numéro Pièce"
+
+#. module: office_reglement
+#: view:reglement.avance:office_reglement.view_avance_form
+msgid "Numéro Pièce"
+msgstr "Numéro Pièce"
+
+#. module: office_reglement
+#: selection:reglement.avance,state:0
+msgid "Paid"
+msgstr "Payé"
+
+#. module: office_reglement
+#: field:account.invoice,montant_paye:0
+#: field:reglement.detail,montant_paye:0
+msgid "Paid Amount"
+msgstr "Montant Payé"
+
+#. module: office_reglement
+#: view:reglement.piece:office_reglement.view_account_reglement_piece_serch
+#: selection:reglement.piece,state:0
+msgid "Partially Impaid"
+msgstr "Partiellement Impayé"
+
+#. module: office_reglement
+#: selection:reglement.avance,state:0
+msgid "Partially Paid"
+msgstr "Partiellement Payé"
+
+#. module: office_reglement
+#: field:office.cheque,partner_id:0
+#: field:reglement.piece,partner_id:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:529
+#: code:addons/office_reglement/reglement.py:632
+#: code:addons/office_reglement/reglement1.py:450
+#: code:addons/office_reglement/reglement1.py:553
+#, python-format
+msgid "Pas de partenaire choisi !"
+msgstr "Pas de partenaire choisi !"
+
+#. module: office_reglement
+#: field:reglement.paiement,date_reglement:0
+msgid "Payment Date"
+msgstr "Date Paiement"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_detail_impaye
+#: model:ir.model,name:office_reglement.model_reglement_detail_piece
+#: view:reglement.detail.piece:office_reglement.view_reglement_detail_piece_form
+msgid "Payment Document"
+msgstr "Pièces Paiements"
+
+#. module: office_reglement
+#: view:reglement.detail.piece:office_reglement.view_reglement_detail_piece_tree
+msgid "Payment Documents"
+msgstr "Pièces Paiements"
+
+#. module: office_reglement
+#: field:reglement.detail.impaye,reglement_id:0
+msgid "Payment ID"
+msgstr "ID. Paiement"
+
+#. module: office_reglement
+#: field:office.cheque,mode_reglement:0
+#: field:reglement.piece,mode_reglement:0
+msgid "Payment Mode"
+msgstr "Mode de Paiement"
+
+#. module: office_reglement
+#: view:reglement.detail.avance:office_reglement.view_detail_avance_tree
+msgid "Payment on Account Details"
+msgstr "Détails Avance"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+msgid "Payment on account"
+msgstr "Avance"
+
+#. module: office_reglement
+#: field:reglement.detail.avance,avance_id:0
+msgid "Payment on account Ref"
+msgstr "Ref. Avance"
+
+#. module: office_reglement
+#: selection:office.cheque,nature_piece:0
+#: selection:reglement.piece,nature_piece:0
+msgid "Piece Client"
+msgstr "Pièce Client"
+
+#. module: office_reglement
+#: field:reglement.detail.impaye,piece_id:0
+msgid "Piece ID"
+msgstr "ID. Pièce"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_piece_client_form
+#: model:ir.ui.menu,name:office_reglement.menu_piece_client_form
+msgid "Piece Reglement Client"
+msgstr "Piece Reglement Client"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_piece_fournisseur_form
+#: model:ir.ui.menu,name:office_reglement.menu_piece_fournisseur_form
+msgid "Piece Reglement Fournisseur"
+msgstr "Piece Reglement Fournisseur"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.menu_piece_reglement
+msgid "Pièce"
+msgstr "Pièce"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "Pièces paiement"
+msgstr "Pièces paiement"
+
+#. module: office_reglement
+#: field:retenue.src.line,invoice_id:0
+msgid "Ref Facture"
+msgstr "Ref Facture"
+
+#. module: office_reglement
+#: field:reglement.retenu.source,retenu_id:0
+msgid "Ref Retenu"
+msgstr "Ref. Retenue"
+
+#. module: office_reglement
+#: field:office.cheque,code_piece:0
+#: field:reglement.avance,code_avance:0
+#: field:reglement.banque,code:0
+#: field:reglement.mode,code:0
+#: field:reglement.paiement,code_reglement:0
+#: field:reglement.piece,code_piece:0
+msgid "Reference"
+msgstr "Référence"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "Refund"
+msgstr "Avoir"
+
+#. module: office_reglement
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_tree
+msgid "Refund Détails"
+msgstr " Détails Avoir"
+
+#. module: office_reglement
+#: field:reglement.detail.avoir,avoir_id:0
+msgid "Refund Ref"
+msgstr "Ref. Avoir"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.menu_reglement
+#: field:reglement.detail,reglement_id:0
+#: field:reglement.detail.avance,reglement_id:0
+#: field:reglement.detail.avoir,reglement_id:0
+#: view:reglement.piece:office_reglement.view_piece_client_form
+#: view:reglement.piece:office_reglement.view_piece_client_tree
+#: view:reglement.piece:office_reglement.view_piece_fournisseur_form
+#: view:reglement.piece:office_reglement.view_piece_fournisseur_tree
+msgid "Reglement"
+msgstr "Règlement"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_avance
+msgid "Reglement Avance"
+msgstr "Reglement Avance"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_banque
+msgid "Reglement Banque"
+msgstr "Reglement Banque"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_reglement_form_client
+msgid "Reglement Client"
+msgstr "Reglement Client"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_detail
+#: field:reglement.paiement,reglement_detail:0
+msgid "Reglement Detail"
+msgstr " Détails Règlement"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_detail_avance
+#: field:reglement.paiement,reglement_detail_avance:0
+msgid "Reglement Detail Avance"
+msgstr "Détails Règlement Avance"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_detail_avoir
+#: field:reglement.paiement,reglement_detail_avoir:0
+msgid "Reglement Detail Avoir"
+msgstr " Détails du Règlement Avoir"
+
+#. module: office_reglement
+#: field:reglement.paiement,reglement_detail_impaye:0
+msgid "Reglement Detail Impaye"
+msgstr "Détails Règlement Impayé"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_reglement_form_fournisseur
+msgid "Reglement Fournisseur"
+msgstr "Reglement Fournisseur"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_mode
+msgid "Reglement Mode"
+msgstr "Reglement Mode"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_paiement
+msgid "Reglement Paiement"
+msgstr "Reglement Paiement"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_office_cheque
+#: model:ir.model,name:office_reglement.model_reglement_piece
+#: field:reglement.paiement,reglement_details_piece:0
+msgid "Reglement Piece"
+msgstr "Règlement Pièce"
+
+#. module: office_reglement
+#: view:office.cheque:office_reglement.cheque_form_view
+msgid "Reset to draft"
+msgstr "Réinitialiser le brouillon"
+
+#. module: office_reglement
+#: field:retenue.src.line,montant_rest:0
+msgid "Reste à payer"
+msgstr "Reste à payer"
+
+#. module: office_reglement
+#: view:reglement.detail:office_reglement.view_reglement_detail_form
+#: view:reglement.detail:office_reglement.view_reglement_detail_tree
+#: field:reglement.detail,montant_rest:0
+#: view:reglement.detail.avance:office_reglement.view_detail_avance_form
+#: view:reglement.detail.avance:office_reglement.view_detail_avance_tree
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_form
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_tree
+#: view:reglement.detail.impaye:office_reglement.view_reglement_detail_impaye_form
+#: view:reglement.detail.impaye:office_reglement.view_reglement_detail_impaye_tree
+msgid "Reste à payer"
+msgstr "Reste à payer"
+
+#. module: office_reglement
+#: view:reglement.retenu:office_reglement.view_regelment_retenu_form
+#: view:reglement.retenu:office_reglement.view_retenu_tree
+msgid "Retenu"
+msgstr "Retenue"
+
+#. module: office_reglement
+#: model:ir.model,name:office_reglement.model_reglement_retenu
+msgid "Retenu A La Source"
+msgstr "Retenu A La Source"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.menu_retenu_source
+msgid "Retenue"
+msgstr "Retenue"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_retenu_source_client_form
+#: model:ir.ui.menu,name:office_reglement.menu_retenu_source_client_item
+msgid "Retenue Source Client"
+msgstr "Retenue Source Client"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_retenu_source_fournisseur_form
+#: model:ir.ui.menu,name:office_reglement.menu_retenu_source_fournisseur_item
+msgid "Retenue Source Fournisseur"
+msgstr "Retenue Source Fournisseur"
+
+#. module: office_reglement
+#: field:retenue.src.line,retenu_src_id:0
+msgid "Retenue source Ref"
+msgstr "Retenue source Ref"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_tree
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_tree
+msgid "Retenue à la source"
+msgstr "Retenue à la source"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_tree
+msgid "Retenue à la source client"
+msgstr "Retenue à la source client"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+msgid "Règlement"
+msgstr "Règlement"
+
+#. module: office_reglement
+#: field:reglement.retenu.source,name:0
+msgid "Référence"
+msgstr "Référence"
+
+#. module: office_reglement
+#: view:reglement.detail.avance:office_reglement.view_detail_avance_form
+#: view:reglement.detail.avance:office_reglement.view_detail_avance_tree
+msgid "Référence Avance"
+msgstr "Référence Avance"
+
+#. module: office_reglement
+#: view:reglement.detail:office_reglement.view_reglement_detail_form
+#: view:reglement.detail:office_reglement.view_reglement_detail_tree
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_form
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_tree
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "Référence Facture"
+msgstr "Référence Facture"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.menu_regelement_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "Réglement"
+msgstr "Réglement"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.menu_regelement_client
+msgid "Réglement Client"
+msgstr "Réglement Client"
+
+#. module: office_reglement
+#: model:ir.ui.menu,name:office_reglement.menu_regelement_fournisseur
+msgid "Réglement Fournisseur"
+msgstr "Réglement Fournisseur"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_tree_customer
+#: view:reglement.paiement:office_reglement.view_reglement_tree_supplier
+msgid "Settlement"
+msgstr "Règlement"
+
+#. module: office_reglement
+#: field:office.cheque,state:0
+#: field:reglement.avance,state:0
+#: field:reglement.paiement,state:0
+#: field:reglement.piece,state:0
+#: field:reglement.retenu.source,state:0
+msgid "State"
+msgstr "État"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+#: view:reglement.paiement:office_reglement.view_reglement_tree_supplier
+#: selection:reglement.retenu.source,type_in_out:0
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: office_reglement
+#: selection:reglement.paiement,type_invoice:0
+msgid "Supplier Invoices"
+msgstr "Supplier Invoices"
+
+#. module: office_reglement
+#: selection:reglement.paiement,type:0
+msgid "Supplier Payment"
+msgstr "Paiement Fournisseur"
+
+#. module: office_reglement
+#: view:reglement.detail:office_reglement.view_reglement_detail_form
+#: view:reglement.detail:office_reglement.view_reglement_detail_tree
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_form
+#: view:reglement.detail.avoir:office_reglement.view_reglement_detail_avoir_tree
+#: field:reglement.detail.avoir,ttc:0
+#: selection:reglement.retenu,type:0
+msgid "TTC"
+msgstr "TTC"
+
+#. module: office_reglement
+#: selection:reglement.retenu,type:0
+msgid "TVA"
+msgstr "TVA"
+
+#. module: office_reglement
+#: field:reglement.retenu,designation:0
+#: field:reglement.retenu.source,designation:0
+msgid "Taux"
+msgstr "Taux"
+
+#. module: office_reglement
+#: model:ir.actions.act_window,name:office_reglement.action_retenu_form
+#: model:ir.ui.menu,name:office_reglement.menu_retenu_form
+msgid "Taux Source Retenu"
+msgstr "Taux Source Retenu"
+
+#. module: office_reglement
+#: field:office.cheque,taux:0
+#: field:reglement.piece,taux:0
+msgid "Taux de Change"
+msgstr "Taux de Change"
+
+#. module: office_reglement
+#: field:retenue.src.line,tva:0
+msgid "Taxes Total "
+msgstr "Taxes Total "
+
+#. module: office_reglement
+#: field:reglement.paiement,montant_total_apaye:0
+msgid "Total A Paiement"
+msgstr "Total A Paiement"
+
+#. module: office_reglement
+#: field:reglement.detail,ttc:0
+msgid "Total Amount"
+msgstr "Montant Total"
+
+#. module: office_reglement
+#: field:reglement.paiement,montant_total_paye:0
+msgid "Total Payer"
+msgstr "Total Payer"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "Total Reste"
+msgstr "Total Reste"
+
+#. module: office_reglement
+#: field:reglement.retenu.source,total_retenu:0
+msgid "Total Retenu"
+msgstr "Total Retenu"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "Total Retenue"
+msgstr "Total Retenue"
+
+#. module: office_reglement
+#: field:reglement.retenu.source,total_reste_a_payer:0
+msgid "Total Retse "
+msgstr "Total Retse "
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+#: field:reglement.retenu.source,total_ttc:0
+msgid "Total TTC"
+msgstr "Total TTC"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_tree_customer
+#: view:reglement.paiement:office_reglement.view_reglement_tree_supplier
+msgid "Total paiement"
+msgstr "Total paiement"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_tree_customer
+#: view:reglement.paiement:office_reglement.view_reglement_tree_supplier
+msgid "Total à payer"
+msgstr "Total à payer"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "Transaction à la caisse"
+msgstr "Transaction à la caisse"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:361
+#: code:addons/office_reglement/reglement.py:385
+#, python-format
+msgid "Transaction déjà faite!"
+msgstr "Transaction déjà faite!"
+
+#. module: office_reglement
+#: field:office.cheque,type:0
+#: field:reglement.paiement,type:0
+#: field:reglement.piece,type:0
+#: field:reglement.retenu,type:0
+#: field:reglement.retenu.source,type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: office_reglement
+#: field:reglement.retenu.source,type_in_out:0
+msgid "Type (IN / OUT)"
+msgstr "Type (IN / OUT)"
+
+#. module: office_reglement
+#: field:reglement.avance,type:0
+msgid "Type Avance"
+msgstr "Type Avance"
+
+#. module: office_reglement
+#: field:reglement.paiement,type_invoice:0
+msgid "Type Invoice"
+msgstr "Type Invoice"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_tree
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_tree
+msgid "Type retenue"
+msgstr "Type retenue"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_client
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "Unpaid"
+msgstr "Impayé"
+
+#. module: office_reglement
+#: view:reglement.detail.impaye:office_reglement.view_reglement_detail_impaye_tree
+msgid "Unpaid Détails"
+msgstr "Détails des Impayés"
+
+#. module: office_reglement
+#: view:reglement.piece:office_reglement.view_piece_client_form
+#: view:reglement.piece:office_reglement.view_piece_fournisseur_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "Valider"
+msgstr "Valider"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:744
+#: code:addons/office_reglement/reglement1.py:647
+#, python-format
+msgid "Verifier Factures !"
+msgstr "Verifier Factures !"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:760
+#: code:addons/office_reglement/reglement1.py:663
+#, python-format
+msgid "Verifier Type de la taxe"
+msgstr "Verifier Type de la taxe"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:754
+#: code:addons/office_reglement/reglement1.py:657
+#, python-format
+msgid "Verifier les factures"
+msgstr "Verifier les factures"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:122
+#: code:addons/office_reglement/reglement1.py:110
+#, python-format
+msgid "Verifier les lignes de details facture."
+msgstr "Verifier les lignes de details facture."
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:130
+#: code:addons/office_reglement/reglement1.py:118
+#, python-format
+msgid "Verifier les lignes de pieces paiement."
+msgstr "Verifier les lignes de pieces paiement."
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:142
+#: code:addons/office_reglement/reglement1.py:130
+#, python-format
+msgid "Verifier les lignes des avances."
+msgstr "Verifier les lignes des avances."
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:136
+#: code:addons/office_reglement/reglement1.py:124
+#, python-format
+msgid "Verifier les lignes des avoirs."
+msgstr "Verifier les lignes des avoirs."
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:148
+#: code:addons/office_reglement/reglement1.py:136
+#, python-format
+msgid "Verifier les lignes des impayes."
+msgstr "Verifier les lignes des impayes."
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:493
+#: code:addons/office_reglement/reglement.py:548
+#: code:addons/office_reglement/reglement.py:600
+#: code:addons/office_reglement/reglement.py:646
+#: code:addons/office_reglement/reglement1.py:415
+#: code:addons/office_reglement/reglement1.py:469
+#: code:addons/office_reglement/reglement1.py:521
+#: code:addons/office_reglement/reglement1.py:567
+#, python-format
+msgid "Veuillez modifier ce montant  !"
+msgstr "Veuillez modifier ce montant  !"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement_ref.py:143
+#, python-format
+msgid "Veuillez saisir la date d'encaissement"
+msgstr "Veuillez saisir la date d'encaissement"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement_avance.py:53
+#, python-format
+msgid "Veuillez saisir un montant different de 0 !"
+msgstr "Veuillez saisir un montant different de 0 !"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:529
+#: code:addons/office_reglement/reglement.py:632
+#: code:addons/office_reglement/reglement1.py:450
+#: code:addons/office_reglement/reglement1.py:553
+#, python-format
+msgid "Veuillez selectionner un partenaire  !"
+msgstr "Veuillez selectionner un partenaire  !"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:263
+#: code:addons/office_reglement/reglement1.py:238
+#, python-format
+msgid "Veuillez verifier avoir de montant %s"
+msgstr "Veuillez verifier avoir de montant %s"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:231
+#: code:addons/office_reglement/reglement1.py:206
+#, python-format
+msgid "Veuillez verifier avoir numero %s"
+msgstr "Veuillez verifier avoir numero %s"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:298
+#: code:addons/office_reglement/reglement1.py:273
+#, python-format
+msgid "Veuillez verifier imapye numero %s"
+msgstr "Veuillez verifier imapye numero %s"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:201
+#: code:addons/office_reglement/reglement1.py:176
+#, python-format
+msgid "Veuillez verifier la facture %s"
+msgstr "Veuillez verifier la facture %s"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement_ref.py:132
+#, python-format
+msgid "Veuillez verifier la piece"
+msgstr "Veuillez verifier la piece"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:330
+#: code:addons/office_reglement/reglement1.py:305
+#, python-format
+msgid "Veuillez verifier la piece %snum_cheque_traite"
+msgstr "Veuillez verifier la piece %snum_cheque_traite"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:349
+#: code:addons/office_reglement/reglement1.py:324
+#, python-format
+msgid "Veuillez verifier toutes les pieces de paiement !!"
+msgstr "Veuillez verifier toutes les pieces de paiement !!"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:361
+#: code:addons/office_reglement/reglement.py:385
+#, python-format
+msgid "Vous avez dejà passé ce reglement à la caisse"
+msgstr "Vous avez dejà passé ce reglement à la caisse"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement.py:737
+#: code:addons/office_reglement/reglement1.py:640
+#, python-format
+msgid "Vous devez saisir au moin une facture"
+msgstr "Vous devez saisir au moin une facture"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_tree_customer
+#: view:reglement.paiement:office_reglement.view_reglement_tree_supplier
+msgid "crée par"
+msgstr "crée par"
+
+#. module: office_reglement
+#: selection:office.cheque,type:0
+#: selection:reglement.piece,type:0
+msgid "dep"
+msgstr "dep"
+
+#. module: office_reglement
+#: selection:office.cheque,type:0
+#: selection:reglement.piece,type:0
+msgid "in"
+msgstr "in"
+
+#. module: office_reglement
+#: code:addons/office_reglement/reglement_ref.py:132
+#, python-format
+msgid "le montant du cheque ne peut pas etre nul !"
+msgstr "le montant du cheque ne peut pas etre nul !"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "montant_rest"
+msgstr "montant_rest"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "montant_retenu"
+msgstr "montant_retenu"
+
+#. module: office_reglement
+#: selection:office.cheque,type:0
+#: selection:reglement.piece,type:0
+msgid "out"
+msgstr "out"
+
+#. module: office_reglement
+#: view:reglement.paiement:office_reglement.view_reglement_form_fournisseur
+msgid "payment on account"
+msgstr "Avance"
+
+#. module: office_reglement
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_client_form
+#: view:reglement.retenu.source:office_reglement.view_retenu_source_form
+msgid "ttc"
+msgstr "ttc"
+

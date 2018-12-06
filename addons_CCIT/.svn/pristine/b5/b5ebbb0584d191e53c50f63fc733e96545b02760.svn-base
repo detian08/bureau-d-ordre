@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+	<record id="wkf_courriel_entrant" model="workflow">
+	    <field name="name">courriel.entrant.wkf</field>
+	    <field name="osv">cci.courriel.entrant</field>
+	    <field name="on_create">True</field>
+	</record>
+
+	<!-- liste des activités-->
+        <record id="act_draft_entrant" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_entrant"/>
+            <field name="flow_start">True</field>
+            <field name="name">draft</field>
+        </record>   
+<!--soumis à la DG-->
+        <record id="act_to_soumdg_entrant" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_entrant"/>
+            <field name="name">soumdg</field>
+            <field name="kind">function</field>
+            <field name="action">to_soumdg()</field>
+        </record>
+<!--soumis à la DG-->
+
+<!--traiter-->
+        <record id="act_traite_entrant" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_entrant"/>
+            <field name="name">traite</field>
+            <field name="kind">function</field>
+            <field name="action">traite()</field>
+        </record>
+<!--traiter-->
+<!--DG soumettre au président-->
+        <record id="act_to_soumpr_entrante" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_entrant"/>
+            <field name="name">soumpre</field>
+            <field name="kind">function</field>
+            <field name="action">to_soumpre()</field>
+        </record>
+<!--DG soumettre au président-->
+
+
+        <record id="act_to_soumpre_entrant" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_courriel_entrant"/>
+            <field name="name">soumdg</field>
+            <field name="kind">function</field>
+            <field name="action">to_soumpre()</field>
+        </record>
+
+
+	<!-- liste des transitions-->
+        <record id="trans_draft_to_soumpre_entrant" model="workflow.transition">
+            <field name="act_from" ref="act_draft_entrant"/>
+            <field name="act_to" ref="act_to_soumpre_entrant"/>
+            <field name="condition">True</field>
+            <field name="signal">a_valider_bt</field>
+        </record>
+
+       <record id="trans_to_soumpre_to_soumdg_entrant" model="workflow.transition">
+            <field name="act_from" ref="act_to_soumpre_entrant"/>
+            <field name="act_to" ref="act_to_soumdg_entrant"/>
+            <field name="condition">True</field>
+            <field name="signal">valider_bt</field>
+        </record>
+
+
+
+	<record id="trans_to_soumdg_traite_entrant" model="workflow.transition">
+            <field name="act_from" ref="act_to_soumdg_entrant"/>
+            <field name="act_to" ref="act_traite_entrant"/>
+            <field name="condition">True</field>
+            <field name="signal">a_traite_bt</field>
+        </record>
+
+
+
+
+	<record id="trans_to_soumdg_to_soumpre_entrant" model="workflow.transition">
+            <field name="act_from" ref="act_to_soumdg_entrant"/>
+            <field name="act_to" ref="act_to_soumpre_entrant"/>
+            <field name="condition">True</field>
+            <field name="signal">a_soumpre_bt</field>
+        </record>
+</data>
+</openerp>

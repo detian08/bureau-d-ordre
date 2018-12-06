@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+
+
+      <!--  <record id="courriel_entrant_a_faire_template_form_view_inherited" model="ir.ui.view">
+            <field name="name">CCI.Form.courriel.inherited</field>
+            <field name="model">cci.courriel.entrant</field>
+		<field name="type">form</field>
+		<field name="inherit_id" ref='cci_bureau_ordre.courriel_template_form_view'/>
+            	<field name="arch" type="xml">
+        	
+
+
+
+
+
+               </field>        
+</record>-->
+
+	<record id="courriel_a_fair_entrant_template_tree_view_inherited" model="ir.ui.view">
+	<field name="name">cci.tree.courriel.entrant.inherited</field>
+	<field name="model">cci.courriel.entrant</field>
+	<field name="type">tree</field>
+ 	<field name="arch" type="xml">
+            <tree>
+                 <field name="name" />
+                <field name="note_id" />
+                <field name="type_id" />
+                <field name="mode_id" />
+                <field name="degre_id" />
+                <field name="importance_id" />
+                <field name="urgent_id" />
+                <field name="date_courriel" />
+                <field name="state"/>
+            </tree>
+        </field>
+	</record>
+
+
+
+
+
+
+	<record id="action_a_faire_courriel_entrant_form" model="ir.actions.act_window">
+            <field name="name">A faire Courriels entrants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel.entrant</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+
+
+
+
+
+
+
+
+        </record>
+
+
+        <record id="action_courriel_entrant_a_faire_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="courriel_a_fair_entrant_template_tree_view_inherited"/>
+            <field name="act_window_id" ref="action_a_faire_courriel_entrant_form"/>
+        </record>
+
+        <record id="action_a_faire_courriel_entrant_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="courriel_entrant_template_form_view_inherited"/>
+            <field name="act_window_id" ref="action_a_faire_courriel_entrant_form"/>
+        </record>
+
+<!--messanging redirecte-->
+<!--action_request_redirect 10-10-2017 add by marwa bm-->
+        <record id="action_courriel_a_faire_entrant_redirect" model="ir.actions.server">
+            <field name="name">Messaging Redirection (Document / Inbox)</field>
+            <field name="condition">True</field>
+            <field name="model_id" ref="model_cci_courriel_entrant"/>
+            <field name="code">action = pool.get('cci.courriel.entrant').message_redirect_action(cr, uid, context)</field>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+           <field name="context">{'default_model':cci.courriel.entrant}</field>
+
+        </record>
+       <menuitem action="action_a_faire_courriel_entrant_form" id="menu_courriel_faire_entrant" name='Courriels entrants' sequence="1" parent='menu_courriel_faire'/>
+
+
+
+
+
+      
+
+    </data>
+</openerp>

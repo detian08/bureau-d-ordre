@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="courriel_entrant_template_form_view_inherited" model="ir.ui.view">
+            <field name="name">CCI.Form.courriel.inherited</field>
+            <field name="model">cci.courriel.entrant</field>
+		<field name="type">form</field>
+		<field name="inherit_id" ref='cci_bureau_ordre.courriel_template_form_view'/>
+            	<field name="arch" type="xml">
+        	
+
+ 
+		<header position='inside'>
+			
+				<button string="Soumettre au Président" name="a_valider_bt" states="draft" type="workflow" class="oe_highlight" groups="cci_bureau_ordre.group_directeur_ccit,cci_bureau_ordre.group_agent_bureau,cci_bureau_ordre.group_assistant_ccit"/>
+
+
+				<!--<button string="Soumettre à l'assistant du Président" name="a_valider_assistant_bt" states="draft" type="workflow" class="oe_highlight"/>-->
+
+
+				<button string="Soumettre à la DG" name="valider_bt" states="to_soumpre" type="workflow" class="oe_highlight" groups="cci_bureau_ordre.group_presedent_ccit"/>
+
+				<button string="Traiter" name="a_traite_bt" states="to_soumdg" type="workflow" class="oe_highlight" groups="cci_bureau_ordre.group_directeur_ccit"/>
+
+    				<button string="Retour au Président" name="a_retour_bt" states="to_soumdg,to_conseiller" type="workflow" class="oe_highlight" groups="cci_bureau_ordre.group_directeur_ccit,cci_bureau_ordre.group_conseiller_ccit"/>
+
+<!--soumis au conseiller/consultant-->
+				<button string="Soumettre au conseiller" name="conseiller_bt" states="to_soumpre" type="workflow" class="oe_highlight" groups="cci_bureau_ordre.group_presedent_ccit"/>
+
+
+				<field name="state" widget="statusbar" statusbar_visible="draft,to_soumpre,to_soumdg"/>
+			
+
+                </header>
+		<group id="entete" position='before'>
+			<group>
+		                <field name="ref_entrant" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+		<!--<field name="is_presedent"  />  -->
+			</group>
+		</group>
+ 
+               </field>        
+</record>
+
+
+
+
+
+	<record id="courriel_entrant_template_tree_view_inherited" model="ir.ui.view">
+	<field name="name">cci.tree.courriel.entrant.inherited</field>
+	<field name="model">cci.courriel.entrant</field>
+	<field name="type">tree</field>
+ 	<field name="arch" type="xml">
+            <tree create="false" delete="false" noupdate= "false">
+		<field name="ref_entrant" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+		<field name="note_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+		<field name="type_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+		<field name="mode_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+		<field name="degre_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+		<field name="importance_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+		<field name="urgent_id" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />
+		<field name="date_courriel" attrs="{'readonly': [ ('state', '!=', 'draft')]}" />  
+
+		<field name="state"/>      
+            </tree>
+        </field>
+	</record>
+
+
+	<record id="action_courriel_entrant_form" model="ir.actions.act_window">
+            <field name="name">Courriels entrants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cci.courriel.entrant</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+
+        <field name="domain" >[('state','in',('draft','to_soumpre','to_soumdg','to_conseiller','traite',))]</field>
+
+        </record>
+
+
+        <record id="action_courriel_entrant_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="courriel_entrant_template_tree_view_inherited"/>
+            <field name="act_window_id" ref="action_courriel_entrant_form"/>
+        </record>
+
+        <record id="action_courriel_entrant_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="courriel_entrant_template_form_view_inherited"/>
+            <field name="act_window_id" ref="action_courriel_entrant_form"/>
+        </record>
+
+<!--messanging redirecte-->
+<!--action_request_redirect 10-10-2017 add by marwa bm-->
+        <record id="action_courriel_entrant_redirect" model="ir.actions.server">
+            <field name="name">Messaging Redirection (Document / Inbox)</field>
+            <field name="condition">True</field>
+            <field name="model_id" ref="model_cci_courriel_entrant"/>
+            <field name="code">action = pool.get('cci.courriel.entrant').message_redirect_action(cr, uid, context)</field>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+           <field name="context">{'default_model':cci.courriel.entrant}</field>
+        </record>
+       <menuitem action="action_courriel_entrant_form" id="menu_courriel_entrant" name='Courriels entrants' sequence="1" parent='menu_courriel_parent'/>
+
+</data>
+</openerp>

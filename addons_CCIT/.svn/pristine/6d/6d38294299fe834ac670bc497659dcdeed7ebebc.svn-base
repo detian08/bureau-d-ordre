@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="note_template_form_view" model="ir.ui.view">
+            <field name="name">CCI Form note</field>
+            <field name="model">courriel.note</field>
+            <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                        <field name="name" />
+
+                        <field name="date_note" invisible='1'/>
+		<field name="dept_id" option="{'create_edit': false}" invisible='1'/>
+                      
+		</group>
+		<!--<notebook><page string="Note">
+
+		</page></notebook>-->
+                
+            </sheet>
+        </form>
+	    </field>
+
+	</record>
+
+	<record id="note_template_tree_view" model="ir.ui.view">
+            <field name="name">note.template.note.tree</field>
+            <field name="model">courriel.note</field>
+            <field name="arch" type="xml">
+            <tree string="Note">
+
+                <field name="name" />
+		<field name="date_note" />
+		<field name="dept_id" option="{'create_edit': false}"/>
+             
+            </tree>
+            </field>
+        </record>
+
+        <record id="note_template_action" model="ir.actions.act_window">
+            <field name="name">Note</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">courriel.note</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="note_template_tree_view"/>
+
+        </record>
+
+
+        <menuitem action="note_template_action"  id="menu_note_template_action" parent="menu_courriel_configuration" sequence="1" />
+
+    </data>
+</openerp>

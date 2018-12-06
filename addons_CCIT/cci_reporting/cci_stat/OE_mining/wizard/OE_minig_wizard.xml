@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+<!--==================== wizard View ==================-->
+        <record id='wizard_mining_view' model="ir.ui.view">
+            <field name="name">OE Mining</field>
+            <field name="model">cci.wizard.oe.mining</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+		<form>
+			<group>
+
+				<field name="product_id"/>
+
+				<field name="consultation_ids" string="Consultations"/>
+				<field name="tags_id"/>
+
+
+
+				<field name="survey_ids" domain="[('product_id','=', product_id)]" string="Sondages"/>
+				
+
+
+			
+
+			</group>
+
+			<button string="Créer rapport" name ="create_report" type="object" class="oe_highlight"/>
+		</form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_wizard_mining">
+            <field name="name">OE Mining</field>
+            <field name="res_model">cci.wizard.oe.mining</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_mining_view"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem id="wizard_mining_marketing" name="OE Mining" action="action_wizard_mining" parent="menu_wizard_claim_list_report"/>
+
+
+	
+
+        <report string="Rapport fiche oe mining"
+          model="res.partner"
+          auto="True"
+          name="jasper_oe_minig_print"
+          rml="cci_reporting/cci_stat/OE_mining/report/report_oe_mining.jrxml"
+          id="fiche_oe_minig"
+          menu="False"/>
+
+        </data>
+    </openerp>
+
+
+

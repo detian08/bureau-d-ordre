@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    
+    	<record model="ir.ui.view" id="view_invoice_picking_graph">
+            <field name="name">invoice.picking.graph</field>
+            <field name="model">invoice.picking</field>
+            <field name="arch" type="xml">
+                <graph string="Invoices" type="pivot">
+                    <field name="partner_id" type="row"/>
+                   <!-- <field name="currency_id" type="row"/>-->
+                    <field name="date_invoice_picking" interval="month" type="col"/>
+                    <field name="amount_total" type="measure" string="Total TTC" />
+                    <field name="amount_untaxed" type="measure" string="Total HT"/>
+                   <!-- <field name="currency_id" type="col"/>-->
+                </graph>
+            </field>
+        </record>
+        <record id="action_invoice_picking_graph" model="ir.actions.act_window">
+            <field name="name">Analyse Factures Ventes</field>
+            <field name="res_model">invoice.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','out_invoice')]</field>
+            <field name="context">{'default_type':'out_invoice', 'type':'out_invoice'}</field>
+           <!-- <field name="search_view_id" ref="account.view_account_invoice_filter"/>-->
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+
+              </p><p>
+               
+              </p><p>
+                
+              </p>
+            </field>
+        </record>
+        
+        
+        
+        
+                <menuitem action="action_invoice_picking_graph" id="menu_action_invoice_picking_graph" parent="invoice_dashboard.menu_board_journal_1"/>
+        
+        <record id="action_invoice_picking_in_graph" model="ir.actions.act_window">
+            <field name="name">Analyse Factures Achat</field>
+            <field name="res_model">invoice.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','in_invoice')]</field>
+            <field name="context">{'default_type':'in_invoice', 'type':'in_invoice'}</field>
+           <!-- <field name="search_view_id" ref="account.view_account_invoice_filter"/>-->
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+
+              </p><p>
+               
+              </p><p>
+                
+              </p>
+            </field>
+        </record>
+        <menuitem action="action_invoice_picking_in_graph" id="menu_action_invoice_picking_in_graph" parent="invoice_dashboard.menu_board_journal_1"/>
+        
+	</data>
+</openerp>

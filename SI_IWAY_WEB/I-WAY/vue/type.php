@@ -1,0 +1,36 @@
+<?php
+include"../Classes/admin.class.php";
+include"../Classes/visiteur.class.php";
+$type=$_POST['v'];
+if($type=='Administrateur'){
+$s=new admin();
+$s->login=$_POST['email'];
+$s->pass=$_POST['pass'];
+$res=$s->rechsession();
+$l=$res->fetchColumn(0);
+if($l==0)
+{
+header("location:../Vue/err.html");}
+else{
+	session_start();
+$_SESSION['login']=$s->login;
+$_SESSION['pass']=$s->pass;
+header("location:../Vue/securise.php");}
+}
+else
+{
+$v=new visiteur();
+$v->email=$_POST['email'];
+$v->pass=$_POST['pass'];
+$r=$v->rechsession();
+$c=$r->fetchColumn(0);
+if($c==0)
+header("location:../Vue/err.html");
+else{
+	session_start();
+$_SESSION['login']=$v->email;
+$_SESSION['pass']=$v->pass;
+header("location:../Vue/securise1.php");
+}
+}
+?>

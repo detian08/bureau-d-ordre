@@ -1,0 +1,51 @@
+<openerp>
+    <data>
+        <record id='cci_wizard_fiche_courriel_entrant_view_form' model="ir.ui.view">
+            <field name="name">Fiche Courriel Entrant</field>
+            <field name="model">cci.wizard.fiche.courriel.entrant</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="2" fill="0" colspan="2">
+                        <field name="permanent" string="Permanent" ></field>
+                        <field name="date_debut" string="Date début" attrs="{'invisible':[('permanent','=',True)]}"></field>
+                        <field name="date_fin" string="Date fin" attrs="{'invisible':[('permanent','=',True)]}" ></field>
+                        <field name="state"></field>
+                    </group>
+
+                    <group colspan="2">
+                        <div class="oe_button_box oe_right">
+                            <button special="cancel" icon="gtk-cancel" string="Cancel"/>
+                            <button type="object" name="create_report" icon="gtk-go-forward" string="Creer Rapport"/>
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_wizard_fiche_courriel_entrant">
+            <field name="name">Fiche Courriel Entrant</field>
+            <field name="res_model">cci.wizard.fiche.courriel.entrant</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cci_wizard_fiche_courriel_entrant_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+	<menuitem id="menu_report_parent" parent="menu_courriel" name="Rapports" sequence="4"/>
+        <menuitem id="submenu_wizard_fiche_courriel_entrant_report" name="Fiche courriel entrant" action="action_wizard_fiche_courriel_entrant"  parent="menu_report_parent"/>
+
+
+        <report string="Rapport fiche courriel entrant"
+          model="cci.courriel.entrant"
+          auto="True"
+          name="jasper_fiche_courriel_entrant_print"
+          rml="cci_bureau_ordre/reporting/Fiche_courriel_entrant/report/fiche_courriel_entrant_report.jrxml"
+          id="fiche_courriel_entrant"
+          menu="False"/>
+
+        </data>
+    </openerp>
+
+
+

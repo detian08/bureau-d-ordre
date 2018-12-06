@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+    <template id="index" page="True">
+      <t t-call="website.layout">
+        <div class="oe_structure">
+          <div class="container">
+            <center><h3>Title</h3></center>
+            <p>
+              
+Nos offres de stages
+Rejoignez-nous et perturbez le marché de l'entreprise!
+
+Avec une petite équipe de personnes intelligentes, nous délivrons le le logiciel de gestion d'entreprise le plus perturbant du monde. Odoo est complètement libre, super facile, bourré de fonctions (+3000 applis) et son offre en ligne est 3x moins chère que les concurrents traditionnels tels que SAP et Ms Dynamics.
+
+Rejoignez-nous, nous vous offrons une chance incroyable d'apprendre à développer et de faire partie d'une expérience excitante et d'une équipe incroyable.
+<!--ajouter des bouton-->
+<br/>
+              <a t-attf-href="/page/stages/detail" class="btn btn-info">Stages Détail</a>
+	      <a t-attf-href="/web/login" class="btn btn-info">button</a>
+            </p>
+<br/>
+<!--c'est our que les sujets de stage sera cliquable-->
+
+<center><h3>Stages Détailpage</h3></center>
+
+
+    
+			<li t-foreach="companies" t-as="company">
+		          
+		              <!--<li><a href="/page/stages/detail"><span t-esc="company.sujet"></span></a></li>-->
+ 				<h3 class="media-heading">
+			      		<a t-attf-href="/page/stages/detail/#{ slug(company) }"><span t-esc="company.sujet"></span></a>
+				</h3>
+
+			      <!--<li><a t-attf-href="/page/stages/apply/#{ stage.id }"><span t-esc="company.sujet"></span></a></li>-->
+		              <small><span t-esc="company.reference"></span></small>
+		          
+			</li>
+ 
+		
+</div>
+
+        </div>
+      </t>
+    </template>
+
+<!--template detail pour postuler-->
+<template id="detail" name='stage Detail'>
+    <t t-call="website.layout">
+    <t t-set="additional_title">Stage Detail</t>
+    <div id="wrap" class="js_iway_pfe.iway_pfe">
+        <div class="oe_structure"/>
+
+        <section class="container mt8">
+            <div class="row">
+              <div class="col-sm-5">
+                  <ol class="breadcrumb mb0">
+                      <li><a href="/page/stages">Nos Stages</a></li>
+                      <li class="active"><span t-field="stage.sujet"></span></li>
+                  </ol>
+              </div>
+		<div class="col-sm-7">
+                  <t t-call="website.publish_management">
+                      <t t-set="object" t-value="stage"/>
+                      <t t-set="publish_edit" t-value="True"/>
+                  </t>
+              </div>
+            </div>
+        </section>
+
+        <div class="oe_structure">
+            <section data-snippet-id="cta" class="mt16 mb16">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center mt16 mb16">
+                            <a t-attf-href="/page/stages/apply/#{ stage.id }" class="btn btn-primary btn-lg">Apply</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </t>
+</template>
+<!--template detail pour postuler-->
+
+           <!-- <title>Academy</title>
+            <t t-foreach="teachers" t-as="teacher">
+              <p><t t-esc="teacher"/></p>
+            </t>-->
+<!--ajout 
+        <template id="index">
+ <t t-call="website.layout">
+
+
+        <div class="oe_structure">
+          <div class="container">
+            <center><h3>Company detail page</h3></center>
+            <t t-foreach="companies" t-as="company">
+              <h4><span t-esc="company.sujet"/></h4>
+              <table class="table-striped table">
+                <tr>
+                  <td>Phone:</td>
+                  <td><span t-esc="company.reference"/></td>
+                </tr>
+                <tr>
+                  <td>E-mail:</td>
+                  <td><span t-esc="company.date_debut_pfe"/></td>
+                </tr>
+                <tr>
+                  <td>Address:</td>
+                  <td>
+                   <span t-esc="company.street"/> <span t-esc="company.street2"/><br/>
+                    <span t-esc="company.city"/> <span t-esc="company.country_id.name"/>
+                  </td>
+                </tr>
+              </table>
+            </t>
+          </div>
+        </div>
+
+</t>
+        </template>-->
+<!--
+
+    <template id="detail" name="Detailpage">
+      <t t-call="website.layout">
+        <div class="oe_structure">
+          <div class="container">
+            <center><h3>Company detail page</h3></center>
+            <t t-foreach="companies" t-as="company">
+              <h4><span t-esc="company.name"/></h4>
+              <table class="table-striped table">
+                <tr>
+                  <td>Phone:</td>
+                  <td><span t-esc="company.phone"/></td>
+                </tr>
+                <tr>
+                  <td>E-mail:</td>
+                  <td><span t-esc="company.email"/></td>
+                </tr>
+                <tr>
+                  <td>Address:</td>
+                  <td>
+                    <span t-esc="company.street"/> <span t-esc="company.street2"/><br/>
+                    <span t-esc="company.city"/> <span t-esc="company.country_id.name"/>
+                  </td>
+                </tr>
+              </table>
+            </t>
+          </div>
+        </div>
+      </t>
+    </template>-->
+<!--tempalte apply
+
+<template id="detail" name='Stage Detail'>
+    <t t-call="website.layout">
+    <t t-set="additional_title">Stage Detail Apply</t>
+    <div id="wrap" class="js_iway_pfe.iway_pfe">
+        <div class="oe_structure"/>
+
+        <section class="container mt8">
+            <div class="row">
+              <div class="col-sm-5">
+                  <ol class="breadcrumb mb0">
+                      <li><a href="/jobs">Nos stages</a></li>
+                      <li class="active"><span t-field="stage.sujet"></span></li>
+                  </ol>
+              </div><div class="col-sm-7">
+                  <t t-call="website.publish_management">
+                      <t t-set="object" t-value="stage"/>
+                      <t t-set="publish_edit" t-value="True"/>
+                  </t>
+              </div>
+            </div>
+        </section>
+
+ 
+
+        <div class="oe_structure">
+            <section data-snippet-id="cta" class="mt16 mb16">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center mt16 mb16">
+                            <a t-attf-href="/page/stages/apply/#{ stage.id }" class="btn btn-primary btn-lg">Apply</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </t>
+</template>
+tempalte apply-->
+<!--page stages-->
+<record id="stages" model='website.menu'>
+<field name="url">/page/stages</field>
+<field name="name">Stages</field>
+<field name="parent_id" ref="website.main_menu"/>
+</record>
+
+
+<record id="stages_pfe" model='website.menu'>
+<field name="url">/page/stages/pfe</field>
+<field name="name">PFE</field>
+<field name="parent_id" ref="stages"/>
+</record>
+
+
+    </data>
+</openerp>
+
+

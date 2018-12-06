@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+<record id="sale_order_inherit" model="ir.ui.view">
+<field name="name">sale_order_form_view</field>
+<field name="model">sale.order</field>
+<field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_done']" position="after">
+        <button  string="Bon de commande Achat" type="object"
+                          name="facturer"/>
+
+            </xpath>
+<!--ajouter bouton créer une commande achat-->
+<xpath expr="//button[@name='print_quotation']" position="after">
+        <button  string="Créer une commande achat" type="object"
+                          name="facturer"/>
+            </xpath>
+
+
+       </field>
+</record>
+
+</odoo>
+

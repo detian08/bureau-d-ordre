@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+        <template inherit_id="website_sale.products_item" id='products_item_inherit'>
+            <xpath expr="//div[@class='product_price']/b" position="after">
+                <span id="hors_taxe">(Hors taxe)</span>
+            </xpath>
+
+
+            <xpath expr="//div[@class='product_price']" position="attributes">
+                <attribute name="id">product_price_web</attribute>
+                 <!--<attribute name="style">visibility:hidden;</attribute>-->
+                <!--<attribute name="script">(function() {var z = document.getElementsByClassName('oe_currency_value');var l = document.getElementsByClassName('oe_currency_value').length;)</attribute>-->
+                <!--for (i=0;i<l;i++) { if (i % 2 != 0) { var e = z.item(i).innerHTML console.log("z.."+e) if (e == '0,000') { console.log("z.."+i) document.getElementById("product_price_web").style.display = 'none'; } } }})"</attribute>-->
+            </xpath>
+        </template>
+
+        <!--<template id="assets_editor" inherit_id="website.assets_editor" name="My scripts">-->
+             <!--<xpath expr="." position="inside">-->
+            <!--<script type="text/javascript" src="/office_website/static/src/js/file.js"></script>-->
+             <!--</xpath>-->
+         <!--</template>-->
+
+
+        <template id="assets_editor" inherit_id="website.assets_frontend" name="My scripts">
+             <xpath expr="." position="inside">
+            <script type="text/javascript" src="/office_website/static/src/js/file.js"></script>
+             </xpath>
+         </template>
+
+        <template id="layout_inherit" inherit_id="website.layout">
+            <!--changer le style du layout et choisir quelle id du layout vous voulez changer -->
+            <xpath expr="//div" position="inside">
+                <link rel="stylesheet" href="/office_website/static/src/css/bootstrap.css"/>
+                <link rel="stylesheet" href="/office_website/static/src/css/custom.css"/>
+                <link rel="stylesheet" href="/office_website/static/src/css/custom_style.css"/>
+                <!--<script type="text/javascript" src="/office_website/static/src/js/file.js"></script>-->
+
+
+            </xpath>
+
+            
+
+            <!--donner un id pour le header-->
+            <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+                <attribute name="id">header-style-1</attribute>
+            </xpath>
+
+            <!-- Changer le footer-->
+            <xpath expr="//footer" position="replace">
+                <div class="oe_structure" data-oe-id="776" data-oe-source-id="769" data-oe-xpath="/data/xpath/div"
+                     data-oe-model="ir.ui.view" data-oe-field="arch">
+                    <footer id="footer-style-1">
+                        <div class="container">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="widget">
+                                    <div class="title">
+                                        <h3>E.P.S</h3>
+
+                                        <ul class="footer-links">
+                                            <li>
+                                                <a href="/page/eps">Qui sommes-nous?</a>
+                                            </li>
+                                            <li>
+                                                <a href="/shop">Nos prestations et produits</a>
+                                            </li>
+                                            <li>
+                                                <a href="/page/mentions">Mentions légales</a>
+                                            </li>
+                                            <li>
+                                                <a href="/page/conditions">Conditions générales de vente</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="widget">
+                                    <div class="title">
+                                        <h3>Nos catégories</h3>
+                                        <ul class="footer-links">
+                                            <li>
+                                                <a href="/shop/category/formation-3">
+                                                Matériel destiné pour la formation
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/shop/category/rangement-medical-4">
+                                                Matériel de rangement médical
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/shop/category/reanimation-et-diagnostic-5">
+                                                Matériel de réanimation et diagnostic
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/shop/category/immobilisation-et-d-evacuation-6">
+                                                Matériel d'immobilisation et d'évacuation
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="widget">
+                                    <div class="title">
+                                        <h3>Contact</h3>
+                                        <ul class="footer-links">
+                                            <li>
+                                                <a href="/page/contactus">Contacter E.P.S.</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="widget">
+                                    <div class="title">
+                                        <h3>Newsletter</h3>
+                                    </div>
+                                    <div class="newsletter_widget">
+                                        <p>Abonnez-vous à notre newsletter pour recevoir des nouvelles, mises à jour,
+                                            trucs gratuits et nouvelles versions par email. Nous ne faisons pas de spam.
+                                        </p>
+                                        <form action="/newsletter/thankyou" method="post" id="newsletter-validate-detail"
+                                              class="newsletter_form">
+                                            
+                                
+                                            <input name="email" id="newsletter"
+                                                   class="form-control required-entry validate-email"
+                                                   placeholder="Entrer votre adresse email ..." type="email"  data-rule="email" data-msg="Please enter a valid email"/>
+                                                   <div class="validation"></div>
+                                            <button type="submit" title="Subscribe" class="btn btn-primary pull-right">
+                                                Inscrivez - vous
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+
+                <section id="copyrights" data-oe-id="770" data-oe-source-id="769" data-oe-xpath="/data/xpath/section"
+                         data-oe-model="ir.ui.view" data-oe-field="arch">
+                    <div class="container">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="copyright-text" itemscope="itemscope" itemtype="http://schema.org/Organization">
+
+                                Copyright &amp;copy; <span t-field="res_company.name" itemprop="name">Company name
+                                </span>   Tous droits réservés
+                            </div>
+                            <!--<ul class="list-inline js_language_selector mt16" t-if="(request.website_multilang and len(languages) &gt; 1) or editable">
+                                <li t-foreach="languages" t-as="lg">
+                                    <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"
+                                    t-att-data-default-lang="editable and 'true' if lg[0] == website.default_lang_code else None"
+                                    t-att-data-lang="lg[0]"
+                                    class="js_change_lang"
+                                    >
+                                    <t t-esc="lg[1].split('/').pop()"/>
+                                    </a>
+                                </li>
+                                <li groups="base.group_website_publisher">
+                                    <t t-set="url_return" t-value="url_for('', '[lang]') + '?' + keep_query()"/>
+                                    <a t-attf-href="/web#action=base.action_view_base_language_install&amp;website_id=#{website.id}&amp;url_return=#{url_return}">
+                                    <i class="fa fa-plus-circle"/>
+                                    Ajouter une langue...
+                                    </a>
+                                </li>
+                            </ul>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6" ><!--clearfix">-->
+                            <!--bouton pour scroller vers haut-->
+                            <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: block;">
+                                <i class="fa fa-angle-up"></i>
+                            </a>
+                            <div class="footer-menu">
+                                <ul class="menu">
+                                    <a href= "https://www.facebook.com/FirstAidEquipement/?ref=ts" target="_blank" title="Facebook">
+                                        <ul class="fa fa-2x fa-facebook fa-lg">
+                                        </ul>
+                                    </a>
+                                    <a href= "http://www.youtube.com" target="_blank" title="Youtube">
+                                        <ul class="fa fa-2x fa-youtube fa-lg">
+                                        </ul>
+                                    </a>
+                                    <a href= "https://www.linkedin.com/company/-eps-tunisie/" target="_blank" title ="linkedin">
+                                        <ul class="fa fa-2x fa-linkedin fa-lg">
+                                        </ul>
+                                    </a>
+                                    <a href = "mailto:contact@eps-tunisie.com" target="_blank" title="Google">
+                                        <ul class="fa fa-2x fa-envelope fa-lg">
+                                        </ul>
+                                    </a>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </xpath>
+            <!--Menu avant header-->
+        <xpath expr="//body/div['id=wrawrap']" position="before">
+            <div id="preheader" class="bg-alpha">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul id="contact" class="list-inline">
+                                    <li class="home hidden-xs">
+                                        <a href="/"><i class="fa fa-home fa-1x" title='Accueil'></i></a>
+                                    </li>
+                                    <li class="home visible-xs-inline-block">
+                                        <a href="/page/website.contactus"><i class="fa fa-envelope fa-1x"></i>Contact</a>
+                                    </li>
+                                    <li class="hidden-xs hidden-sm">
+                                        <a href="/page/website.contactus"><i class="fa fa-map-marker fa-1x"></i>Contactez nous</a>
+                                    </li>
+                                    <li class="hidden-xs">
+                                        <i class="fa fa-phone fa-1x"></i><span>(+216) 71 887 630</span>
+                                    </li>
+                                    <li class="hidden-xs">
+                                        <i class="fa fa-mobile fa-1x"></i><span>(+216) 21 964 778</span>
+                                    </li>
+                                    <li class="hidden-xs">
+                                        <i class="fa fa-envelope fa-1x"></i><a href="mailto:contact@eps-tunisie.com">contact@eps-tunisie.com</a>
+                                    </li>
+                                </ul>
+                                
+                                <div id="social" class="pull-right">
+                                    <a href="https://www.facebook.com/FirstAidEquipement/?ref=ts" title ="Facebook" target="_blank">
+                                        <i class="fa fa-facebook fa-1x"></i>
+                                    </a>
+                                    
+                                    <a href="https://www.linkedin.com/company/-eps-tunisie/" title ="Linkedin" target="_blank">
+                                        <i class="fa fa-linkedin fa-1x"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </xpath>
+        </template>
+
+        <!--ici pour définir votre emplacement du votre logo-->
+        <template id="website.layout_logo_show" inherit_id="website.layout" customize_show="True" name="Show Logo">
+            <xpath expr="//header//a[@class='navbar-brand']" position="replace">
+                <a href="/" class="navbar-brand logo">
+                    <img src="/office_website/static/src/img/your_logo.png" alt='EPS'/>
+                </a>
+            </xpath>
+        </template>
+
+
+        <template id="cart_inherit" inherit_id="website_sale.cart">
+                    <!--enlever la partie -->
+
+            <xpath expr="//div/div[@id='right_column']" position="replace">
+            </xpath>
+            <!-- Pour changer la classe de la div souhaitée -->
+            <xpath expr="//div/div[@class='col-md-8 col-sm-9 oe_cart']" position="attributes">
+                <attribute name='class'>col-md-12 col-sm-9 oe_cart</attribute>
+            </xpath>
+
+            <!--<xpath expr="//div/div/div/div/table[@id='cart_products']" position="after">-->
+                <!--<t t-esc="website_sale_order.amount_untaxed"/>-->
+                <!--<t t-esc="website_sale_order.amount_tax"/>-->
+            <!--</xpath>-->
+                    <!--ajouter deux champs dans la table des produits -->
+            <xpath expr="//div/div/div/div/table[@id='cart_products']" position="replace">
+                <table class='table table-striped table-condensed' id="cart_products" t-if="website_sale_order and website_sale_order.website_order_line">
+                    <thead>
+                        <tr>
+                            <th colspan="2" width="100">Product</th>
+                            <th width="100">Price</th>
+                            <th width="120">Quantity</th>
+                            <th width="100">
+                                <abbr title="Taxes may be updated after providing shipping address">Taxe</abbr>
+                            </th>
+                            <th width="100">Remises %</th>
+                            <th width="120">Sous Total</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <t t-foreach="website_sale_order.website_order_line" t-as="line">
+                          <tr>
+                            <td colspan="2" t-if="not line.product_id.product_tmpl_id"></td>
+
+                            <td align="center" t-if="line.product_id.product_tmpl_id">
+                                <span t-field="line.product_id.image_small"
+                                        t-field-options='{"widget": "image", "class": "img-rounded"}'/>
+                            </td>
+
+                            <td t-if="line.product_id.product_tmpl_id">
+                                <div>
+                                    <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
+                                        <strong t-esc="line.product_id.with_context(display_default_code=False).display_name"/>
+                                    </a>
+                                </div>
+                                <div class="text-muted" t-esc="'\n'.join(line.name.splitlines()[1:])"/>
+                            </td>
+
+                            <td class="text-center" name="price">
+                                <del class="text-danger" t-att-style="'' if line.product_id.lst_price &gt; line.discounted_price else 'display: none;'" style="text-decoration: line-through; white-space: nowrap;" t-field="line.product_id.lst_price" t-field-options='{"widget": "monetary","from_currency": "line.company_id.currency_id","display_currency": "user_id.partner_id.property_product_pricelist.currency_id"}'/>&amp;nbsp;
+                                <span t-field="line.discounted_price" style="white-space: nowrap;" t-field-options='{"widget": "monetary","from_currency": "website_sale_order.pricelist_id.currency_id","display_currency": "user_id.partner_id.property_product_pricelist.currency_id"}'/>
+                            </td>
+
+                            <td class="text-center"> <!--pour qte et + et - -->
+                                <div class="input-group oe_website_spinner">
+                                    <span class="input-group-addon">
+                                        <a t-attf-href="#" class="mb8 js_add_cart_json" data-no-instant="">
+                                            <i class="fa fa-minus"></i>
+                                        </a>
+                                    </span>
+                                    <input type="text" class="js_quantity form-control"
+                                          t-att-data-line-id="line.id" 
+                                          t-att-data-product-id="line.product_id.id"
+                                          t-att-value="int(line.product_uom_qty)"/> <!--quantité-->
+                                    <span class="input-group-addon">
+                                        <a t-attf-href="#" class="mb8 float_left js_add_cart_json" data-no-instant="">
+                                           <i class="fa fa-plus"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </td>
+
+                              <td> <!--discount-->
+
+                                <div t-esc="line.tax_id.description">
+                                    <span t-field="line.tax_id.description" style="white-space: nowrap;" />
+                                    <!--t-field-options='{-->
+                                    <!--"widget": "monetary",-->
+                                    <!--"from_currency": "website_sale_order.pricelist_id.currency_id",-->
+                                    <!--"display_currency": "user_id.partner_id.property_product_pricelist.currency_id"}'-->
+                                </div>
+                            </td>
+
+                            <td> <!--taxe-->
+
+                                <div t-esc="line.discount">
+                                    <span t-field="line.discount" style="white-space: nowrap;" />
+                                    <!--t-field-options='{-->
+                                    <!--"widget": "monetary",-->
+                                    <!--"from_currency": "website_sale_order.pricelist_id.currency_id",-->
+                                    <!--"display_currency": "user_id.partner_id.property_product_pricelist.currency_id"}'-->
+                                </div>
+                            </td>
+
+                            <td>
+                                <div>
+                                    <span style="white-space: nowrap;" t-field="line.price_subtotal" t-field-options='{"widget": "monetary","from_currency": "website_sale_order.pricelist_id.currency_id","display_currency": "user_id.partner_id.property_product_pricelist.currency_id"}'/>
+                                </div>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+
+
+        </xpath>
+
+    </template>
+<!--pour remplacer le valeur du taxe-->
+    <template id="total_inherit" inherit_id="website_sale.total">
+        <xpath expr="//table[@id='cart_total']" position="replace">
+         <table class='pull-right mb16' id="cart_total" t-if="website_sale_order">
+        <thead>
+            <tr width="120" class="text-muted">
+                <td>Total hors taxe:</td>
+                <td class="text-right">
+                    <span t-field="website_sale_order.amount_untaxed" style="white-space: nowrap;" t-field-options='{
+                        "widget": "monetary",
+                        "from_currency": "website_sale_order.pricelist_id.currency_id",
+                        "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                    }'/>
+                </td>
+            </tr>
+            <tr width="120" class="text-muted" id="order_total_taxes">
+                <td><abbr title="Taxes may be updated after providing shipping address">Taxes:</abbr></td>
+                <td class="text-right">
+                    <span t-field="website_sale_order.amount_tax" style="white-space: nowrap;" t-field-options='{
+                        "widget": "monetary",
+                        "from_currency": "website_sale_order.pricelist_id.currency_id",
+                        "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                    }'/>
+                </td>
+            </tr>
+
+
+            <tr width="100" style="border-top: 1px solid #000" id="order_total">
+                <th><h3>Total: </h3></th>
+                <th class="text-right">
+                  <h3><span t-field="website_sale_order.amount_total" style="white-space: nowrap;" t-field-options='{
+                      "widget": "monetary",
+                      "from_currency": "website_sale_order.pricelist_id.currency_id",
+                      "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                    }'/></h3>
+                </th>
+            </tr>
+
+        </thead>
+    </table>
+        </xpath>
+        <!--<tr id='order_total_taxes' position="replace">-->
+        <!--</tr>-->
+        <!--<xpath expr="//tr[@id=order_total_taxes']" position="attributes">
+            <attribute name='invisible'>1</attribute>
+        </xpath>-->
+    </template>
+
+<!---->
+        <template id="product_price_inherit" inherit_id="website_sale.product_price">
+            <xpath expr="//div/h4/span[@itemprop='price']" position='after'>
+                <p id='taxe' style="font-size : 12px;">( Hors taxe)</p>
+
+                <p id='tva' style="font-size : 10px; color :#8a6d3b;"> 
+                    TVA <t style="font-size : 18px;  " t-esc="tva"/>
+                </p>
+            </xpath>
+        </template>
+<!--Affichage de la quantité de chaque produit-->
+        <template id="product_inherit" inherit_id="website_sale.product">
+            <xpath expr="//div/div/h1[@itemprop='name']" position='after'>
+                <p style="font-size : 18px; color : #428bca;"> Quantité disponible : 
+                    <t style="font-size : 18px;  " t-esc="quantity"/> 
+                </p>
+               
+            </xpath>
+        </template>
+
+        
+
+
+
+        <!--<template id="website.layout_copyrights" inherit_id="website.layout" customize_show="True" name="hide copy rights">-->
+        <!--<xpath expr="//section[@id='copyrights']" position="replace">-->
+        <!--</xpath>-->
+        <!--</template>-->
+    </data>
+</openerp>

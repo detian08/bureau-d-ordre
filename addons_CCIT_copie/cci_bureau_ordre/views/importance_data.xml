@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+<!--id = nom du module.id-->
+
+
+*
+    <record model="courriel.important" id="cci_bureau_ordre.oui_important">
+        <field name="name">Important</field>
+    </record>
+    <record model="courriel.important" id="cci_bureau_ordre.non_important">
+        <field name="name">Non Important</field>
+    </record>
+ <record model="courriel.important" id="important_other">
+        <field name="name">Autres</field>
+    </record>
+</data>
+</openerp>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		
+		<record model="category.university" id="id_university_1">
+			<field name="logo"></field>
+			<field name="abbreviation">IIT</field>
+			<field name="name">International Institute of Technologies - Sfax</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="website">http://www.iit-nau.com/</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="establishment" ref="id_establishment_1"></field>
+			
+		</record>
+		
+		<record model="category.university" id="id_university_2">
+			<field name="logo"></field>
+			<field name="abbreviation">IPSAS</field>
+			<field name="name">Private Polytechnic Institute of Advanced Sciences of Sfax (IPSAS)</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="website">http://ipsas-ens.net/</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="establishment" ref="id_establishment_4"></field>
+			
+		</record>
+		
+		<record model="category.university" id="id_university_3">
+			<field name="logo"></field>
+			<field name="abbreviation">ISIMS</field>
+			<field name="name">Higher Institute of Computer Science and Multimedia od Sfax</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="website">http://www.isimsf.rnu.tn/</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="establishment" ref="id_establishment_2"></field>
+			
+		</record>
+		
+		<record model="category.university" id="id_university_4">
+			<field name="logo"></field>
+			<field name="abbreviation">ENIS</field>
+			<field name="name">National School of Engineers of Sfax</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="website">http://www.enis.rnu.tn</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="establishment" ref="id_establishment_2"></field>
+		
+		</record>
+
+		<record model="category.university" id="id_university_5">
+			<field name="logo"></field>
+			<field name="abbreviation">ENIT</field>
+			<field name="name">National School of Engineers of Tunis</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="website">http://www.enit.rnu.tn</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="establishment" ref="id_establishment_3"></field>
+		
+		</record>
+	
+	</data>
+</openerp>

@@ -1,0 +1,94 @@
+<openerp>
+    <data>
+
+
+        <record id="office_document_alfresco_produit_filter" model="ir.ui.view">
+            <field name="name">office.document.alfresco.produit.search</field>
+            <field name="model">office.document.alfresco.produit</field>
+            <field name="arch" type="xml">
+                <search string="xxx">
+                    <field name="product_default_code" string="Référence produit"/>
+                    <field name="produit_id" string="Désignation produit"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Désignation produit" icon="terp-personal" domain="[]"
+                                context="{'group_by':'produit_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="document_prod_form_view">
+            <field name="name">document.form</field>
+            <field name="model">office.document.alfresco.produit</field>
+            <field name="arch" type="xml">
+                <form string="Document produit Form">
+                    <sheet>
+                        <group>
+                            <field name="node" invisible="True"/>
+                            <field name="nom_fichier"/>
+                            <field name = "product_default_code" />
+                            <button name="download_document" type="object"
+                                    string="Télécharger" class="oe_highlight" context="{'node': node}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="document_prod_tree_view">
+            <field name="name">document.tree</field>
+            <field name="model">office.document.alfresco.produit</field>
+            <field name="arch" type="xml">
+                <tree string="Document produit Tree">
+                    <field name="node" invisible="True"/>
+                    <field name="nom_fichier"/>
+                    <field name = "product_default_code" />
+                    <button name="download_document" type="object"
+                            string="Télécharger" class="oe_highlight" context="{'node': node}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="document_prod_list_action">
+            <field name="name">Documents Produits</field>
+            <field name="res_model">office.document.alfresco.produit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'group_by':'produit_id'}</field>
+        </record>
+
+
+        <!--Pieces Jointes documents produit by  salwa ksila 24/03/217 -->
+        <record id="product_view_form_inherit" model="ir.ui.view">
+            <field name="name">product.normal.view.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Pieces jointes">
+                        <tree create="false">
+                            <field name="document_ids">
+                                <tree string="documents" create="false">
+                                    <field name="nom_fichier"/>
+                                </tree>
+                            </field>
+                            <button name="ajout" type="object"
+                                    string="Ajouter Document" class="oe_edit_only"
+                                    context="{'produit_id': active_id,'name': name,'default_code':default_code}"/>
+                        </tree>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+
+
+        <menuitem id="documents_menu_produit" name="Documents produit" parent="document_menu"
+                  action="document_prod_list_action"
+                  sequence="1"
+                  groups="base.group_sale_manager"/>
+    </data>
+</openerp>

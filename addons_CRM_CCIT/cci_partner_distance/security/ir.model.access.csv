@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+coach_access_res_partner_distance,res.partner.distance,model_res_partner_distance,cci_config_groups.group_coach_cci,1,1,0,1
+user_access_res_partner_distance,res.partner.distance,model_res_partner_distance,cci_config_groups.group_user_cci,1,1,1,1

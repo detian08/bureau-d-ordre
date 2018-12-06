@@ -1,0 +1,49 @@
+<openerp>
+    <data>
+        <record id='cci_wizard_fiche_activite_view_form' model="ir.ui.view">
+            <field name="name">Fiche Activité</field>
+            <field name="model">cci.wizard.fiche.activite</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="2" fill="0" colspan="2">
+                        <field name="responsable_id" string="Responsable" ></field>
+                        <field name="date_debut" string="Date début" ></field>
+                        <field name="date_fin" string="Date fin" ></field>
+                    </group>
+
+                    <group colspan="2">
+                        <div class="oe_button_box oe_right">
+                            <button special="cancel" icon="gtk-cancel" string="Cancel"/>
+                            <button type="object" name="create_report" icon="gtk-go-forward" string="Creer Rapport"/>
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_wizard_fiche_activite">
+            <field name="name">Fiche Activité</field>
+            <field name="res_model">cci.wizard.fiche.activite</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cci_wizard_fiche_activite_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="submenu_wizard_fiche_activite_report" name="Fiche activité" action="action_wizard_fiche_activite"  parent="menu_wizard_claim_list_report"/>
+
+
+        <report string="Rapport fiche activité"
+          model="res.partner"
+          auto="True"
+          name="jasper_fiche_activite_print"
+          rml="cci_reporting/cci_stat/Fiche_activite/report/fiche_activite_report.jrxml"
+          id="fiche_activite"
+          menu="False"/>
+
+        </data>
+    </openerp>
+
+
+

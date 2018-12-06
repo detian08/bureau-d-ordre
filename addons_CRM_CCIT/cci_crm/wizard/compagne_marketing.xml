@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+<!--==================== wizard View ==================-->
+        <record id='wizard_compagne_view' model="ir.ui.view">
+            <field name="name">Compagne Marketing</field>
+            <field name="model">wizard.compagne</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+		<form>
+			<group>
+				<field name="product_id" domain="[('type','!=', 'visite'),('type','!=', 'adhesion'),('state','=', 'validate')]"/>
+				<field name="name"/>
+				<field name="membres_ids"/>
+                <!--<field name="status" widget="progressbar" string=""/>-->
+			</group>
+                        <footer>
+                            <div class="oe_button_box oe_right">
+                                <button string="Lancer Compagne marketing" name ="get_opportunite" type="object" class="oe_highlight"/>
+                                <button special="cancel" icon="gtk-cancel" string="Annuler"/>
+			                </div>
+                    </footer>
+
+		</form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_wizard_compagne">
+            <field name="name">Compagne Marketing</field>
+            <field name="res_model">wizard.compagne</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_compagne_view"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem id="wizard_compagne_marketing" name="Compagne Marketing" action="action_wizard_compagne" parent="base.menu_sales" sequence="5"/>
+        <!--<menuitem id="wizard_product_compagne" name="Lancer Compagne Marketing" action="action_wizard_product" parent="base.menu_sales" sequence="6"/>-->
+
+	<!-- hide lancer compagne marketing for user_cci add by marwa BM 30-08-2017-->
+	<!--<record id="wizard_product_compagne" model="ir.ui.menu">
+		<field name="groups_id" eval="[(6,0, [ref('base.group_no_one'),ref('cci_config_groups.group_coach_cci')])]"/>
+	</record>-->
+
+        <!--<menuitem name="Opportunités" id="menu_crm_opportunities_coach" parent="base.menu_sales" sequence="4" action="crm_case_category_act_oppor_coach" groups="cci_config_groups.group_coach_cci"/>-->
+
+    </data>
+</openerp>

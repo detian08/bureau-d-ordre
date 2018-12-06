@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    	<record id="view_newsletter_form" model="ir.ui.view">
+            <field name="name">office.newsletter.form</field>
+            <field name="model">office.newsletter</field>
+            <field name="arch" type="xml">
+                <form string="Promotion">
+                    <sheet>
+     					<group>
+    						<field name="email"/>
+                        </group>
+                    </sheet> 
+                </form>
+            </field>
+        </record>
+
+        <record id="view_newsletter_tree" model="ir.ui.view">
+            <field name="name">office.newsletter.tree</field>
+            <field name="model">office.newsletter</field>
+            <field name="arch" type="xml">
+                <tree string="Newsletter">
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_newsletter" model="ir.actions.act_window">
+            <field name="name">Newsletter</field>
+            <field name="res_model">office.newsletter</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+        </record>
+
+        <menuitem 
+            name="Newsletter"
+            id="menu_website_newsletter_root"
+            parent="base.marketing_menu"
+            sequence='40'
+            groups="marketing.group_marketing_user"/>
+
+    	<menuitem 
+            name="Newsletter"
+            id="menu_website_newsletter"
+            parent="menu_website_newsletter_root"
+            groups="marketing.group_marketing_user" action="action_newsletter"/>
+    </data>
+</openerp>

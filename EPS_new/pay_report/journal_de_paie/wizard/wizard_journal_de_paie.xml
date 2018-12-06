@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+<!--==================== wizard View ==================-->
+        <record id='wizard_journal_de_paie_view' model="ir.ui.view">
+            <field name="name">wizard.journal.de.paie.view</field>
+            <field name="model">wizard.journal.de.paie</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Fiche de Paie ouvrier" >
+                    <group col="2" fill="0" states="choose" colspan="4">
+                        
+                        <separator colspan="2"/>
+                        <field name="year"/>
+                       
+                        <group colspan="2">
+                            <button special="cancel" icon="gtk-cancel" string="Cancel"/>
+                            <button type="object" name="create_report" icon="gtk-go-forward" string="Creer Rapport"/>
+                        </group>
+                        <field invisible="1" name="state"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_wizard_journal_de_paie">
+            <field name="name">wizard.journal.de.paie.action</field>
+            <field name="res_model">wizard.journal.de.paie</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_journal_de_paie_view"/>
+            <field name="target">new</field>
+        </record>
+<!--==================== report spec ========================-->
+        <report string="Journal de Paie"
+		model="hr.payslip"
+		auto="True"
+		name="jasper_report_journal_de_paie_print"
+		rml="pay_report/journal_de_paie/report/journal_de_paie.jrxml"
+		id="report_journalde_paie"
+		menu="False"
+		/>
+        
+        <menuitem id="submenu_wizard_journal_de_paie" name="Journal de Paie" action="action_wizard_journal_de_paie" parent="menu_hr_root_payroll_report" sequence="30"/>
+
+    </data>
+</openerp>
+

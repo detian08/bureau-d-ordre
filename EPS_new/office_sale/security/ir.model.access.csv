@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inventory_excel_extended_purchase_manager_eps,excel.extended,model_excel_extended,purchase.group_purchase_manager,1,1,1,1
+access_inventory_excel_extended_sale_manager_eps,excel.extended ,model_excel_extended,base.group_sale_manager,1,1,1,1
+access_sale_order_line_portail,sale.order.line,model_sale_order_line,office_groups.portal_template,1,1,1,1
+access_sale_order_portail,sale.order,model_sale_order,office_groups.portal_template,1,1,1,1
+

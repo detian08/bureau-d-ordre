@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<menuitem 
+            name="Slides"
+            id="menu_website_slides_root"
+            sequence="32"
+            parent="base.marketing_menu"
+            groups="marketing.group_marketing_user"/>
+
+       
+       
+
+        <!-- SLIDE.SLIDE -->
+        <record id="view_slide_slide_form" model="ir.ui.view">
+            <field name="name">slide.slide.form</field>
+            <field name="model">slide.image</field>
+            <field name="arch" type="xml">
+                <form string="Slide">
+                    <sheet>
+     					<group>
+     						<field name="image" widget="image" height="64"/>
+    						<field name="name"/>
+    						<field name="description"/>
+    						<field name="image_alt"/>
+    						
+                        </group>
+                    </sheet> 
+                </form>
+            </field>
+        </record>
+
+        <record id="view_slide_slide_tree" model="ir.ui.view">
+            <field name="name">slide.slide.tree</field>
+            <field name="model">slide.image</field>
+            <field name="arch" type="xml">
+                <tree string="Slides">
+					<field name="name"/>
+					<field name="description"/>
+					<field name="image_alt"/>
+					<field name="image" widget="image" height="64"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_slides_slides" model="ir.actions.act_window">
+            <field name="name">Slides</field>
+            <field name="res_model">slide.image</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+        </record>
+        <menuitem action="action_slides_slides" id="submenu_action_slides_slides" parent="menu_website_slides_root" sequence="3"/>
+
+
+
+
+    </data>
+</openerp>

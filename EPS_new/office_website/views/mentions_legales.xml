@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+        <template name="mentions page" id="website.mentions" page="True">
+            <t t-call="website.layout">
+                <section class="blog-wrapper">
+                    <div class="container">
+                        <div>
+                        <h1>Mentions Légales</h1>
+                        <hr class="colorgraph"/>
+
+                        <strong style = "font-size:20px;color:#e2392f;"> Siège Social</strong>
+                        <p>
+                            <strong style = "color:#e2392f;">Equipement de Premiers Secours</strong>
+                            <br/>
+                        </p>
+                        <p> <i class="fa fa-map-marker fa-1x"/> 31, Rue Malaga Résidence Badr El Manar 1,
+                        <br/> 
+                            2092,
+                            <br/>
+                            Tunis, Tunisie
+                            <br/>
+                            <i class="fa fa-phone fa-1x"/>
+                            <strong>Tel :</strong> +216 71 887 630 - <strong><i class="fa fa-file-text-o fa-1x"/> Fax :</strong> +216 71 884 074
+                            <br/>
+
+                            <strong>Site :</strong>
+                            <a href="http://www.eps-tunisie.com" target="_blank" style="color:#e2392f;">http://www.eps-tunisie.com</a>
+                            <br/>
+                            <strong>Suivez nous sur les réseaux sociaux :</strong>
+                            <a href = "https://www.facebook.com/pages/EPS-Tunisie/423243991066609?ref=ts">
+                            <i class="fa fa-facebook-square fa-1x"/></a>
+                        </p>
+
+                        <strong style = "font-size:20px;color:#e2392f;">Cookies :</strong>
+                        <p class="j">
+                            Il peut être procédé à l'implantation de "cookies" dans votre ordinateur.
+                            Un "cookie" ne nous permet pas de vous identifier.
+                            De manière générale, il enregistre des informations relatives à la navigation de votre
+                            ordinateur sur notre site. Vous pouvez vous opposer à l'enregistrement des cookies en
+                            configurant votre navigateur en conséquence. EPS ne garantit pas dans ces conditions
+                            le bon fonctionnement du site web.
+                        </p>
+                        <strong style = "font-size:20px;color:#e2392f;">Liens hypertextes :</strong>
+                        <p class="j">
+                            Le site EPS autorise la mise en place d'un lien hypertexte pointant vers son contenu, sous
+                            réserve de :
+                        </p>
+                        <ul>
+                            <li style ="padding-left:30px;">
+                                * Ne pas utiliser la technique du lien profond ("deep linking"), c'est-à-dire que les
+                                    pages du site www.eps.com.tn ne doivent pas être imbriquées à l'intérieur des pages
+                                    d'un autre site (usage des frames, par exemple), mais accessibles par l'ouverture
+                                    d'une fenêtre.
+                            </li>
+                            <li style ="padding-left:30px;">
+                                <p>* Mentionner dans un lien texte le contenu visé.</p>
+                            </li>
+                        </ul>
+                        <p class="j">
+                            Cette autorisation ne s'applique pas aux sites internet diffusant des informations à
+                            caractères pornographiques, polémiques, homophobes, xénophobes ou pouvant, dans une
+                            plus large mesure porter atteinte à la sensibilité du plus grand nombre.
+                        </p>
+
+                        <strong style = "font-size:20px;color:#e2392f;">Usage du site web :</strong>
+                        <p class="j">
+                            En aucun cas, EPS ne pourra être tenue responsable de quelconques dommages,
+                            directs ou indirects, qui puissent résulter de l'accès a ce site web, ou de son
+                            utilisation, ou de l'accès via ce site a d'autres sites et leur utilisation, dommages
+                            incluant notamment, mais sans limitation, tout préjudice financier ou commercial,
+                            pertes d'exploitation, perte de programmes ou de données dans votre système d'information,
+                            même si EPS a été avisé de la possibilité de survenance de tels dommages.
+                            Toute information est réputée être fournie par EPS "en l'état".
+                        </p>
+                        <p class="j">
+                            EPS peut à tout moment revoir ces dispositions en mettant à jour cette page.
+                            En utilisant ce site web, vous acceptez d'être lié par toute révision de ces dispositions.
+                        </p>
+                    </div>
+                </div>
+                </section>
+            </t>
+        </template>
+
+        <record id="mentions_page_link" model="website.menu">
+            <field name="name">Mentions légales</field>
+            <field name="url">/page/mentions</field>
+        </record>
+
+    </data>
+</openerp>

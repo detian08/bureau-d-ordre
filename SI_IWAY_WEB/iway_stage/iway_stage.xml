@@ -1,0 +1,299 @@
+<!--PFE-->
+<!--form-->
+<openerp>
+    <data>
+<record id="view_iway_pfe_form" model="ir.ui.view">
+        <field name="name">Iway_pfe.Form.View </field>
+        <field name="model">iway_pfe.iway_pfe</field>
+        <field name="arch" type="xml">
+		<form string="iway_pfe">
+			<header>
+                        <button name="action_propose" type="workflow"
+                                string="Retour au proposer"
+                                states="affecter,cloture"/>
+
+                        <button name="action_affecte" type="workflow"
+                                string="affecter" states="propose"
+                                class="oe_highlight"/>
+<!--states="confirmed"-->
+                        <button name="action_cloture" type="workflow"
+                                string="Marquer comme clôturer" 
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visibility='propose,cloture'/>
+			</header>
+		  
+			
+	             <group>
+<group>
+			<field name="sujet"/>
+			<field name="reference"/>
+                        <field name="competence"/>
+ 			<field name="connaissance"/>
+			<field name="date_debut_pfe"/>
+                        <field name="date_fin_pfe"/>
+</group>
+<group>
+			<!--<field name="stagiaire"/>-->
+			<field name="periode"/>
+			<field name="directeur_technique"/>
+			<field name="profil_candidat"/>
+			<field name="stagiaire"/>  
+			<field name="cin"/>
+ </group>
+<group>
+                        <field name="description" style=' max-width: 1150px;  width: 500px'/>
+            		
+		    
+ 			</group>
+</group>
+		 
+		</form>
+	</field> 
+      </record>
+<!--tree-->
+ <record id="view_iway_pfe_tree" model="ir.ui.view">
+        <field name="name">iway_pfe.tree.view </field>
+        <field name="model">iway_pfe.iway_pfe</field>
+        <field name="arch" type="xml">
+		<tree string="iway_pfe"> 
+               	  
+			<field name="sujet"/>
+			<field name="reference"/>
+                        <field name="competence"/>
+			<field name="connaissance"/>
+			<field name="date_debut_pfe"/>
+                        <field name="date_fin_pfe"/>
+			<!--<field name="stagiaire"/>-->
+			<field name="periode"/>
+			<field name="directeur_technique"/>
+			<field name="profil_candidat"/> 
+			<field name="stagiaire"/>
+			<field name="cin"/> 
+                        <field name="description" style=' max-width: 1150px;  width: 500px'/>
+                        <field name="state"/>
+			<field name="type_menu"/>
+		</tree>
+	</field> 
+      </record>
+<!--action-->
+<record model="ir.actions.act_window" id="action_pfe">
+    <field name="name">PFE</field>
+    <field name="res_model">iway_pfe.iway_pfe</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+<!--type ajouter-->
+    <field name="view_id" ref="view_iway_pfe_tree"/>
+    <field name="domain">[('type_menu','=','pfe'),('create_uid','=','uid')]</field>
+    <field name="context">{'type_menu':'pfe'}</field>
+
+	</record>
+<!--sequence sur tous les record tree et form-->
+
+    <record model="ir.actions.act_window.view" id="action_pfe_tree">
+    <field eval="1" name="sequence"/>
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="view_iway_pfe_tree"/><!--view_pfe_tree-->
+    <field name="domain">[('type_menu','=','pfe'),('create_uid','=','uid')]</field>
+    <field name="act_window_id" ref="action_pfe"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_pfe_form">
+    <field eval="2" name="sequence"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_iway_pfe_form"/>
+    <field name="domain">[('type_menu','=','pfe'),('create_uid','=','uid')]</field>
+    <field name="act_window_id" ref="action_pfe"/>
+	</record>
+<!--PFA-->
+<!--form-->
+<record id="view_iway_pfa_form22" model="ir.ui.view">
+        <field name="name">Iway_pfa.Form.View </field>
+        <field name="model">iway_pfe.iway_pfe</field>
+        <field name="arch" type="xml">
+		<form string="iway_pfa">
+			<header>
+                        <button name="action_propose" type="workflow"
+                                string="Retour au proposer"
+                                states="affecter,cloture"/>
+
+                        <button name="action_affecte" type="workflow"
+                                string="affecter" states="propose"
+                                class="oe_highlight"/>
+<!--states="confirmed"-->
+                        <button name="action_cloture" type="workflow"
+                                string="Marquer comme clôturer" 
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visibility='propose,cloture'/>
+			</header>
+		  
+			
+	             <group>
+<group>
+			<field name="sujet"/>
+			<field name="reference"/>
+                        <field name="competence"/>
+			<field name="date_debut_pfe"/>
+</group>
+<group>
+                        <field name="date_fin_pfe"/>
+			<field name="duree"/>
+			<field name="encadreur"/> 
+</group>
+<group>
+ <field name="description" style=' max-width: 1150px;  width: 500px'/>
+            
+		     </group>
+</group>
+		 
+		</form>
+	</field> 
+      </record>
+<!--tree-->
+ <record id="view_iway_pfa22_tree" model="ir.ui.view">
+        <field name="name">iway_pfa.tree.view </field>
+        <field name="model">iway_pfe.iway_pfe</field>
+        <field name="arch" type="xml">
+		<tree string="iway_pfa"> 
+               	  
+			<field name="sujet"/>
+			<field name="reference"/>
+                        <field name="competence"/>
+                       
+			<field name="date_debut_pfe"/>
+                        <field name="date_fin_pfe"/>
+                        <field name="description" style=' max-width: 1150px;  width: 500px'/>
+			<field name="duree"/>
+			<field name="encadreur"/> 
+                        <field name="state"/>
+		</tree>
+	</field> 
+      </record>
+<!--action-->
+    <record model="ir.actions.act_window" id="action_view_iway_pfa22">
+    <field name="name">PFA</field>
+    <field name="res_model">iway_pfe.iway_pfe</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+<!--type ajouter-->
+    <field name="view_id" ref="view_iway_pfa22_tree"/>
+    <field name="domain">[('type_menu','=','pfa'),('create_uid','=','uid')]</field>
+    <field name="context">{'type_menu':'pfa'}</field>
+    </record>
+<!--sequence sur tous les record tree et form-->
+
+    <record model="ir.actions.act_window.view" id="action_view_iway_pfa22_tree">
+    <field eval="1" name="sequence"/>
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="view_iway_pfa22_tree"/><!--view_pfe_tree-->
+    <field name="domain">[('type_menu','=','pfa'),('create_uid','=','uid')]</field>
+    <field name="act_window_id" ref="action_view_iway_pfa22"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_view_iway_pfa22_form">
+    <field eval="2" name="sequence"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_iway_pfa_form22"/>
+    <field name="domain">[('type_menu','=','pfa'),('create_uid','=','uid')]</field>
+    <field name="act_window_id" ref="action_view_iway_pfa22"/>
+	</record>
+<!--STE-->
+<!--form-->
+<record id="view_iway_ste_form22" model="ir.ui.view">
+        <field name="name">Iway_ste.Form.View </field>
+        <field name="model">iway_pfe.iway_pfe</field>
+        <field name="arch" type="xml">
+		<form string="iway_ste">
+			<header>
+                        <button name="action_propose" type="workflow"
+                                string="Retour au proposer"
+                                states="affecter,cloture"/>
+
+                        <button name="action_affecte" type="workflow"
+                                string="affecter" states="propose"
+                                class="oe_highlight"/>
+<!--states="confirmed"-->
+                        <button name="action_cloture" type="workflow"
+                                string="Marquer comme clôturer" 
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visibility='propose,cloture'/>
+			</header>
+		
+			
+	             <group>
+<group>
+
+			<field name="sujet"/>
+			<field name="reference"/>
+                        <field name="competence"/>
+ </group>
+ <group>
+                        
+			<field name="date_debut_pfe"/>
+                        <field name="date_fin_pfe"/>
+			<field name="duree"/>
+			<field name="encadreur"/> 
+</group>
+<group>
+                        <field name="description" style=' max-width: 1150px;  width: 500px'/>
+            
+		     </group>
+</group>
+		 
+		</form>
+	</field> 
+      </record>
+<!--tree-->
+ <record id="view_iway_ste22_tree" model="ir.ui.view">
+        <field name="name">iway_ste.tree.view </field>
+        <field name="model">iway_pfe.iway_pfe</field>
+        <field name="arch" type="xml">
+		<tree string="iway_ste"> 
+               	  
+			<field name="sujet"/>
+			<field name="reference"/>
+                        <field name="competence"/>
+                       
+			<field name="date_debut_pfe"/>
+                        <field name="date_fin_pfe"/>
+                        <field name="description" style=' max-width: 1150px;  width: 500px'/>
+			<field name="duree"/>
+			<field name="encadreur"/> 
+                        <field name="state"/>
+		</tree>
+	</field> 
+      </record>
+<!--action-->
+    <record model="ir.actions.act_window" id="action_view_iway_ste22">
+	    <field name="name">STE</field>
+	    <field name="res_model">iway_pfe.iway_pfe</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	<!--type ajouter-->
+	    <field name="view_id" ref="view_iway_ste22_tree"/>
+	    <field name="domain">[('type_menu','=','ste'),('create_uid','=','uid')]</field>
+	    <field name="context">{'type_menu':'ste'}</field>
+    </record>
+<!--sequence sur tous les record tree et form-->
+
+    <record model="ir.actions.act_window.view" id="action_view_iway_ste22_tree">
+	    <field eval="1" name="sequence"/>
+	    <field name="view_mode">tree</field>
+	    <field name="view_id" ref="view_iway_ste22_tree"/><!--view_pfe_tree-->
+	    <field name="domain">[('type_menu','=','ste'),('create_uid','=','uid')]</field>
+	    <field name="act_window_id" ref="action_view_iway_ste22"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_view_iway_ste22_form">
+	    <field eval="2" name="sequence"/>
+	    <field name="view_mode">form</field>
+	    <field name="view_id" ref="view_iway_ste_form22"/>
+	    <field name="domain">[('type_menu','=','ste'),('create_uid','=','uid')]</field>
+	    <field name="act_window_id" ref="action_view_iway_ste22"/>
+	</record>
+<!--Add menu entry in Settings/Email-->
+<menuitem name="Stage" id="stage_id_inherit" parent="hr.menu_hr_root"/>
+
+<menuitem id="menu_pfe" name="PFE" sequence="10" action="action_pfe" parent="stage_id_inherit"/>
+<menuitem id="menu_pfa" name="PFA" sequence="11" action="action_view_iway_pfa22" parent="stage_id_inherit"/>
+<menuitem id="menu_ste" name="STE" sequence="12" action="action_view_iway_ste22" parent="stage_id_inherit"/>
+ 
+ </data>
+</openerp>

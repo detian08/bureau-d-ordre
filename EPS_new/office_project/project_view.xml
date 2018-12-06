@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<delete model="ir.ui.menu" id="project.menu_projects"/>
+
+<record id="project.menu_project_management" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('office_groups.office_group_manager_purchase'), ref('office_groups.office_group_manager'),ref('office_groups.office_group_gerant_eps')])]"/>
+        </record>
+
+        
+
+<menuitem name="Taches"
+            id="project.menu_project_management"
+            parent="base.menu_main_pm"
+            sequence="1"/>
+ 
+  <record model="ir.ui.menu" id="project.menu_project_management">
+      <field name="name">Taches</field>
+    </record>
+ 
+        <record id="view_edit_project_form_inherit" model="ir.ui.view">
+            <field name="name">project.project.form.inherit</field>
+            <field name="model">project.project</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <button name="set_template" position="replace"/>
+            </field>
+        </record>
+
+
+
+<record id="view_task_form2_inherit" model="ir.ui.view">
+            <field name="name">project.task.form.inherit</field>
+            <field name="model">project.task</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                
+               <field name="stage_id" widget="statusbar" clickable="True"
+                            options="{'fold_field': 'fold'}" position="attributes"> 
+                            
+                            <attribute name="invisible">True</attribute>
+                </field>
+                <xpath expr="//header" position="inside">
+                <button name="action_sent"  string="Envoyer" states="draft" type="object" class="oe_highlight" />
+                <button name="action_accept"  string="Accepter" type="object" class="oe_highlight" attrs="{'invisible':['|',('visibility_button','=',False),('state','not in',['sent'])]}" />
+                <!-- attrs="{'invisible':['|',('visibility_button','=',False),('state','not in',['sent'])]}"-->
+                <button name="action_done"  string="Terminer"  type="object" class="oe_highlight" attrs="{'invisible':['|',('visibility_button','=',False),('state','not in',['waiting'])]}" />
+                   <field name="state" widget="statusbar" />
+
+                </xpath>
+           <!--     <xpath expr="//group/group/field[@name='user_id']" position="after">
+                
+
+                   <field name="user_cc_ids" widget="many2many_tags" />
+
+
+                </xpath>-->
+                
+                <field name="project_id" domain="[('state','not in', ('close', 'cancelled'))]" on_change="onchange_project(project_id)" context="{'default_use_tasks':1}"  position="attributes" >
+                <attribute name="invisible">True</attribute>
+                </field>
+                <field name="reviewer_id"   position="after" >
+                <field name="visibility_button" invisible="1" />
+                </field>
+                 <field name="reviewer_id"   position="attributes" >
+                <attribute name="readonly">True</attribute>
+                </field>
+                
+                <xpath expr="//notebook/page[@string='Extra Info']/group/field[@name='sequence']" position="attributes">
+                
+                   <attribute name="invisible">True</attribute>
+
+                </xpath>
+                
+            </field>
+        </record>
+
+
+ <record id="view_task_tree2_inherit" model="ir.ui.view">
+            <field name="name">project.task.tree.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+            	<field name="project_id" position="attributes">
+            		<attribute name="invisible">True</attribute>
+                </field>
+                <field name="stage_id" position="attributes">
+                	<attribute name="invisible">True</attribute>
+                
+                </field>
+                <field name="total_hours" position="after">
+                	<field name="state"  />
+                
+                </field>
+			</field>
+  </record>
+
+
+
+
+
+
+
+ </data>
+</openerp>

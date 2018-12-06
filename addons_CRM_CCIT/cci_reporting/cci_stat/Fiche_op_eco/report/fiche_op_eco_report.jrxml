@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fiche_op_eco_report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2396694214876032"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;category&apos;]"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/home/mbenmessaoud/Odoo_ERP_Project/addons_CRM/cci_reporting/cci_stat/Fiche_op_eco/report/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sub_sec" class="java.lang.Object"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="date_op" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/date_op]]></fieldDescription>
+	</field>
+	<field name="nom_op" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/nom_op]]></fieldDescription>
+	</field>
+	<field name="mont_op" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[/data/record/mont_op]]></fieldDescription>
+	</field>
+	<field name="nom_op_eco" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/nom_op_eco]]></fieldDescription>
+	</field>
+	<field name="dateAuj" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/dateAuj]]></fieldDescription>
+	</field>
+	<field name="street" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/street]]></fieldDescription>
+	</field>
+	<field name="street2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/street2]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/city]]></fieldDescription>
+	</field>
+	<field name="zip" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/zip]]></fieldDescription>
+	</field>
+	<field name="country" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/country]]></fieldDescription>
+	</field>
+	<field name="category" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/category]]></fieldDescription>
+	</field>
+	<field name="section_code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/section_code]]></fieldDescription>
+	</field>
+	<field name="section" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/section]]></fieldDescription>
+	</field>
+	<field name="mont_op_lost" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[/data/record/mont_op_lost]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/currency]]></fieldDescription>
+	</field>
+	<field name="stat_path" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/stat_path]]></fieldDescription>
+	</field>
+	<variable name="mont_op_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{mont_op}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="58" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FICHE OPÉRATEUR ÉCONOMIQUE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="10" width="105" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Le : " + $F{dateAuj}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="1" width="100" height="50"/>
+				<imageExpression><![CDATA[$F{stat_path} + "logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="449" y="24" width="105" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="96" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="-1" y="1" width="556" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom_op_eco}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="36" width="555" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{street}+" "+$F{street2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="20" width="555" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{city}+" "+$F{zip}+" "+$F{country}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="48" width="555" height="45"/>
+				<dataSourceExpression><![CDATA[$P{sub_sec}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "fiche_op_eco_report_subreport_secteur.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="0" y="0" width="553" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="84" y="0" width="371" height="20" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Opération]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Montant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="85" height="20" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="dd/MM/yy" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="85" height="20" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date_op}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="84" y="0" width="371" height="20" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" "+$F{nom_op}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.000" isBlankWhenNull="true">
+				<reportElement x="455" y="0" width="100" height="20" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mont_op}.setScale(3).toString()+ " " +$F{currency}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23">
+			<textField>
+				<reportElement x="189" y="0" width="167" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="74">
+			<staticText>
+				<reportElement x="414" y="1" width="41" height="20" forecolor="#000000"/>
+				<box>
+					<topPen lineColor="#9E9E9E"/>
+					<leftPen lineColor="#9E9E9E"/>
+					<bottomPen lineColor="#9E9E9E"/>
+					<rightPen lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<textField pattern="###0.000" isBlankWhenNull="true">
+				<reportElement x="455" y="1" width="100" height="20"/>
+				<box>
+					<topPen lineColor="#9E9E9E"/>
+					<leftPen lineColor="#9E9E9E"/>
+					<bottomPen lineColor="#9E9E9E"/>
+					<rightPen lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{mont_op_1}.setScale(3).toString()+ " " +"CFA"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

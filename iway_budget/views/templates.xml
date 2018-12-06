@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+       <record id="budget_forms" model="ir.ui.view">
+           <field name="name">Budget Form</field>
+           <field name="model">budget.budget</field>
+           <field name="arch" type="xml">
+               <form string="Budget">
+
+                   <sheet>
+
+        <div>
+                       <group col="4">
+                           <field name="type_bgt" />
+                           <field name="libelle_bgt"/>
+                           <field name="type_piece"/>
+                           <field name="name"/>
+                           <field name="date_mise"/>
+                       </group>
+                       <notebook>
+                           <page string="Ligne budgetaire" editable="bottom">
+                               <field name="budget_line_ids"/>
+                           </page>
+                           <page string="Rubrique" >
+                           </page>
+                       </notebook>
+
+        </div>
+<group>
+</group>
+
+                       <!--<group>
+                           <field name="mont_remb" attrs="{'invisible':[('state', 'not in', ['envoye'])]}"/>
+                           <field name="motif_rejet" attrs="{'invisible':[('state', 'not in', ['envoye'])]}"/>
+                       </group>-->
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+       <record id="budget_tree" model="ir.ui.view">
+           <field name="name">Budget Tree</field>
+           <field name="model">budget.budget</field>
+           <field name="arch" type="xml">
+               <tree string="Budget">
+                   <field name="type_bgt" />
+                   <field name="libelle_bgt"/>
+                   <field name="type_piece"/>
+                   <field name="name"/>
+                   <field name="date_mise"/>
+               </tree>
+           </field>
+       </record>
+                   <!--<field name="date_reception"/>-->
+                   <!--<field name="id_unique"/>-->
+                   <!--<field name="mont_remb" sum="Montant Total"/>-->
+       <record id="budget_action" model="ir.actions.act_window">
+           <field name="name">Budget</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">budget.budget</field>
+           <field name="view_mode">tree,form</field>
+           <field name="help" type="html">
+             <p class="oe_view_nocontent_create">
+               Cliquer pour créer budget
+             </p><p>
+               <!-- More details about what a user can do with this object will be OK -->
+             </p>
+           </field>
+       </record>
+
+
+        <menuitem name="Budgets" id="budgets_menu" sequence="0"/>
+
+
+<menuitem name="Budgets" id="budget" sequence="1" parent="budgets_menu" />
+
+
+<menuitem name="budget" id="budget_budget" sequence="1" parent="budget"
+action="budget_action"/>
+    </data>
+</openerp>

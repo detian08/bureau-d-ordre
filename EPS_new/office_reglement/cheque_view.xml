@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="cheque_form_view">
+            <field name="name">cheque.form</field>
+            <field name="model">office.cheque</field>
+            <field name="arch" type="xml">
+                <form string="Cheque Form">
+
+                    <header>
+                        <button name="action_draft" type="object"
+                                string="Reset to draft"
+                                states="emis,done"/>
+                        <button name="action_confirm" type="object"
+                                string="Confirm" states="draft"
+                                class="oe_highlight"/>
+                        <button name="action_done" type="object"
+                                string="Mark as encaissed" states="emis"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+
+
+                    <sheet>
+                        <group>
+                            <group>
+
+                                <field name="name" string="Référence"/>
+                                <field name="num_cheque_traite"/>
+                                <field name="mode_reglement"/>
+                                <!--<field name="partner_id" domain="[('customer','=', True)]"/> -->
+                                <field name="partner_id"/>
+
+                                <field name="currency_id"/>
+
+                                <field name="montant_piece"/>
+                                <field name="taux"
+                                       attrs="{'invisible':[('currency_id','=',137)],'required':[('currency_id','!=',137)]}"/>
+                                <field name="montant_monnaie_local"/>
+                                <field name="date_echance" string="Date de création"/>
+                                <field name="date_encaissement" attrs="{'invisible': [('state','=', 'draft')]}"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="num_compte"/>
+                                <field name="banque_id"/>
+                                <field name="agence"/>
+                                <field name="titulaire"/>
+                                <!--field name="nature_piece" /-->
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="cheque_tree_view">
+            <field name="name">cheque.tree</field>
+            <field name="model">office.cheque</field>
+            <field name="arch" type="xml">
+                <tree string="Cheque Tree"
+                      colors="blue:state == 'draft';gray:state =='emis' black:state == 'encaisse'">
+                    <field name="name" string="Référence"/>
+                    <field name="partner_id"/>
+                    <field name="mode_reglement"/>
+                    <field name="num_cheque_traite"/>
+                    <field name="date_echance" string="Date de création"/>
+                    <field name="montant_monnaie_local"/>
+                    <!--field name="nature_piece"/-->
+                    <field name="state"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <!--<record id="office_cheque_form_inherit" model="ir.ui.view">-->
+            <!--<field name="name">office.cheque.form.inherit</field>-->
+            <!--<field name="model">office.cheque</field>-->
+            <!--<field name="inherit_id" ref="office_reglement.view_piece_client_form"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<field name="state" position="replace">-->
+                <!--<header>-->
+
+                    <!--<button name="cheque_draft" string="draft" states="draft" icon="gtk-jump-to" colspan="4"/>-->
+                    <!--<button name="cheque_emis" string="Emis" states="emis" icon="gtk-jump-to" colspan="2"/>-->
+                    <!--<button name="cheque_encaisse" string="Encaisser" states="Encaisser" icon="gtk-jump-to"-->
+                    <!--colspan="2"/>-->
+                    <!--<field name="state" widget="statusbar"/>-->
+                <!--</header>-->
+                <!--</field>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="office_cheque_tree_inherit" model="ir.ui.view">-->
+        <!--<field name="name">office.cheque.tree.inherit</field>-->
+        <!--<field name="model">office.cheque</field>-->
+        <!--<field name="inherit_id" ref="office_reglement.view_piece_client_tree"/>-->
+        <!--<field name="arch" type="xml">-->
+            <!--<field name="state" position="replace">-->
+            <!--</field>-->
+        <!--</field>-->
+        <!--</record>-->
+
+
+        <record model="ir.actions.act_window" id="cheque_menu_action">
+            <field name="name">Cheque</field>
+            <field name="res_model">office.cheque</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="depense_cheque_menu" name="Cheque Depense EPS" parent="office_cautions.main_stfn_menu"
+                  action="cheque_menu_action"
+                  sequence="2"
+                  groups="account.group_account_invoice"
+                  />
+
+    </data>
+</openerp>

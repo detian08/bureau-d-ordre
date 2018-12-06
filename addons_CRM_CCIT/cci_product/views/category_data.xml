@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+
+<!-- After installation of the module, open the related menu -->
+	<record id="categ1" model="product.category">
+		<field name="name">Mission d'affaires</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ2" model="product.category">
+		<field name="name">Forum</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ3" model="product.category">
+		<field name="name">Foire</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ4" model="product.category">
+		<field name="name">Salons</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ5" model="product.category">
+		<field name="name">Journées économiques et commerciales</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ6" model="product.category">
+		<field name="name">Veille sur les différents évènements commerciaux</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>	
+	</record>
+	<record id="categ7" model="product.category">
+		<field name="name">Publication sur les différents manifestations commerciales nationales et internationales</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>	
+	</record>
+	<record id="categ8" model="product.category">
+		<field name="name">Elaboration et mise en œuvre des programmes en matière de marketing et de promotion</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>	
+	</record>
+	<record id="categ9" model="product.category">
+		<field name="name">Supervision et coordination des politiques commerciales de la CCIT</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>	
+	</record>
+	<record id="categ10" model="product.category">
+		<field name="name">Quinzaine d'été</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>	
+	</record>
+	<record id="categ11" model="product.category">
+		<field name="name">Grande Quinzaine Commerciale</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ12" model="product.category">
+		<field name="name">Vente d'ouvrage</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ13" model="product.category">
+		<field name="name">Vente de DDU</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ14" model="product.category">
+		<field name="name">Location de Salle</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ15" model="product.category">
+		<field name="name">Location de Place de Foire</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ16" model="product.category">
+		<field name="name">Location de Kiosques</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ17" model="product.category">
+		<field name="name">Location de Boutiques</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ18" model="product.category">
+		<field name="name">Vente Appels d'Offre</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ19" model="product.category">
+		<field name="name">Taxe Chambre de Commerce (TCC)</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ20" model="product.category">
+		<field name="name">Vente de tickets des Gares</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ19" model="product.category">
+		<field name="name">Côtisation des Entreprises</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ21" model="product.category">
+		<field name="name">Inscription au Registre de Commerce</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ22" model="product.category">
+		<field name="name">Certifications</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ23" model="product.category">
+		<field name="name">Produits COA (Centre d'opportunités d'affaires)</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ24" model="product.category">
+		<field name="name">Produit des Foires</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ25" model="product.category">
+		<field name="name">Intérêt sur  DAT (Dépots à terme)</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ26" model="product.category">
+		<field name="name">Dividendes</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ27" model="product.category">
+		<field name="name">Frais de Gestion FG (Fonds de Garantie)</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ28" model="product.category">
+		<field name="name">Espace Publicitaire</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ29" model="product.category">
+		<field name="name">Information</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ30" model="product.category">
+		<field name="name">Publication</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ31" model="product.category">
+		<field name="name">Communication</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ32" model="product.category">
+		<field name="name">Media</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ33" model="product.category">
+		<field name="name">Production Audiovisuelle</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ34" model="product.category">
+		<field name="name">Objets publicitaires</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ35" model="product.category">
+		<field name="name">Réseaux sociaux</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ36" model="product.category">
+		<field name="name">Assistance juridique</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ37" model="product.category">
+		<field name="name">Accompagnement des porteurs de projets</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ38" model="product.category">
+		<field name="name">Enquête (Baromètre etc.)</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ39" model="product.category">
+		<field name="name">Visite d’Entreprises</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+	<record id="categ40" model="product.category">
+		<field name="name">Programme Talents du Monde UEMOA</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ41" model="product.category">
+		<field name="name">AGOA</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ42" model="product.category">
+		<field name="name">Gestion de projets</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ43" model="product.category">
+		<field name="name">Elaboration de business plan</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ44" model="product.category">
+		<field name="name">Journées d’information</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ45" model="product.category">
+		<field name="name">Journées  portes ouverte sur les métiers</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ46" model="product.category">
+		<field name="name">Délivrance d’attestation d’origine</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ47" model="product.category">
+		<field name="name">Etablissement de Carte de ressortissant et des duplicata</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ48" model="product.category">
+		<field name="name">Edition du répertoire des entreprises</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ49" model="product.category">
+		<field name="name">Mise à disposition d’opportunités d’affaires</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ50" model="product.category">
+		<field name="name">Bibliothèque consulaire</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ51" model="product.category">
+		<field name="name">Contribution à l’édition de documents (Document de présentation de la CCIT, 7 raisons pour investir au Togo …)</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ52" model="product.category">
+		<field name="name">Délivrance d’attestation d’existence</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ53" model="product.category">
+		<field name="name">Gestion des cotisations annuelles</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ54" model="product.category">
+		<field name="name">Délivrance de quitus pour l’inscription au fonds de garantie</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ55" model="product.category">
+		<field name="name">Délivrance de quitus pour l’inscription sur la liste électorale</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ56" model="product.category">
+		<field name="name">Délivrance de quitus pour l’inscription sur la liste de candidature</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ57" model="product.category">
+		<field name="name">Organisation de journées d’information</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ58" model="product.category">
+		<field name="name">Recherche d’information sur les entreprises togolaises et étrangères</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ59" model="product.category">
+		<field name="name">Edition de listes d’entreprises par zone ou secteur d’activités</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+	<record id="categ60" model="product.category">
+		<field name="name">Organisation des évènements commerciaux nationaux et internationaux</field>
+		<field name="parent_id" eval="ref('product.product_category_all')"/>
+	</record>
+
+
+
+</data>
+</openerp>

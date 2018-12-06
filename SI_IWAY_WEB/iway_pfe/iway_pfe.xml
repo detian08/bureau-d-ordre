@@ -1,0 +1,87 @@
+<openerp>
+    <data>
+      <record id="iway_pfe_tree_view" model="ir.ui.view">
+        <field name="name">iway_pfe.tree.view </field>
+        <field name="model">iway_pfe.iway_pfe</field>
+        <field name="arch" type="xml">
+		<tree string="iway_pfe"> 
+               	  
+			<field name="sujet"/>
+			<field name="reference"/>
+                        <field name="competence"/>
+                       
+			<field name="date_debut_pfe"/>
+                        <field name="date_fin_pfe"/>
+                        <field name="comment" style=' max-width: 1150px;  width: 500px'/>
+                       <!-- <field name="detaille" placeholder="Other Information ..." colspan="4"/>-->
+			<!--<field name="mail"/>
+                        <field name="telephone"/>
+                        <field name="date_pfe"/>-->
+                        <field name="state"/>
+		</tree>
+	</field> 
+      </record>
+
+	<record id="iway_pfe_form_view" model="ir.ui.view">
+        <field name="name">Iway_pfe.Form.View </field>
+        <field name="model">iway_pfe.iway_pfe</field>
+        <field name="arch" type="xml">
+		<form string="iway_pfe">
+			<header>
+                        <button name="action_propose" type="workflow"
+                                string="Reset to propose"
+                                states="affecter,cloture"/>
+
+                        <button name="action_affecte" type="workflow"
+                                string="affecte" states="propose"
+                                class="oe_highlight"/>
+<!--states="confirmed"-->
+                        <button name="action_cloture" type="workflow"
+                                string="Mark as cloture" 
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visibility='propose,cloture'/>
+			</header>
+		  <sheet>
+			
+	             <group>
+
+			<field name="sujet"/>
+			<field name="reference"/>
+                        <field name="competence"/>
+                        
+			<field name="date_debut_pfe"/>
+                        <field name="date_fin_pfe"/>
+                        <field name="comment" style=' max-width: 1150px;  width: 500px'/>
+                       <!-- <field name="detaille" placeholder="Other Information ..." colspan="4"/>-->
+			<!--<field name="sujet"/>
+			<field name="date_pfe"/>-->
+			<!--<separator string="Application Summary"/>-->
+			<!--<field name="description" rowspan="6" colspan="2" col="8" row="16" placeholder="Feedback of interviews..."/>-->
+			<!--<field name="mail"/>
+                        <field name="telephone"/>
+                        <field name="date_naissance"/>-->
+		     </group>
+		  </sheet>
+		</form>
+	</field> 
+      </record>
+
+	<record model="ir.actions.act_window" id="action_pfe">
+    <field name="name">PFE</field>
+    <field name="res_model">iway_pfe.iway_pfe</field>
+    <field name="view_mode">tree,form</field>
+	</record>
+<!--menu parent-->
+<!--<menuitem id="menu_ideas" name="PFE" sequence="10"
+          action="action_pfe" parent="hr_recruitment.menu_crm_case_categ0_act_job"/>-->
+
+ 
+    
+<!--menu enfant
+<menuitem id="menu_ideas_child" name="Ideas child" sequence="1"
+          parent ="menu_ideas" action="action_list_ideas"/>-->
+
+<!--<menuitem id="menu_ideas_child2" name="Ideas child 2" sequence="2"
+          parent ="menu_ideas" action="action_list_ideas"/>-->
+    </data>
+</openerp>

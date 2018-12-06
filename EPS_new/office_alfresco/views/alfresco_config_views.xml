@@ -1,0 +1,54 @@
+<openerp>
+    <data>
+        <!--salwa ksila add 29/03/2017-->
+        <record model="ir.ui.view" id="office_alfresco_config_view_form">
+            <field name="name">office.alfresco.configuration.form</field>
+            <field name="model">office.alfresco.configuration</field>
+            <field name="arch" type="xml">
+                <form string="Configuration Alfresco Form">
+                    <sheet>
+                        <group>
+                            <field name="url"/>
+                            <field name="port"/>
+                            <field name="user"/>
+                            <field name="mp"/>
+                            <field name="is_default"  context="{'is_default': is_default}"/>
+                        </group>
+                        <group>
+                            <button name="config_test" type="object" string="tester la connection"
+                                    class="oe_edit_only"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="office_alfresco_config_view_tree">
+            <field name="name">office.alfresco.configuration.tree</field>
+            <field name="model">office.alfresco.configuration</field>
+            <field name="arch" type="xml">
+                <tree string="Configuration tree">
+                    <field name="url"/>
+                    <field name="port"/>
+                    <field name="user"/>
+                    <field name="mp" password="True"/>
+                    <field name="is_default"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="configuration_list_action">
+            <field name="name">Configuration Alfresco</field>
+            <field name="res_model">office.alfresco.configuration</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="configurations_menu" name="Alfresco" parent="base.menu_config" action="configuration_list_action" sequence="1"/>
+        <menuitem id="main_documentation_menu" name="Documents Alfresco"/>
+        <menuitem id="document_menu" name="Documents Alfresco" parent="main_documentation_menu"/>
+        
+
+    </data>
+</openerp>

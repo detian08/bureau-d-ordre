@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		
+		<record model="category.establishment" id="id_establishment_1">
+			<field name="logo"></field>
+			<field name="name">North American Private University</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			
+		</record>
+		
+		<record model="category.establishment" id="id_establishment_2">
+			<field name="logo"></field>
+			<field name="name">University of Sfax</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			
+		</record>
+		
+		<record model="category.establishment" id="id_establishment_3">
+			<field name="logo"></field>
+			<field name="name">University of Tunis</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			
+		</record>
+
+
+		<record model="category.establishment" id="id_establishment_4">
+			<field name="logo"></field>
+			<field name="name">Southern Private University (ULS)</field>
+			<field name="description">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			<field name="address">Certamen scuta cum concitat proximos cunctorum certamen pugnantium proximos securitas occurrere distarent distarent longe securitas longe hastisque concitat dolorem miles.</field>
+			
+		</record>
+	
+	</data>
+</openerp>

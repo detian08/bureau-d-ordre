@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="degre_template_form_view" model="ir.ui.view">
+            <field name="name">CCI Form degre</field>
+            <field name="model">courriel.degre</field>
+            <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                        <field name="name" />
+
+
+                      
+                        
+                      
+		</group>
+		
+		<!--<notebook><page string="Note">
+
+		</page></notebook>-->
+                
+            </sheet>
+        </form>
+	    </field>
+
+	</record>
+
+	<record id="degre_template_tree_view" model="ir.ui.view">
+            <field name="name">degre.template.degre.tree</field>
+            <field name="model">courriel.degre</field>
+            <field name="arch" type="xml">
+            <tree string="degrés de confidentialité">
+
+                <field name="name" />
+
+         
+
+
+            </tree>
+            </field>
+        </record>
+
+        <record id="degre_template_action" model="ir.actions.act_window">
+            <field name="name">degre</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">courriel.degre</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="degre_template_tree_view"/>
+
+        </record>
+        <menuitem action="degre_template_action"  id="menu_degre_template_action" parent="menu_courriel_configuration" sequence="2" />
+
+    </data>
+</openerp>

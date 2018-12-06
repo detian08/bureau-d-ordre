@@ -1,0 +1,51 @@
+<openerp>
+    <data>
+        <record model="workflow" id="wkf_iway_entretien_workflow">
+            <field name="name">iway_entretien.iway_entretien_workflow.workflow</field>
+            <field name="osv">iway_entretien.iway_entretien</field><!--nom du modèle-->
+            <field name="on_create">True</field>
+        </record>
+
+        <record model="workflow.activity" id="brouillon">
+            <field name="name">Brouillon</field>
+            <field name="wkf_id" ref="wkf_iway_entretien_workflow"/>
+            <field name="flow_start" eval="True"/>
+            <field name="kind">function</field>
+            <field name="action">action_brouillon()</field>
+        </record>
+        <record model="workflow.activity" id="affecter">
+            <field name="name">affecter</field>
+            <field name="wkf_id" ref="wkf_iway_entretien_workflow"/>
+            <field name="kind">function</field>
+            <field name="action">action_affecte()</field>
+        </record>
+        <record model="workflow.activity" id="cloture">
+            <field name="name">Cloture</field>
+            <field name="wkf_id" ref="wkf_iway_entretien_workflow"/>
+            <field name="kind">function</field>
+            <field name="action">action_cloture()</field>
+        </record>
+
+        <record model="workflow.transition" id="iway_entretien_workflow_draft_to_affecter">
+            <field name="act_from" ref="brouillon"/>
+            <field name="act_to" ref="affecter"/>
+            <field name="signal">action_affecte</field>
+        </record>
+        <record model="workflow.transition" id="iway_entretien_workflow_affecter_to_brouillon">
+            <field name="act_from" ref="affecter"/>
+            <field name="act_to" ref="brouillon"/>
+            <field name="signal">action_brouillon</field>
+        </record>
+        <record model="workflow.transition" id="iway_entretien_workflow_done_to_brouillon">
+            <field name="act_from" ref="cloture"/>
+            <field name="act_to" ref="brouillon"/>
+            <field name="signal">action_brouillon</field>
+        </record>
+        <record model="workflow.transition" id="iway_entretien_workflow_affecter_to_cloture">
+            <field name="act_from" ref="affecter"/>
+            <field name="act_to" ref="cloture"/>
+            <field name="signal">action_cloture</field>
+        </record>
+    </data>
+</openerp>
+

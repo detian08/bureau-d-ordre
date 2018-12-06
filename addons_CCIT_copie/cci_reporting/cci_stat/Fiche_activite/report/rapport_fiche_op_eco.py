@@ -1,0 +1,140 @@
+# encoding: utf-8
+import JasperDataParser
+from openerp.jasper_reports import jasper_report
+from openerp import pooler
+import time
+import datetime
+from operator import itemgetter
+
+# import base64
+import os
+# import netsvc
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
+
+
+class jasper_client(JasperDataParser.JasperDataParser):
+	def __init__(self, cr, uid, ids, data, context):
+		super(jasper_client, self).__init__(cr, uid, ids, data, context)
+
+	def generate_data_source(self, cr, uid, ids, data, context):
+		return 'records'
+
+	def generate_parameters(self, cr, uid, ids, data, context):
+		return {}
+
+	def generate_properties(self, cr, uid, ids, data, context):
+		return {}
+
+	def generate_records(self, cr, uid, ids, data, context):
+		total_mont_adh = 0
+		total_mont_op = 0
+		list_category = []
+		list_product = []
+		list_categ_name = []
+		pool = pooler.get_pool(cr.dbname)
+		result = []
+		if 'form' in data:
+			partner_obj = self.pool.get('res.partner')
+			print 'data.............',data
+			dateAuj = time.strftime('%d-%m-%Y %H:%M')
+			responsable_id = data['form']['responsable_id'][0]
+			date_debut = data['form']['date_debut'][0]
+			date_fin = data['form']['date_fin'][0]
+
+			activite_obj = partner_obj.browse(cr, uid, responsable_id)
+			street = partner_obj.browse(cr, uid, responsable_id).street
+			street2 = partner_obj.browse(cr, uid, responsable_id).street2
+			city = partner_obj.browse(cr, uid, responsable_id).city
+			zip = partner_obj.browse(cr, uid, responsable_id).zip
+			country_id = partner_obj.browse(cr, uid, responsable_id).country_id.id
+			country= self.pool.get('res.country').browse(cr, uid, country_id).name
+
+			ops_ids = pool.get('crm.lead').search(cr, uid, [('partner_id', '=', op_eco_id),('stage_id.name','=','Won')])
+			ops_objs = pool.get('crm.lead').browse(cr, uid, ops_ids)
+
+			if ops_objs:
+				for op in ops_objs:
+					total_mont_op = total_mont_op + op.planned_revenue
+					data = {
+						'date_op': datetime.datetime.strptime(op.date_debut,"%Y-%m-%d"),
+						'dateAuj': dateAuj,
+						'nom_op_eco':op_eco_obj[0].name,
+						'street':street,
+						'street2':street2,
+						'city':city,
+						'zip':zip,
+						'country':country,
+						'nom_op': u'Participer à ' + op.name,
+						'mont_op': repr(op.planned_revenue),
+						'mont_op_lost':'',
+					}
+					result.append(data)
+				print 'data..............',data
+	
+			cr.execute("SELECT category_id FROM res_partner_res_partner_category_rel WHERE partner_id =%s",(responsable_id,))	
+			lines = cr.dictfetchall()
+			if lines :
+				for line in lines:
+					category_id = line['category_id']
+					list_category.append(category_id)
+				print 'list_category.....',list_category
+
+				
+				cr.execute('SELECT product_template_id FROM product_template_res_partner_category_rel WHERE res_partner_category_id in %s',(tuple(list_category),))
+				lines_p = cr.dictfetchall()
+				print 'lines_p..',lines_p
+				for product in lines_p:
+					product_template_id = product['product_template_id']
+
+
+					categ_id = self.pool.get('product.template').browse(cr, uid, product_template_id, context=context).categ_id.id
+					list_product.append(categ_id)
+
+				cr.execute('SELECT crm_case_section_id FROM crm_case_section_product_category_rel WHERE product_category_id in %s',(tuple(list_product),))
+				dict_section = cr.dictfetchall()[0]
+				section_id=dict_section['crm_case_section_id']
+				print 'section_id..',section_id
+
+				section_code = self.pool.get('crm.case.section').browse(cr,uid,section_id,context=context).code
+				section = self.pool.get('crm.case.section').browse(cr,uid,section_id,context=context).name
+				data = {						
+					'section':section,
+					'section_code':section_code,
+
+				}
+				result.append(data)
+
+				for cat in list_category :
+					category = self.pool.get('res.partner.category').browse(cr,uid,cat,context=context).name
+					list_categ_name.append(category) 
+
+					data = {						
+						'category':category,
+					}
+					result.append(data)
+
+			else:
+				data = {
+					'date_op': datetime.datetime.strptime(op.date_debut,"%Y-%m-%d"),
+					'dateAuj': dateAuj,
+					'nom_op_eco':op_eco_obj[0].name,
+					'street':street,
+					'street2':street2,
+					'city':city,
+					'zip':zip,
+					'country':country,
+					'nom_op': '',
+					'mont_op': '',
+					'mont_op_lost':'',
+					'section':'',
+					'section_code':'',
+					'category':'',
+				}
+				result.append(data)
+	
+
+
+		return result
+		
+jasper_report.report_jasper('report.jasper_fiche_activite_print', 'res.partner', parser=jasper_client, )

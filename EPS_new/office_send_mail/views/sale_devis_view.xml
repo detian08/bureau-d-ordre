@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+  
+
+    <record id="view_sale_devis_form_inherit" model="ir.ui.view">
+        <field name="name">sale.devis.form.inherit</field>
+        <field name="model">sale.devis</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="office_sale_devis.view_sale_devis_form"/>
+        <field name="arch" type="xml">
+    		<button name="confirmer_devis" position="before">
+    	            <button name="open_report_wizard" type="object" string="Enoyer par email" context="{'reference': reference, 'partner_id': partner_id}" states="draft" class="oe_highlight"/>
+    		</button>
+	</field>
+   </record>
+
+
+
+
+    <record model="ir.ui.view" id="report_wizard_form_view1">
+        <field name="name">report_wizard.form</field>
+        <field name="model">mail_wiz</field>
+        <field name="arch" type="xml">
+            <form string="Mail Wizard">
+                <header>
+                        <button name="send_mail" type="object" string="Envoyer" class="oe_highlight" />
+                        <!--<button name="cancel_mail" type="workflow" string="Annuler" class="oe_highlight" />
+                        <field name="state" widget="statusbar" statusbar_visible="outgoing,sent"/>-->
+                    </header>
+                <sheet>
+                        <label for="objet" class="oe_edit_only"/>
+                        <h2><field name="objet"/></h2>
+                        <group>
+                            <field name="email_from"/>
+                            <field name="email"/>
+                            <!-- widget="many2many_tags" -->
+                        </group>
+                        <notebook>
+                            <page string="Corps">
+                                <field name="corps"/>
+                            </page>
+                            <page string="Attachments">
+                                <field name= "document_ids">
+                                    <tree string="documents" create="false">
+                                        <field name="nom_fichier" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+		</form>
+	    </field>
+	</record>
+
+
+
+      
+    </data>
+</openerp>
+

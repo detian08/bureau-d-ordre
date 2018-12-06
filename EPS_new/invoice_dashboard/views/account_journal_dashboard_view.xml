@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <record id="account_journal_dashboard_kanban_view" model="ir.ui.view">
+        <field name="name">account.journal.dashboard.kanban</field>
+        <field name="model">account.journal</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_background_grey" create="0">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="show_on_dashboard"/>
+                <field name="kanban_dashboard"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(3)} oe_kanban_card oe_kanban_invoice">
+                            <t t-value="JSON.parse(record.kanban_dashboard.raw_value)" t-set="dashboard"/>
+                            <t t-value="record.type.raw_value" t-set="journal_type"/>
+                            <t t-value="record.id" t-set="id_graph"/>
+
+                            <t t-call="JournalTop"/>
+                            <div class="o_kanban_card_content o_visible">
+                                <div class="row">
+                                    
+                                    <t t-if="journal_type == 'sale' || journal_type == 'purchase'" t-call="JournalBodySalePurchase"/>
+                                    <t t-if="(journal_type == 'bank' || journal_type == 'cash')" t-call="JournalBodyBankCash"/>
+                                    <div t-if="journal_type == 'general' || journal_type == 'situation'" class="row">
+                                    </div>
+                                </div>
+                                <t t-if=" journal_type == 'sale' || journal_type == 'purchase'" t-call="JournalBodyGraph"/>
+                                <!--journal_type == 'bank' || journal_type == 'cash' || -->
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-name="JournalTop">
+                        <div class="o_kanban_card_header">
+                            <div class="o_kanban_card_header_title">
+                                <h3 class="text-center">
+                                    <strong><field name="name"/></strong>
+                                </h3>
+                            </div>
+                        </div>
+                    </t>
+
+                   
+                    <t t-name="JournalBodySalePurchase">
+                        <div class="col-xs-5 o_kanban_primary_left">
+                            <button type="object" name="action_create_new" class="btn btn-sm">
+                                <t t-if="journal_type == 'sale'"><span>Nouvelle Vente</span></t>
+                                <t t-if="journal_type == 'purchase'"><span>Nouvelle Achat</span></t>
+                            </button>
+                        </div>
+                        <div class="col-xs-7 o_kanban_primary_right">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <a type="object" name="open_action" context="{'search_default_draft': '1'}" >
+                                        <span t-if="journal_type == 'sale'" title="Factures à valider"><t t-esc="dashboard.number_draft"/> Factures à valider</span>
+                                        <span t-if="journal_type == 'purchase'" title="Factures en Brouillon"><t t-esc="dashboard.number_draft"/> Factures en Brouillon</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <span> <t t-esc="dashboard.sum_draft"/> DT </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <a type="object" name="open_action" context="{'search_default_unpaid': '1'}">
+                                        <span t-if="journal_type == 'sale'" title="En attente de paiement">
+                                        <t t-esc="dashboard.number_waiting"/>  En attente de paiement</span>
+                                        <span t-if="journal_type == 'purchase'" title="Paiement à faire"><t t-esc="dashboard.number_waiting"/> Paiement à faire</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <span> <t t-esc="dashboard.sum_waiting"/> DT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-name="JournalBodyGraph">
+                        <div class="o_kanban_graph_section">
+                            <field name="kanban_dashboard_graph" t-att-graph_type="_.contains(['cash','bank'],journal_type) ? 'line' : 'bar'" widget="kanban_graph"/><!-- -->
+                        </div>
+                    </t>
+                     <t t-name="JournalBodyBankCash">
+                        <!-- On the left, display :
+                            - A button corresponding to the bank_statements_source, if it wasn't configured, a button for each of them
+                            - If there are statements to reconcile, a link to reconcile them -->
+                        <!-- class="col-xs-6 o_kanban_primary_left"-->
+                           
+                       
+                        <!-- On the right, show other common informations/actions -->
+                        <div class="col-xs-15  text-center ">
+                            
+
+                                <div class="col-xs-15 text-center">
+                                    <span title="Solde des Caisses">Solde en Caisses : </span>
+                                    <span><t t-esc="dashboard.last_balance"/> DT</span>
+                                </div>
+                                
+                                <div class="col-xs-15 text-center">
+                                 <span title="Stock">Stock : </span>
+                                    <span><t t-esc="dashboard.sum_stock"/> DT</span>
+                                 
+                                </div>
+                               
+                                
+
+                        </div>
+                    </t>
+            </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="open_account_journal_dashboard_kanban" model="ir.actions.act_window">
+        <field name="name">Tableau de Bord</field>
+        <field name="res_model">account.journal</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="usage">menu</field>
+        <field name="context">{}</field>
+       <field name="domain">['|','|',('type', '=', 'cash'),('type', '=', 'sale'),('type', '=', 'purchase')]</field>
+
+    </record>
+
+    <menuitem id="menu_board_journal_1" name="Tableau de Bord" parent="account.menu_finance" sequence="1" />
+    <menuitem id="submenu_board_journal_1" name="Tableau de Bord" action="open_account_journal_dashboard_kanban"
+              parent="menu_board_journal_1" sequence="1"  />
+
+  </data>
+</openerp>

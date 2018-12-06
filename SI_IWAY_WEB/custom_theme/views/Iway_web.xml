@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--<template id="mysale_report" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//table[@class='table table-condensed']" position="before">
+                <h3>
+                   texte ajouté pour test
+                </h3>
+            </xpath>
+        </template>-->
+    		<!--<xpath expr="//div[@id='info']/ul" position="inside">
+    			<li><a href="/stages">Stages</a></li>
+   		 </xpath>-->
+	 <!-- <template id="stage_footer_custom" inherit_id="website_hr_recruitment.job_footer_custom" name="Footer Job Link">
+
+		<a href="/jobs" position="after">
+		<li><a href="/stages">Stages</a></li>
+		</a>
+	   </template>-->
+
+<!--Pour l'ajout d'une page-->
+		<!--<template id="stages" name="stages" page="True">
+			<t t-call="website.layout">
+			       <div id="wrap">
+				     <div class="container">
+					   <h1>Ceci est une nouvelle page !</h1>
+				     </div>
+			       </div>
+			  </t>
+
+		</template>
+
+		<record id="stage_page_link" model="website.menu">
+			<field name="name">Stages</field> 
+			<field name="url">/stages</field>
+			<field name="parent_id" ref="website.main_menu"/>
+		</record>-->
+<!--test-->
+<!--
+	<template name="Services page" id="website.services" page="True">
+	  <t t-call="website.layout">
+	   <div id="wrap">
+	     <div class="container">
+	       <h1>Our Services</h1>
+	       <ul class="services">
+		 <li>Cloud Hosting</li>
+		 <li>Support</li>
+		 <li>Unlimited space</li>
+	       </ul>
+
+	       <div class="oe_structure" />
+	     </div>
+	   </div>
+	  </t>
+	</template>
+-->
+	<!--<record id="services_page_link" model="website.menu">
+	  <field name="name">Services</field>
+	  <field name="url">/page/services</field>
+	  <field name="parent_id" ref="website.main_menu" />
+	  <field name="sequence" type="int">99</field>
+	</record>
+
+	<template id="website.stages" name="stages" page="True">
+		<t t-call="website.layout">
+			<div id="wrap">
+				<div class="container">
+					   <h1>Ceci est une nouvelle page !</h1>
+				</div>
+			</div>
+		</t>
+
+	</template>
+-->
+
+
+	<!--<record id="stage_page_link" model="website.menu">
+		<field name="name">Stages</field> 
+		<field name="url">/page/stages</field>
+		<field name="parent_id" ref="website.main_menu"/>
+	</record>-->
+    </data>
+</openerp>

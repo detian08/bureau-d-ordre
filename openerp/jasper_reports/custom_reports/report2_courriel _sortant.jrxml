@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2_courriel _sortant" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Nom-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Nom-name]]></fieldDescription>
+	</field>
+	<field name="Objet-objet" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Objet-objet]]></fieldDescription>
+	</field>
+	<field name="Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pays-country_id/Cree_par-create_uid/Name-name]]></fieldDescription>
+	</field>
+	<field name="Date_de_reception-date_courriel" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Date_de_reception-date_courriel]]></fieldDescription>
+	</field>
+	<field name="Alias_Name-alias_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Pays-country_id/Derniere_modification_par-write_uid/Alias_Name-alias_name]]></fieldDescription>
+	</field>
+	<field name="Equipe_commerciale-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Utilisateur-User/Equipe_commerciale_par_defaut-default_section_id/Equipe_commerciale-name]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="450" y="29" width="105" height="15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="15" width="105" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="1" width="105" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Le " + new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="12" width="100" height="50"/>
+				<imageExpression><![CDATA["/home/amal/odoo_8.1/addons_CRM_CCIT/jasper_reports/images/logo_ccit.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="3" y="1" width="550" height="71"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accusé de réception ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="72" width="550" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA["Référence: "]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA["Expéditeur: "]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="311" y="20" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Destinataire: "+$F{Equipe_commerciale-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Date de réception:  "+$F{Date_de_reception-date_courriel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="554" height="59"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Objet: " + $F{Objet-objet}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="97" splitType="Stretch">
+			<textField>
+				<reportElement x="-413" y="37" width="204" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Référence: "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Reçu et enregistré par l'employé "+$F{Name-name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

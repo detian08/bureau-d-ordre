@@ -1,0 +1,26 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_document_courrier_admin, document.courrier,model_document_courrier,base.group_erp_manager,1,1,1,1
+access_document_attachment_admin, document.attachment,model_document_attachment,base.group_erp_manager,1,1,1,1
+access_document_transmission_categ_admin, document.transmission.categ,model_document_transmission_categ,base.group_erp_manager,1,1,1,1
+access_document_category_admin, document.category,model_document_category,base.group_erp_manager,1,1,1,1
+access_document_action_admin, document.action,model_document_action,base.group_erp_manager,1,1,1,1
+
+
+
+access_document_courrier_agent, document.courrier,model_document_courrier,bureau_ordre.courrier_group_agent_bureau_ordre,1,1,1,0
+access_document_attachment_agent, document.attachment,model_document_attachment,bureau_ordre.courrier_group_agent_bureau_ordre,1,1,1,1
+access_alfresco_configuration_agent,alfresco.configuration,model_alfresco_configuration,bureau_ordre.courrier_group_agent_bureau_ordre,1,1,1,1
+access_document_transmission_categ_agent, document.transmission.categ,model_document_transmission_categ,bureau_ordre.courrier_group_agent_bureau_ordre,1,0,0,0
+access_document_category_agent, document.category,model_document_category,bureau_ordre.courrier_group_agent_bureau_ordre,1,0,0,0
+access_document_action_agent, document.action,model_document_action,bureau_ordre.courrier_group_agent_bureau_ordre,1,1,1,0
+
+
+
+access_document_courrier, document.courrier,model_document_courrier,bureau_ordre.courrier_group_employe,1,1,0,0
+access_document_attachment, document.attachment,model_document_attachment,bureau_ordre.courrier_group_employe,1,0,0,0
+access_alfresco_configuration_employe,alfresco.configuration,model_alfresco_configuration,bureau_ordre.courrier_group_employe,1,0,0,0
+access_document_transmission_categ, document.transmission.categ,model_document_transmission_categ,bureau_ordre.courrier_group_employe,1,0,0,0
+access_document_category, document.category,model_document_category,bureau_ordre.courrier_group_employe,1,0,0,0
+access_document_action, document.action,model_document_action,bureau_ordre.courrier_group_employe,1,1,1,0

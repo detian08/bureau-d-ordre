@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--<delete model="ir.ui.menu" id="base.menu_reporting_dashboard"/> base.group_no_one
+       -->
+
+
+        <delete model="ir.ui.menu" id="stock.menu_stock_sched"/>
+        <delete model="ir.ui.menu" id="stock.menu_stock_sched"/>
+        <delete model="ir.ui.menu" id="stock.menu_procurement_compute"/>
+        <delete model="ir.ui.menu" id="stock.menu_stock_proc_schedulers"/>
+
+        <!-- For manager-->
+
+        <menuitem name="Products by Category" id="stock.menu_product_by_category_stock_form"
+                  action="product.product_category_action"
+                  parent="stock.menu_stock_product" sequence="0" groups="stock.group_stock_manager"/>
+
+        <!-- Menu for admin only -->
+        <menuitem id="stock.menu_traceability" name="Traceability" parent="stock.menu_stock_root"
+                  sequence="4" groups="base.group_no_one"/>
+
+        <menuitem
+                id="stock.menu_product_in_config_stock" name="Products"
+                parent="stock.menu_stock_configuration" sequence="45" groups="stock.group_stock_manager"/>
+
+        <menuitem action="stock.action_warehouse_form" id="stock.menu_action_warehouse_form" groups="base.group_no_one"
+                  parent="stock.menu_stock_configuration" sequence="1"/>
+        <menuitem
+                action="product.product_uom_form_action" id="stock.menu_stock_uom_form_action"
+                parent="stock.menu_stock_configuration" sequence="35" groups="base.group_no_one"/>
+        <menuitem
+                action="product.product_normal_action" id="stock.menu_product_variant_config_stock"
+                parent="stock.menu_product_in_config_stock" sequence="2" groups="stock.group_stock_manager"/>
+        <menuitem action="stock.action_routes_form" id="stock.menu_stock_routes"
+                  parent="stock.menu_stock_configuration" sequence="11" groups="base.group_no_one"/>
+        <menuitem
+                action="product.product_ul_form_action" groups="stock.group_stock_manager"
+                id="stock.menu_product_packaging_stock_action" parent="stock.menu_product_in_config_stock"
+                sequence="3"/>
+        <menuitem
+                action="product.product_category_action_form" id="stock.menu_product_category_config_stock"
+                parent="stock.menu_product_in_config_stock" sequence="0" groups="stock.group_stock_manager"/>
+        <menuitem
+                id="stock.menu_stock_unit_measure_stock" name="Units of Measure"
+                parent="stock.menu_product_in_config_stock" sequence="35" groups="stock.group_stock_manager"/>
+        <menuitem
+                action="product.product_template_action" id="stock.menu_product_template_config_stock"
+                parent="stock.menu_product_in_config_stock" sequence="1" groups="stock.group_stock_manager"/>
+
+        <menuitem action="stock.action_location_form" id="stock.menu_action_location_form" groups="base.group_no_one"
+                  parent="stock.menu_stock_configuration" sequence="5"/>
+        <menuitem
+                action="product.product_uom_categ_form_action" id="stock.menu_stock_uom_categ_form_action"
+                parent="stock.menu_stock_configuration" sequence="30" groups="base.group_no_one"/>
+        <menuitem
+                id="stock.menu_pickingtype"
+                name="Types of Operation"
+                parent="stock.menu_stock_configuration"
+                action="stock.action_picking_type_list" groups="base.group_no_one"/>
+        <menuitem action="stock.action_orderpoint_form" id="stock.menu_stock_order_points"
+                  parent="stock.menu_stock_configuration" sequence="10" groups="base.group_no_one"/>
+        <menuitem id="stock.menu_stock_procurement" name="Automatic Procurements"
+                  parent="stock.menu_stock_configuration" groups="base.group_no_one" sequence="5"/>
+
+        <menuitem action="stock.action_incoterms_tree" id="stock.menu_action_incoterm_open"
+                  parent="stock.menu_stock_configuration" sequence="40" groups="base.group_no_one"/>
+        <menuitem id="stock.menu_stock_sched" name="Schedulers" parent="stock.menu_stock_root" sequence="4"
+                  groups="base.group_no_one"/>
+        <menuitem action="stock.action_procurement_compute" id="stock.menu_procurement_compute"
+                  parent="stock.menu_stock_sched" groups="base.group_no_one"/>
+        <menuitem action="procurement.action_compute_schedulers" id="stock.menu_stock_proc_schedulers"
+                  parent="stock.menu_stock_sched" sequence="20" groups="base.group_no_one"/>
+        <menuitem action="procurement.procurement_exceptions" id="stock.menu_stock_procurement_action"
+                  parent="stock.menu_stock_sched" sequence="50" groups="base.group_no_one"/>
+
+        <!-- inherit view_picking_form-->
+
+
+        <record id="view_picking_inherit_form_22" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock_account.view_picking_inherit_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@string='Create Invoice']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_picking_form_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <!-- Added header by salwa ksila -->
+                <xpath expr="//form/header" position="before">
+                    <header>
+                        <button name="set_copy_data" states="done" string="Duplicate" type="object"
+                                context="{'active_id': active_id}"
+                                class="oe_edit_only" groups="office_groups.office_group_manager"/>
+
+                        <!--<button name="get_cancel_state" string="duplicate2" type="object" context="{'active_id': active_id}"-->
+                        <!--class="oe_highlight" groups="office_stock.group_manager"/>-->
+
+                    </header>
+                </xpath>
+
+                <xpath expr="//button[@string='Reverse Transfer']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <button name="do_print_picking" position="replace"/>
+                <button name="action_confirm" position="replace">
+                    <button name="action_confirm" states="draft" string="Mark as Todo" type="object"
+                            class="oe_highlight" groups="base.group_user"/>
+                </button>
+                <button name="force_assign" position="replace"/>
+                <button name="do_unreserve" position="replace"/>
+                <button name="action_cancel" position="replace" />
+                <button name="do_enter_transfer_details" position="replace">
+                    <button name="do_enter_transfer_details" states="assigned" string="Transfer"
+                            groups="stock.group_stock_user" type="object" class="oe_highlight"/>
+
+                </button>
+
+
+                <!--
+            <button name="action_confirm"  position="after">
+            <button name="create_facture_bl" string="Create Facture" type="object" attrs="{'invisible':['|',('picking_type_id','=',1),('state','not in',['done'])]}" class="oe_highlight" />
+
+
+            </button>
+            -->
+                <!-- debut correction Erreur BL boutton retour etat brouillon -->
+
+
+                <button name="action_confirm" position="after">
+                    <button name="returntodraft" states="done" string="Retour etat Brouillon" type="object"
+                            groups="office_groups.office_group_manager" class="oe_edit_only"/>
+                </button>
+                <button name="action_confirm" position="after">
+                    <button name="returntodone" states="draft" string="Retour etat Transfere" type="object"
+                            groups="office_groups.office_group_manager" class="oe_edit_only"/>
+                </button>
+
+
+                <!-- fin correction Erreur BL boutton retour etat brouillon -->
+
+                <field name="state" position="attributes">
+                    <attribute name="statusbar_visible">"draft,assigned,done"</attribute>
+                </field>
+                <field name="partner_id" position="after">
+                    <field name="supplier_ref"
+                           attrs="{'invisible': ['|',('picking_type_id','=',2),('picking_type_id','=',7)]}"/>
+                    <field name="ref_description"
+                           attrs="{'invisible':['|','|',('picking_type_id','=',1),('picking_type_id','=',6),('picking_type_id','=',8)]}"/>
+                    <field name="currency_id"
+                           attrs="{'invisible':['|',('picking_type_id','=',6),('picking_type_id','=',7)]}"/>
+                    <!--<field name="name"/>-->
+
+                    <!--<field name="ancien_reference" string="Ancien référence"/>-->
+
+                </field>
+                <field name="origin" position="replace">
+                    <field name="sale_order_id" on_change="onchange_sale_order_id(sale_order_id)"
+                           domain="[('partner_id','=', partner_id) ]"
+                           attrs="{'invisible': ['|','|','|',('picking_type_id', '=', 1),('picking_type_id','=',6),('picking_type_id','=',7),('picking_type_id','=',8)]}"/>
+                    <field name="purchase_order_id" on_change="onchange_purchase_order_id(purchase_order_id)"
+                           domain="[('partner_id','=', partner_id) ]"
+                           attrs="{'invisible': ['|','|','|',('picking_type_id', '=', 2),('picking_type_id','=',6),('picking_type_id','=',7),('picking_type_id','=',8)]}"/>
+                    <button colspan="2" name="button_add_order" string="Ajouter lignes de commande" type="object"
+                            attrs="{'invisible': ['|','|','|',('picking_type_id','=',6),('picking_type_id','=',7),('picking_type_id','=',8)]}"/>
+
+                </field>
+                <xpath expr="//field[@name='move_lines']" position="after">
+                    <group>
+                        <group>
+                            <field name="tax_line" nolabel="1">
+                                <tree editable="bottom" string="Taxes">
+                                    <field name="name"/>
+                                    <field name="account_id" groups="account.group_account_invoice"/>
+                                    <field name="base"
+                                           on_change="base_change(base,parent.currency_id,parent.company_id,parent.date_invoice)"
+                                           readonly="1"/>
+                                    <field name="amount"
+                                           on_change="amount_change(amount,parent.currency_id,parent.company_id,parent.date_invoice)"/>
+                                    <field invisible="True" name="base_amount"/>
+                                    <field invisible="True" name="tax_amount"/>
+                                    <field name="factor_base" invisible="True"/>
+                                    <field name="factor_tax" invisible="True"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                        <group class="oe_right">
+                            <button colspan="2" name="button_reset_taxes" string="Compute Taxes" type="object"
+                                    icon="terp-stock_format-scientific"/>
+                            <field name="undiscount_total" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"/>
+                            <label string="" colspan="2"/>
+                            <field name="discount_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <label string="" colspan="2"/>
+                            <field name="amount_untaxed" string="Total NHT" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"/>
+                            <label string="" colspan="2"/>
+                            <field name="amount_tax" string="Total Taxes" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"/>
+                            <field name="amount_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <!-- TODO pourquoi ce bouton -->
+                            <button name="draft_validate" states="draft" string="Process Now" type="object"
+                                    icon="gtk-yes" colspan="4"/>
+                        </group>
+                    </group>
+                </xpath>
+                <!--
+                    champs inutils
+                 -->
+                <xpath expr="//page[@string='Additional Info']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_move_picking_form_inherit" model="ir.ui.view">
+            <field name="name">stock.move.form.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_form"/>
+            <field name="arch" type="xml">
+                <button name="force_assign" position="replace"/>
+                <button name="do_unreserve" position="replace"/>
+                <field name="product_id" position="replace">
+                    <field name="product_id"
+                           on_change="onchange_product_id(product_id,location_id,location_dest_id, parent.partner_id,picking_type_id)"/>
+                    <field name="default_code" string="Référence"/>
+                    <field name="price_unit"/>
+                    <field name="discount"/>
+                    <!--field name="product_order_qty" attrs="{'invisible': [('picking_type_id', '=', 2)]}" readonly="1"/>
+                    <field name="product_reste_qty" attrs="{'invisible': [('picking_type_id', '=', 2)]}" readonly="1"/-->
+                </field>
+                <xpath expr="//group[@string='Locations']" position="before">
+                    <group string="Taxes">
+                        <field colspan="4" name="move_tax_id"
+                               domain="[('parent_id','=',False),('company_id', '=', parent.company_id)]" nolabel="1"/>
+                    </group>
+                </xpath>
+                <xpath expr="//group[@name='quants_grp']" position="replace"/>
+                <button name="%(stock.move_scrap)d"
+                        position="replace"/>
+                <xpath expr="//form[@string='Stock Moves']/group/group[2]" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//group[@string='Locations']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_stock_inventroy_form_inherit" model="ir.ui.view">
+            <field name="name">stock.inventory.form.inherit</field>
+            <field name="model">stock.inventory</field>
+            <field name="inherit_id" ref="stock.view_inventory_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook/page/field[@name='line_ids']/tree[@string='Inventory Details']/field[@name='product_qty']"
+                       position="after">
+                    <field name="product_price"/>
+                </xpath>
+
+
+            </field>
+        </record>
+
+
+        <record id="view_move_picking_tree_inherit" model="ir.ui.view">
+            <field name="name">stock.move.tree.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="name"/>
+
+                </field>
+                <field name="product_uom_qty" position="after">
+                    <field name="price_unit"/>
+                    <field name="discount"/>
+                </field>
+                <field name="product_uos_qty" position="replace"/>
+                <field name="product_uos" position="replace"/>
+                <field name="location_dest_id" position="replace"/>
+                <field name="string_availability_info" position="replace"/>
+                <button name="%(stock.move_scrap)d" position="replace"/>
+                <field name="state" position="after">
+                    <field name="move_tax_id"/>
+                    <field name="price_subtotal"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_bon_reception_view" model="ir.actions.act_window">
+            <field name="name">Bons de Reception</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="domain">[('picking_type_id','=',1)]</field>
+            <field name="context">{
+                'search_default_picking_type_id': 1,
+                'default_picking_type_id': 1,
+                'contact_display': 'partner_address',
+
+                }
+            </field>
+        </record>
+        <record id="action_br_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="act_window_id" ref="action_bon_reception_view"/>
+        </record>
+
+        <record id="action_br_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock.view_picking_form"/>
+            <field name="act_window_id" ref="action_bon_reception_view"/>
+        </record>
+
+
+        <menuitem
+                action="action_bon_reception_view"
+                id="menu_bon_reception"
+                parent="stock.menu_stock_warehouse_mgmt" sequence="1"
+                groups="purchase.group_purchase_manager,purchase.group_purchase_user"/>
+
+        <record id="vpicktree_inherited" model="ir.ui.view">
+            <field name="name">stock.picking.tree.inherited</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+
+                    <field name="create_uid" string="crée par"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_bon_livraison_view" model="ir.actions.act_window">
+            <field name="name">Bons de Livraison</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="domain">[('picking_type_id','=',2), ('name', '!=', False)]</field>
+            <field name="context">{
+                'search_default_picking_type_id': 2,
+                'default_picking_type_id': 2,
+                'contact_display': 'partner_address',
+                }
+            </field>
+        </record>
+        <!--added by salwa  -->
+        <record id="action_bon_livraison_view2" model="ir.actions.act_window">
+            <field name="name">Bons de Livraison annulée</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="domain">[('picking_type_id','=',2),('name','=',False)]</field>
+            <field name="context">{
+                'search_default_picking_type_id': 2,
+                'default_picking_type_id': 2,
+                'contact_display': 'partner_address',
+                }
+            </field>
+        </record>
+
+        <record id="action_bon_livraison_view3" model="ir.actions.act_window">
+            <field name="name">Bons Entrée</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="domain">[('picking_type_id','=',6)]</field>
+            <field name="context">{
+                'search_default_picking_type_id': 6,
+                'default_picking_type_id': 6,
+                'contact_display': 'partner_address',
+                }
+            </field>
+        </record>
+
+        <record id="action_bon_livraison_view4" model="ir.actions.act_window">
+            <field name="name">Bons Sortie</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="domain">[('picking_type_id','=',7)]</field>
+            <field name="context">{
+                'search_default_picking_type_id': 7,
+                'default_picking_type_id': 7,
+                'contact_display': 'partner_address',
+
+                }
+            </field>
+        </record>
+
+
+        <!-- Bon de retour -->
+        <record id="action_bon_livraison_view5" model="ir.actions.act_window">
+            <field name="name">Bons Retour</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="domain">[('picking_type_id','=',8)]</field>
+            <field name="context">{
+                'search_default_picking_type_id': 8,
+                'default_picking_type_id': 8,
+                'contact_display': 'partner_address',
+
+                }
+            </field>
+        </record>
+
+        <record id="action_bl_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="act_window_id" ref="action_bon_livraison_view"/>
+        </record>
+
+        <record id="action_bl_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock.view_picking_form"/>
+            <field name="act_window_id" ref="action_bon_livraison_view"/>
+        </record>
+
+        <menuitem
+                action="action_bon_livraison_view"
+                id="menu_bon_livraison"
+                parent="stock.menu_stock_warehouse_mgmt" sequence="1"
+                groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+        <!--added by salwa  -->
+        <menuitem id="menu_stock_inventory_control" name="Inventory Control" parent="stock.menu_stock_root"
+                  sequence="3"/>
+        <menuitem id="menu_bon_livraison_annulee" name="BL Annulées" parent="stock.menu_stock_root"
+                  sequence="2"/>
+
+
+        <menuitem
+                action="action_bon_livraison_view2"
+                id="menu_bon_livraison2"
+                name="BL Annulées"
+                parent="menu_bon_livraison_annulee" sequence="2"
+                groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+        <menuitem
+                action="action_bon_livraison_view3"
+                id="menu_bon_livraison3"
+                name="Bons Entrée"
+                parent="stock.menu_stock_warehouse_mgmt" sequence="3"
+                groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+        <menuitem
+                action="action_bon_livraison_view4"
+                id="menu_bon_livraison4"
+                name="Bons Sortie"
+                parent="stock.menu_stock_warehouse_mgmt" sequence="4"
+                groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+        <menuitem
+                action="action_bon_livraison_view5"
+                id="menu_bon_livraison5"
+                name="Bons Retour Vente"
+                parent="menu_bon_livraison_annulee" sequence="5"
+                groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+        <menuitem
+                action="stock.action_picking_type_form"
+                id="stock.menu_action_picking_type_form"
+                parent="stock.menu_stock_warehouse_mgmt" sequence="1" groups="base.group_no_one"/>
+
+        <record id="action_bon_reception_annule" model="ir.actions.act_window">
+            <field name="name">Bons de réception annulés</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('picking_type_id','=',1), ('name', '=', False)]]</field>
+        </record>
+
+        <record id="action_bon_retour_achat" model="ir.actions.act_window">
+            <field name="name">Bons de retour achat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('picking_type_id','=',9)]</field>
+            <field name="context">{
+                'search_default_picking_type_id': 9,
+                'default_picking_type_id': 9,
+                'contact_display': 'partner_address',
+
+                }
+            </field>
+        </record>
+
+
+        <menuitem id="menu_bon_reception_annulee" name="BR Annulées" parent="stock.menu_stock_root"
+                  sequence="3"/>
+
+        <menuitem
+                action="action_bon_reception_annule"
+                id="menu_bon_reception_annule"
+                name="BR Annulées"
+                parent="menu_bon_reception_annulee" sequence="2"
+                groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+        <menuitem
+                action="action_bon_retour_achat"
+                id="menu_bon_retour_achat"
+                name="Bons Retour Achat"
+                parent="menu_bon_reception_annulee" sequence="2"
+                groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+    </data>
+</openerp>
+

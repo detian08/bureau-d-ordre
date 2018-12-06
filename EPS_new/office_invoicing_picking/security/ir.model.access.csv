@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_invoice_picking,invoice.picking,model_invoice_picking,account.group_account_invoice,1,1,1,1
+access_account_invoice_picking_line,invoice.picking.line,model_invoice_picking_line,account.group_account_invoice,1,1,1,1
+access_account_invoice_picking_taxe,invoice.picking.taxe,model_invoice_picking_tax,account.group_account_invoice,1,1,1,1
+access_account_bank_statement_eps,account.bank.statement,account.model_account_bank_statement,account.group_account_invoice,1,1,1,1
+access_account_bank_statement_line_eps,account.bank.statement.line,account.model_account_bank_statement_line,account.group_account_invoice,1,1,1,1
+access_account_cashbox_line_eps,account.cashbox.line,account.model_account_cashbox_line,account.group_account_invoice,1,1,1,1
+access_account_statement_operation_template_eps,account.statement.operation.template,account.model_account_statement_operation_template,account.group_account_invoice,1,1,1,1
+access_res_currency_account_manager_eps,res.currency account managereps,base.model_res_currency,account.group_account_invoice,1,1,1,1
+access_res_currency_rate_account_manager_eps,res.currency.rate account manager eps,base.model_res_currency_rate,account.group_account_invoice,1,1,1,1

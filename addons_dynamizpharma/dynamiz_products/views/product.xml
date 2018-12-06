@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id="product_template_form_view_inherit" model="ir.ui.view">
+<field name="name">product_template_form_view</field>
+<field name="model">product.template</field>
+<field name="inherit_id" ref="product.product_template_form_view"/>
+<field name="arch" type="xml">
+
+<!--<xpath expr="//field[@name='categ_id']" position="after">
+<field name="prixpub"/>
+</xpath>-->
+
+<xpath expr="//page[@name='notes']" position="after">
+<page string="Component" name="component" attrs="{'invisible':[('sale_ok', '=', False)]}">
+
+<group string="Component">
+
+    <field name="component_ids">
+        <tree editable="bottom">
+		<field name="article"/>
+            	<field name="quantity"/>
+
+            	<field name="price"/>
+            
+
+        </tree>
+    </field>
+
+</group>
+</page>
+</xpath>
+
+<xpath expr="//page[@name='component']" position="after">
+<page string="clients" name="client">
+<!--<field name="cltIds">-->
+<tree editable="bottom">
+<field name="name"/>
+</tree>
+<!--</field>-->
+</page>
+</xpath>
+
+</field>
+</record>
+
+</odoo>
+

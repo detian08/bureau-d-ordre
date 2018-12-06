@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_office_newsletter_portail,office.newsletter,model_office_newsletter,office_groups.portal_template,1,1,1,1
+access_product_promo_portail,product.promo,model_product_promo,office_groups.portal_template,1,1,1,1
+access_slide_image_portail,slide.image,model_slide_image,office_groups.portal_template,1,1,1,1
+access_slide_image_marketing,slide.image,model_slide_image,office_groups.office_group_manager_marketing,1,1,1,1
+access_office_newsletter_marketing,office.newsletter,model_office_newsletter,office_groups.office_group_manager_marketing,1,1,1,1
+access_product_promo_marketing,product.promo,model_product_promo,office_groups.office_group_manager_marketing,1,1,1,1
+product_public_category_marketing,product.public.category,website_sale.model_product_public_category,office_groups.office_group_manager_marketing,1,1,1,1

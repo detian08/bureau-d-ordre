@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+<!--id = nom du module.id-->
+
+
+*
+    <record model="courriel.degre" id="cci_bureau_ordre.degree_public">
+        <field name="name">Public</field>
+    </record>
+    <record model="courriel.degre" id="cci_bureau_ordre.degree_confidentiel">
+        <field name="name">confidentiel</field>
+    </record>
+ <record model="courriel.degre" id="degree_other">
+        <field name="name">Autres</field>
+    </record>
+</data>
+</openerp>

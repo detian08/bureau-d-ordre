@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+<!--id = nom du module.id-->
+
+
+*
+    <record model="courriel.type" id="cci_bureau_ordre.facture_type">
+        <field name="name">Facture</field>
+    </record>
+    <record model="courriel.type" id="cci_bureau_ordre.demande_emploi">
+        <field name="name">Demande d'emploi</field>
+    </record>
+    <record model="courriel.type" id="cci_bureau_ordre.demande_information">
+        <field name="name">Demande d'information</field>
+    </record>
+ <record model="courriel.type" id="type_other">
+        <field name="name">Autres</field>
+    </record>
+</data>
+</openerp>

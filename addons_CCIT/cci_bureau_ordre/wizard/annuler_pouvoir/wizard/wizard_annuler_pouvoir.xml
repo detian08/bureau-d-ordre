@@ -1,0 +1,55 @@
+<openerp>
+    <data>
+        <record id='cci_wizard_annuler_pouvoir_view_form' model="ir.ui.view">
+            <field name="name">Annuler pouvoir</field>
+            <field name="model">cci.wizard.annuler_pouvoir</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <separator string="voulez vous annuler la gestion de votre courriel ?" colspan="4"/>
+                    <!--<group col="2" fill="0" colspan="2">
+                        <field name="permanent" string="Permanent" ></field>
+                        <field name="date_debut" string="Date début" attrs="{'invisible':[('permanent','=',True)]}"></field>
+                        <field name="date_fin" string="Date fin" attrs="{'invisible':[('permanent','=',True)]}" ></field>
+                        <field name="state"></field>
+                    </group>-->
+
+                    <group colspan="2">
+                        <div class="oe_button_box oe_right">
+                            <button special="cancel" icon="gtk-cancel" string="Cancel"/>
+                           <!-- <button type="object" name="create_report" icon="gtk-go-forward" string="Creer Rapport"/>-->
+			<button string="Non" name ="create_report_non" type="object" class="oe_highlight"/>
+			<button string="Oui" name ="create_report_oui" type="object" class="oe_highlight"/>
+			
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_wizard_annuler_pouvoir">
+            <field name="name">Annuler pouvoir</field>
+            <field name="res_model">cci.wizard.annuler_pouvoir</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cci_wizard_annuler_pouvoir_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+	
+        <menuitem id="submenu_wizard_annuler_pouvoir" name="Annuler Pouvoir" action="action_wizard_annuler_pouvoir"  parent="menu_courriel_faire" groups="cci_bureau_ordre.group_presedent_ccit,cci_bureau_ordre.group_assistant_ccit" />
+
+<!--groups="cci_bureau_ordre.group_presedent_ccit,cci_bureau_ordre.group_assistant_ccit"-->
+        <!--<report string="Rapport fiche courriel entrant"
+          model="cci.courriel.entrant"
+          auto="True"
+          name="jasper_fiche_courriel_entrant_print"
+          rml="cci_bureau_ordre/reporting/Fiche_courriel_entrant/report/fiche_courriel_entrant_report.jrxml"
+          id="fiche_courriel_entrant"
+          menu="False"/>-->
+
+        </data>
+    </openerp>
+
+
+

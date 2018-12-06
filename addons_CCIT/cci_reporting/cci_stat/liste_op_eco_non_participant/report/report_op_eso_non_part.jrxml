@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cheques_depense" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/name]]></fieldDescription>
+	</field>
+	<field name="partner_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/partner_id]]></fieldDescription>
+	</field>
+	<field name="dateAuj" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/dateAuj]]></fieldDescription>
+	</field>
+	<field name="product_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/product_id]]></fieldDescription>
+	</field>
+	<field name="section_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/section_id]]></fieldDescription>
+	</field>
+	<field name="user_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/user_id]]></fieldDescription>
+	</field>
+	<field name="planned_revenue" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[/data/record/planned_revenue]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/currency]]></fieldDescription>
+	</field>
+	<field name="stat_path" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/stat_path]]></fieldDescription>
+	</field>
+	<group name="groupe line">
+		<groupHeader>
+			<band height="63">
+				<staticText>
+					<reportElement x="0" y="43" width="198" height="20" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Opérateurs économiques]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="1" width="555" height="42" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{product_id}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="198" y="43" width="84" height="20" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Revenue]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="282" y="43" width="149" height="20" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Département]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="431" y="43" width="126" height="20" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Commercial]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="0" width="553" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OPÉRATEURS ÉCONOMIQUES DÉSISTANT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="1" width="107" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Le : " + $F{dateAuj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="446" y="15" width="107" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image onErrorType="Blank">
+				<reportElement x="0" y="1" width="100" height="50"/>
+				<imageExpression><![CDATA[$F{stat_path} + "logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="490" y="30" width="67" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="198" height="20"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{partner_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.000" isBlankWhenNull="true">
+				<reportElement x="198" y="0" width="84" height="20"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{planned_revenue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="0" width="149" height="20"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{section_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="0" width="126" height="20"/>
+				<box>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{user_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="19" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="7" splitType="Stretch"/>
+	</summary>
+</jasperReport>

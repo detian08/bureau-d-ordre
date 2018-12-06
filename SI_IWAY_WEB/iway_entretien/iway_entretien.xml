@@ -1,0 +1,112 @@
+<openerp>
+    <data>
+      <record id="iway_entretien_tree_view" model="ir.ui.view">
+        <field name="name">iway_entretien.tree.view </field>
+        <field name="model">iway_entretien.iway_entretien</field>
+        <field name="arch" type="xml">
+		<tree string="iway_entretien"> 
+               	  
+			<field name="sujet"/>
+			<field name="responsable"/>
+			<field name="mode"/>
+			<!--<field name="presentiel"/>-->
+                        <!--<field name="categorie_echelon"/>-->
+                       
+			<!--<field name="competence"/>-->
+			<field name="scorefinal"/>
+			<field name="decision"/>
+			<field name="localite"/>
+                        <field name="date_entretien"/>
+                        <!--<field name="comment" style=' max-width: 1150px;  width: 500px'/>-->
+			<field name="observation" style=' max-width: 1150px;  width: 500px'/>
+			<!--<field name="evaluation_ids" sum="Score" on_change="onchange_montant(evaluation_ids)"/>-->
+                        
+                        <!--<field name="responsable"/>-->
+                        
+                       <!-- <field name="detaille" placeholder="Other Information ..." colspan="4"/>-->
+			<!--<field name="mail"/>
+                        <field name="telephone"/>
+                        <field name="date_pfe"/>-->
+                        <field name="state"/>
+		</tree>
+	</field> 
+      </record>
+
+	<record id="iway_entretien_form_view" model="ir.ui.view">
+        <field name="name">iway_entretien.Form.View </field>
+        <field name="model">iway_entretien.iway_entretien</field>
+        <field name="arch" type="xml">
+		<form string="iway_entretien">
+			<header>
+                        <button name="action_brouillon" type="workflow"
+                                string="Retour au brouillon"
+                                states="affecter,cloture"/>
+
+                        <button name="action_affecte" type="workflow"
+                                string="Affecter" states="brouillon"
+                                class="oe_highlight"/>
+<!--states="confirmed"-->
+                        <button name="action_cloture" type="workflow"
+                                string="Marquer comme clôturer" 
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visibility='brouillon,cloture'/>
+			</header>
+		  
+		<sheet>
+	             <group>
+			<group>
+				<field name="sujet"/>
+				<field name="responsable"/>
+				<field name="mode"/>
+		     	</group>
+			<group>
+				<!--<field name="presentiel"/>-->
+				<!--<field name="categorie_echelon"/>
+		                <field name="competence"/>-->
+				<field name="scorefinal"/>
+				<field name="decision"/>
+				<field name="localite"/>
+		                <field name="date_entretien"/>
+
+		               <!-- <field name="comment" style=' max-width: 1150px;  width: 500px'/>-->
+				
+			</group>
+		</group>
+
+		<group>
+			<field name="evaluation_ids"/>
+			<field name="observation" style=' max-width: 1150px;  width: 500px'/>
+		</group>
+
+                       <!-- <field name="detaille" placeholder="Other Information ..." colspan="4"/>-->
+			<!--<field name="sujet"/>
+			<field name="date_pfe"/>-->
+			<!--<separator string="Application Summary"/>-->
+			<!--<field name="description" rowspan="6" colspan="2" col="8" row="16" placeholder="Feedback of interviews..."/>-->
+			<!--<field name="mail"/>
+                        <field name="telephone"/>
+                        <field name="date_naissance"/>-->
+		  </sheet>
+		</form>
+	</field> 
+      </record>
+
+	<record model="ir.actions.act_window" id="action_entretien">
+    <field name="name">Entretien</field>
+    <field name="res_model">iway_entretien.iway_entretien</field>
+    <field name="view_mode">tree,form</field>
+	</record>
+<!--menu parent-->
+<!--<menuitem id="menu_ideas" name="PFE" sequence="10"
+          action="action_pfe" parent="hr_recruitment.menu_crm_case_categ0_act_job"/>-->
+<menuitem id="menu_ideas" name="Entretien" sequence="10"
+          action="action_entretien" parent="base.menu_crm_case_job_req_main"/>
+    
+<!--menu enfant
+<menuitem id="menu_ideas_child" name="Ideas child" sequence="1"
+          parent ="menu_ideas" action="action_list_ideas"/>-->
+
+<!--<menuitem id="menu_ideas_child2" name="Ideas child 2" sequence="2"
+          parent ="menu_ideas" action="action_list_ideas"/>-->
+    </data>
+</openerp>

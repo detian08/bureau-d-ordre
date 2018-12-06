@@ -1,0 +1,164 @@
+	
+<openerp>
+	<data>
+<!--courriels entrants-->
+
+<!--group presedent pour le modéle cci.courriel.entrant-->
+	     <record model="ir.rule" id="cci_bureau_ordre_courriel_entrant_record_presedent_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_entrant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_presedent_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'to_soumpre')]</field>
+
+		     <field eval="1" name="perm_read"></field>   
+		     <field eval="0" name="perm_write"></field> 
+		     <field eval="0" name="perm_unlink"></field>
+		     <field eval="0" name="perm_create"></field>
+	     </record>    
+<!--group vice_presedent pour le modéle cci.courriel.entrant-->
+	     <record model="ir.rule" id="project_courriel_entrant_record_vice_presedent_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_entrant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_assistant_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'to_soumpre'),('is_presedent', '=', 'False')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+
+
+<!--group dirceteur general pour le modéle cci.courriel.entrant-->
+	     <record model="ir.rule" id="project_courriel_entrant_record_directeur_general_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_entrant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_directeur_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'to_soumdg')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+<!--group membre conseiller pour le modéle cci.courriel.entrant-->
+	     <record model="ir.rule" id="project_courriel_entrant_record_membre_conseiller_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_entrant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_conseiller_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'to_conseiller')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+
+<!--group depertement conseiller pour le modéle cci.courriel.entrant-->
+	     <record model="ir.rule" id="project_courriel_entrant_record_departement_conseiller_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_entrant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_departement_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'traite')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+<!--group agent bureau ordre pour le modéle cci.courriel.entrant-->
+	     <record model="ir.rule" id="project_courriel_entrant_record_agent_bureau_ordre_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_entrant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_agent_bureau'))]"></field>
+		     <field name="domain_force">[('state', '=', 'draft')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+
+
+<!--courriels sortants-->
+
+<!--group presedent pour le modéle cci.courriel.sortant-->
+	     <record model="ir.rule" id="project_courriel_sortant_record_presedent_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_sortant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_presedent_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'to_soumpre')]</field>
+
+		     <field eval="1" name="perm_read"></field>   
+		     <field eval="1" name="perm_write"></field> 
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>    
+<!--group vice_presedent pour le modéle cci.courriel.sortant-->
+	     <record model="ir.rule" id="project_courriel_sortant_record_vice_presedent_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_sortant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_assistant_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'to_soumpre'),('is_presedent', '=', 'False')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+
+
+<!--group dirceteur general pour le modéle cci.courriel.sortant-->
+	     <record model="ir.rule" id="project_courriel_sortant_record_directeur_general_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_sortant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_directeur_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'to_soumdg')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+<!--group membre conseiller pour le modéle cci.courriel.sortant-->
+	     <record model="ir.rule" id="project_courriel_sortant_record_membre_conseiller_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_sortant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_conseiller_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'to_conseiller'),('state', '!=', 'to_soumdg')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+
+<!--group depertement conseiller pour le modéle cci.courriel.sortant-->
+	     <record model="ir.rule" id="project_courriel_sortant_record_departement_conseiller_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_sortant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_departement_ccit'))]"></field>
+		     <field name="domain_force">[('state', '=', 'draft')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+<!--group agent bureau ordre pour le modéle cci.courriel.sortant-->
+	     <record model="ir.rule" id="project_courriel_sortant_record_agent_bureau_ordre_rule">
+		     <field name="name">Project: bureau d'ordre </field>
+		     <field name="model_id" ref="model_cci_courriel_sortant"></field>
+		     <field name="groups" eval="[(4,ref('cci_bureau_ordre.group_agent_bureau'))]"></field>
+		     <field name="domain_force">[('state', '=', 'traite')]</field>
+		     <field eval="1" name="perm_write"></field>
+		     <field eval="1" name="perm_read"></field>
+		     <field eval="1" name="perm_unlink"></field>
+		     <field eval="1" name="perm_create"></field>
+	     </record>
+
+
+    	</data>
+</openerp>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cheques_depense" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="348"/>
+	<property name="ireport.y" value="112"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/name]]></fieldDescription>
+	</field>
+	<field name="product_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/product_id]]></fieldDescription>
+	</field>
+	<field name="planned_revenue" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[/data/record/planned_revenue]]></fieldDescription>
+	</field>
+	<field name="fail_revenue" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[/data/record/fail_revenue]]></fieldDescription>
+	</field>
+	<field name="total_realise" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[/data/record/total_realise]]></fieldDescription>
+	</field>
+	<field name="total_fail" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[/data/record/total_fail]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/date]]></fieldDescription>
+	</field>
+	<field name="year" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/year]]></fieldDescription>
+	</field>
+	<field name="dateAuj" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/dateAuj]]></fieldDescription>
+	</field>
+	<field name="stat_path" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/stat_path]]></fieldDescription>
+	</field>
+	<variable name="variable_total_realise" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_realise}]]></variableExpression>
+	</variable>
+	<variable name="variable_total_fail" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{total_fail}]]></variableExpression>
+	</variable>
+	<group name="groupe line">
+		<groupHeader>
+			<band height="39">
+				<staticText>
+					<reportElement x="0" y="19" width="169" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.1"/>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Produit]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="169" y="19" width="193" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.1"/>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total revenu réalisé]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="362" y="19" width="194" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.1"/>
+						<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+						<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total revenu perdu ]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="2" width="551" height="54" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ÉTAT REVENU]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="1" width="107" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Le "+$F{dateAuj}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="55" width="553" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="446" y="18" width="107" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="54" y="0" width="100" height="50"/>
+				<imageExpression><![CDATA[$F{stat_path} + "logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="486" y="33" width="67" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="169" height="20" forecolor="#000000"/>
+				<box>
+					<pen lineWidth="0.1"/>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement isPrintRepeatedValues="false" x="169" y="0" width="193" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<box>
+					<pen lineWidth="0.1"/>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{total_realise}.setScale(2, java.math.RoundingMode.HALF_UP)]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement isPrintRepeatedValues="false" x="362" y="0" width="194" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<box>
+					<pen lineWidth="0.1"/>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{total_fail}.setScale(2, java.math.RoundingMode.HALF_UP)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="20">
+			<textField isBlankWhenNull="true">
+				<reportElement x="169" y="0" width="193" height="20"/>
+				<box>
+					<pen lineWidth="0.1"/>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable_total_realise}.setScale(2, java.math.RoundingMode.HALF_UP)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="169" height="20" forecolor="#000000"/>
+				<box>
+					<pen lineWidth="0.1"/>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[TOTAUX]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="362" y="0" width="194" height="20"/>
+				<box>
+					<pen lineWidth="0.1"/>
+					<topPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.1" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.1" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable_total_fail}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

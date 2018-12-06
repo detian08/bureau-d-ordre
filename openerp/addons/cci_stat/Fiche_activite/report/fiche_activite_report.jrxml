@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="activity" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="10"/>
+	<property name="ireport.y" value="0"/>
+	<field name="date_debut" class="java.lang.String"/>
+	<field name="date_fin" class="java.lang.String"/>
+	<field name="create_date" class="java.lang.String"/>
+	<field name="nom_op" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<field name="stat_path" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/stat_path]]></fieldDescription>
+	</field>
+	<field name="responsable_id" class="java.lang.String"/>
+	<field name="responsable_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FICHE ACTIVITE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="446" y="3" width="110" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Le " + new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="446" y="25" width="109" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" / "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="446" y="48" width="109" height="20"/>
+				<textElement/>
+				<text><![CDATA[CCIT CRM SIEGE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="72" width="555" height="1"/>
+			</line>
+			<image onErrorType="Blank">
+				<reportElement x="0" y="8" width="100" height="50"/>
+				<imageExpression><![CDATA[$F{stat_path} + "logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="554" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{responsable_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="19" width="230" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date_debut}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="355" y="19" width="199" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date_fin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="230" y="21" width="126" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[jusqu'à]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="18" width="189" height="30"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Date de l'activité]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="18" width="199" height="30"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nom de l'opération]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="18" width="167" height="30"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Type d'activité]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="-13" width="189" height="32"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{create_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="356" y="-13" width="199" height="32"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nom_op}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="189" y="-13" width="167" height="32"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<leftPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<bottomPen lineWidth="0.25" lineColor="#9E9E9E"/>
+					<rightPen lineWidth="0.25" lineColor="#9E9E9E"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="377" y="0" width="100" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+    
+
+ <!--<record id="group_gerant_eps" model="res.groups">
+        <field name="name">Gérant</field>
+        
+        <field name="implied_ids" eval="[(4, ref('base.group_erp_manager')),(4, ref('office_stock.group_manager_sale')),(4, ref('office_stock.group_manager_purchase'))]"/>
+    </record>-->
+
+
+</data>
+
+
+
+</openerp>

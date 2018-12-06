@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sale_config_settings" model="ir.ui.view">
+            <field name="name">jaro.distance.config</field>
+            <field name="model">sale.config.settings</field>
+            <field name="inherit_id" ref="crm.view_sale_config_settings"/>
+            <field name="arch" type="xml">
+                <data>
+                    <separator string="Sale Services" position="before">
+                     <separator string="Opérateur économique"/>
+                        <group>
+                                    <field name="seuil"/>
+                        </group>
+
+                </separator>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>

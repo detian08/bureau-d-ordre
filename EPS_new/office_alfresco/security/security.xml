@@ -1,0 +1,11 @@
+<openerp>
+<data>
+    <record id="group_manager" model="res.groups">
+        <field name="name">Document Alfresco/ Configuration</field>
+    </record>
+
+    <record id="office_groups.office_group_manager_sale" model="res.groups">
+      <field name="implied_ids" eval="[(4, ref('group_manager'))]"/>
+    </record>
+</data>
+</openerp>

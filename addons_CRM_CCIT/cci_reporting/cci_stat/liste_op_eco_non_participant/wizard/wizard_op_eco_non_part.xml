@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+<!--==================== wizard View ==================-->
+        <record id='wizard_perdu_list_view' model="ir.ui.view">
+            <field name="name">Opérateurs Économiques Désistant</field>
+            <field name="model">cci.wizard.perdu</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Opérateurs Économiques Désistant" >
+                    <group col="2" fill="0" colspan="4">
+                        <field name="product_id" domain="[('type','!=', 'visite'),('type','!=', 'adhesion'),('state','=', 'validate')]" options="{'no_create': True}"/>
+                    </group>
+                    <footer>
+
+                            <div class="oe_button_box oe_right">
+                                <button type="object" name="create_report" icon="gtk-go-forward" string="Créer Rapport"/>
+                                <button special="cancel" icon="gtk-cancel" string="Annuler"/>
+			                </div>
+
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_wizard_perdu_list">
+            <field name="name">Opérateurs Économiques Désistant</field>
+            <field name="res_model">cci.wizard.perdu</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_perdu_list_view"/>
+            <field name="target">new</field>
+        </record>
+ 	<menuitem id="submenu_wizard_perdu_list_report" name="OE désistants" action="action_wizard_perdu_list" parent="menu_wizard_claim_list_report" sequence="3"/>
+
+
+<!--==================== report spec ========================-->
+        <report string="Opérateurs Économiques Désistant"
+		model="crm.lead"
+		auto="True"
+		name="jasper_perdu_print"
+		rml="cci_reporting/cci_stat/liste_op_eco_non_participant/report/report_op_eso_non_part.jrxml"
+		id="op_eco_non_part"
+		menu="False"/>
+
+
+
+    </data>
+</openerp>
+
+
+
